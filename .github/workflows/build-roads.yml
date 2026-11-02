@@ -1,0 +1,132 @@
+name: Build road files
+
+on:
+  schedule:
+    - cron: "17 7 3 * *"     # 3rd of every month, 07:17 UTC
+  workflow_dispatch:          # "Run workflow" button on GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 6         # be polite to Geofabrik's free servers
+      matrix:
+        state:
+          - AL:alabama
+          - AK:alaska
+          - AZ:arizona
+          - AR:arkansas
+          - CA:california
+          - CO:colorado
+          - CT:connecticut
+          - DE:delaware
+          - DC:district-of-columbia
+          - FL:florida
+          - GA:georgia
+          - HI:hawaii
+          - ID:idaho
+          - IL:illinois
+          - IN:indiana
+          - IA:iowa
+          - KS:kansas
+          - KY:kentucky
+          - LA:louisiana
+          - ME:maine
+          - MD:maryland
+          - MA:massachusetts
+          - MI:michigan
+          - MN:minnesota
+          - MS:mississippi
+          - MO:missouri
+          - MT:montana
+          - NE:nebraska
+          - NV:nevada
+          - NH:new-hampshire
+          - NJ:new-jersey
+          - NM:new-mexico
+          - NY:new-york
+          - NC:north-carolina
+          - ND:north-dakota
+          - OH:ohio
+          - OK:oklahoma
+          - OR:oregon
+          - PA:pennsylvania
+          - RI:rhode-island
+          - SC:south-carolina
+          - SD:south-dakota
+          - TN:tennessee
+          - TX:texas
+          - UT:utah
+          - VT:vermont
+          - VA:virginia
+          - WA:washington
+          - WV:west-virginia
+          - WI:wisconsin
+          - WY:wyoming
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq osmium-tool
+          pip install -q osmium
+      - name: Build
+        run: |
+          CODE="${{ matrix.state }}"; NAME="${CODE#*:}"; CODE="${CODE%%:*}"
+          echo "CODE=$CODE" >> "$GITHUB_ENV"
+          PY=python ./build.sh "$CODE" "$NAME"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: road-${{ env.CODE }}
+          path: out/${{ env.CODE }}.sqlite.gz
+          retention-days: 3
+
+  release:
+    needs: build              # only publishes if every state built
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - name: Write manifest
+        run: |
+          cd out
+          python3 - <<'EOF'
+          import hashlib, json, os, datetime
+          files = sorted(f for f in os.listdir('.') if f.endswith('.sqlite.gz'))
+          m = {
+            "built_utc": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "schema": 2,
+            "attribution": "© OpenStreetMap contributors, ODbL",
+            "states": {
+              f.split('.')[0]: {
+                "file": f,
+                "bytes": os.path.getsize(f),
+                "sha256": hashlib.sha256(open(f, 'rb').read()).hexdigest(),
+              } for f in files
+            },
+          }
+          json.dump(m, open('manifest.json', 'w'), indent=1)
+          print(len(files), "states")
+          EOF
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          TAG="roads-$(date -u +%Y%m%d-%H%M)"
+          gh release create "$TAG" out/* --title "Road data $(date -u +%Y-%m-%d)" \
+            --notes "Speed-limit road files for all states. Data © OpenStreetMap contributors, ODbL." --latest
+          # keep only the newest 3 road releases
+          gh release list --limit 100 --json tagName --jq '.[].tagName' \
+            | grep '^roads-' | sort -r | tail -n +4 \
+            | xargs -r -I{} gh release delete {} --yes --cleanup-tag
