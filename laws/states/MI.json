@@ -1,0 +1,54 @@
+{
+  "code": "MI",
+  "name": "Michigan",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "MCL 257.627: 25 business districts/residential subdivisions, 55 trunk line and county highways (incl. gravel), 70 limited-access freeways"
+  },
+  "fine": {
+    "model": "county_schedule",
+    "base": 0,
+    "brackets": [],
+    "typical_range": [105, 135],
+    "max_fine": null,
+    "notes": "Civil infraction; each district court sets amounts. Example (58th Dist., fine+costs): 1-5 over $105, 6-10 $115, 11-15 $125, 16-25 $135, 26+ call court."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, 100],
+    "notes": "Court may add costs up to $100, plus $40 justice system assessment (MJI table, 2021). Often bundled into court's total."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 5, "points": 1},
+      {"min_over": 6, "max_over": 10, "points": 2},
+      {"min_over": 11, "max_over": 15, "points": 3},
+      {"min_over": 16, "max_over": null, "points": 4}
+    ],
+    "notes": "MCL 257.320a. Reckless driving = 6 pts. One court lists interstate speeding as 0-4 pts; statute shows no such exception."
+  },
+  "zones": {
+    "work_zone": "45 mph where a lane is closed unless otherwise posted (MCL 257.627(6)).",
+    "school_zone": "Fines doubled for moving violations in school zones (58th Dist. Court)."
+  },
+  "tiers": {
+    "court": {"min_over": 26, "min_speed": null, "reason": "No pay-by-schedule amount at 26+ over in sampled court; 4 points from 16+."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless driving (misdemeanor) - conduct-based, no speed number",
+               "max_jail_days": 93, "max_fine": 500, "license": null, "citation": "MCL 257.626(2)"}
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Trucks 10,000+ lb, truck-tractors, combos and school buses: max 65 where posted limit is higher (MCL 257.627(4))."
+  },
+  "sources": [
+    {"title": "MCL 257.627 Speed limits", "url": "https://zeus-milenia.legislature.mi.gov/documents/mcl/pdf/mcl-257-627.pdf"},
+    {"title": "MCL 257.320a Point system (am. 2023 PA 39)", "url": "https://renderpdf.legislature.mi.gov/documents/mcl/pdf/MCL-257-320A.pdf"},
+    {"title": "MCL 257.626 Reckless driving", "url": "https://zeus-milenia.legislature.mi.gov/documents/mcl/pdf/mcl-257-626.pdf"},
+    {"title": "MJI civil infraction monetary sanctions table", "url": "https://courts.michigan.gov/siteassets/publications/benchbooks/qrms/traffic/traffic/civil-infraction-monetary-sanctions-table.pdf?r=1"},
+    {"title": "58th District Court fines", "url": "https://miottawa.org/Courts/58thDistrict/dcourtfines.htm"}
+  ],
+  "confidence": "medium",
+  "notes": "Speeding is a civil infraction; no speed-based criminal threshold. Residential 25 applies to subdivisions/designated residential streets, else 55. Freeway 75 and some 65 trunk lines are posted. Statute 1-pt tier reads 'more than 1 but not more than 5'. Fine data from one court only."
+}

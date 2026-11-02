@@ -1,0 +1,122 @@
+{
+  "code": "SC",
+  "name": "South Carolina",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55,
+    "trunk": 55,
+    "primary": 55,
+    "secondary": 55,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "S.C. Code 56-5-1520: 30 urban district; 40 unpaved roads; 55 other locations. 70 interstate / 60 multilane divided primary only where posted."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 10,
+        "fine": 25
+      },
+      {
+        "min_over": 11,
+        "max_over": 14,
+        "fine": 50
+      },
+      {
+        "min_over": 15,
+        "max_over": 25,
+        "fine": 75
+      },
+      {
+        "min_over": 26,
+        "max_over": null,
+        "fine": 200
+      }
+    ],
+    "typical_range": [
+      15,
+      200
+    ],
+    "max_fine": 200,
+    "notes": "Statute sets ranges; values shown are maximums: $15-25, $25-50, $50-75, $75-200 (56-5-1520(G)). Exactly 15 and exactly 25 over fall in gaps in the text."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      51.75,
+      240
+    ],
+    "notes": "Assessments roughly double the fine. Example (Clemson municipal court): totals $76.75 / $128.75 / $180.50 / $440 by bracket."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 10,
+        "points": 2
+      },
+      {
+        "min_over": 11,
+        "max_over": 24,
+        "points": 4
+      },
+      {
+        "min_over": 25,
+        "max_over": null,
+        "points": 6
+      }
+    ],
+    "notes": "56-1-720. Reckless driving = 6 points."
+  },
+  "zones": {
+    "work_zone": "Not verified.",
+    "school_zone": "Not verified."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 25,
+      "min_speed": null,
+      "reason": "25+ over: 6 points and fine up to $200."
+    },
+    "arrest": {
+      "min_over": 26,
+      "min_speed": null,
+      "offense": "Speeding more than 25 over (misdemeanor, jail possible)",
+      "max_jail_days": 30,
+      "max_fine": 200,
+      "license": "6 points",
+      "citation": "S.C. Code 56-5-1520(G)"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "Only manufactured/mobile homes in transport: 10 below posted, max 55."
+  },
+  "sources": [
+    {
+      "title": "H.3149 (2025-26) showing current 56-5-1520(G)",
+      "url": "https://scstatehouse.gov/sess126_2025-2026/prever/3149_20241205.htm"
+    },
+    {
+      "title": "H.4759 (2014) showing 56-5-1520 limits",
+      "url": "https://www.scstatehouse.gov/sess120_2013-2014/prever/4759_20140220.htm"
+    },
+    {
+      "title": "S.705 (2025-26) showing 56-1-720 points",
+      "url": "https://www.scstatehouse.gov/sess126_2025-2026/prever/705_20251210.htm"
+    },
+    {
+      "title": "Clemson Municipal Court fines/points",
+      "url": "https://clemson.edu/campus-life/municipal-court/court-info/points.html"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "Statute text read via bills quoting current law (code site not reachable). All SC speeding is a misdemeanor. Reckless driving (56-5-2920) has no speed number; penalty not verified. Court-cost example dates to 2008 guidance."
+}

@@ -1,0 +1,121 @@
+{
+  "code": "TX",
+  "name": "Texas",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70,
+    "trunk": 70,
+    "primary": 70,
+    "secondary": 70,
+    "tertiary": 60,
+    "unclassified": 60,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "Tex. Transp. Code § 545.352(b): 30 urban district (15 alley); outside urban district 70 on US/state-numbered highways incl. FM/RM roads, 60 on other highways. OSM mapping assumes numbered = secondary and above; inside a city, unposted streets are 30."
+  },
+  "fine": {
+    "model": "judge_discretion",
+    "per_mph": null,
+    "base": null,
+    "brackets": [],
+    "typical_range": [
+      1,
+      200
+    ],
+    "max_fine": 200,
+    "notes": "Each court sets its own fine within the $1–$200 statutory range (§ 542.401). Range shown is the statutory range, not observed averages."
+  },
+  "court_costs": {
+    "amount": 129,
+    "range": [
+      129,
+      null
+    ],
+    "notes": "Mandatory on conviction: $62 state + $14 local consolidated court costs, $50 state traffic fine (§ 542.4031), $3 local traffic fine. Extra fees possible (e.g. $15 time-payment fee)."
+  },
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No points since the Driver Responsibility Program was repealed 9/1/2019. Habitual violator suspension: 4+ moving convictions in 12 months or 7+ in 24 months (§ 521.292)."
+  },
+  "zones": {
+    "work_zone": "Min and max fine doubled when workers present and the limit is posted (§ 542.404).",
+    "school_zone": "No statewide fine doubling found; school-zone limits are set and posted locally."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 25,
+      "min_speed": 95,
+      "reason": "Not eligible for driving-safety-course dismissal at 25+ over or 95+ mph (CCP art. 45A.352(a)(5))."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (misdemeanor)",
+      "max_jail_days": 30,
+      "max_fine": 200,
+      "license": null,
+      "citation": "Tex. Transp. Code § 545.401"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "Separate truck and nighttime limits were repealed effective 9/1/2011 (HB 1353); school buses have lower limits."
+  },
+  "sources": [
+    {
+      "title": "Tex. Transp. Code § 545.352 (via texas.public.law)",
+      "url": "https://texas.public.law/statutes/tex._transp._code_section_545.352"
+    },
+    {
+      "title": "Tex. Transp. Code § 542.401 general penalty",
+      "url": "https://texas.public.law/statutes/tex._transp._code_section_542.401"
+    },
+    {
+      "title": "Tex. Transp. Code § 542.4031 state traffic fine",
+      "url": "https://texas.public.law/statutes/tex._transp._code_section_542.4031"
+    },
+    {
+      "title": "Tex. Transp. Code § 542.404 work zone",
+      "url": "https://texas.public.law/statutes/tex._transp._code_section_542.404"
+    },
+    {
+      "title": "Tex. Transp. Code § 545.401 reckless driving (Justia, 2025)",
+      "url": "https://law.justia.com/codes/texas/transportation-code/title-7/subtitle-c/chapter-545/subchapter-i/section-545-401/"
+    },
+    {
+      "title": "Tex. Transp. Code § 543.004 notice to appear for speeding",
+      "url": "https://texas.public.law/statutes/tex._transp._code_section_543.004"
+    },
+    {
+      "title": "Tex. Transp. Code § 521.292 habitual violator",
+      "url": "https://texas.public.law/statutes/tex._transp._code_section_521.292"
+    },
+    {
+      "title": "Texas OCA justice court cost chart (offenses on/after 1/1/2020)",
+      "url": "https://www.txcourts.gov/media/1444860/justice-court.pdf"
+    },
+    {
+      "title": "Texas OCA justice court convictions cost chart (rev. 7/22/2024)",
+      "url": "https://www.txcourts.gov/media/1458904/justice-court-convictions-court-cost-chart.pdf"
+    },
+    {
+      "title": "Texas DPS DRP surcharge repeal FAQ",
+      "url": "https://www.dps.texas.gov/section/driver-license/faq/driver-responsibility-program-surcharge-repeal-faqs"
+    },
+    {
+      "title": "HB 1353 (82R, 2011) enrolled",
+      "url": "https://capitol.texas.gov/tlodocs/82R/billtext/pdf/HB01353F.pdf"
+    },
+    {
+      "title": "Defensive-driving 25+/95+ exclusion (secondary)",
+      "url": "https://www.recordinglaw.com/tools/traffic-ticket-lookup/texas/"
+    },
+    {
+      "title": "Tex. Code Crim. Proc. art. 45A.352 (driving safety course)",
+      "url": "https://texas.public.law/statutes/tex._code_of_crim._proc._article_45a.352"
+    }
+  ],
+  "confidence": "high",
+  "notes": "Speeding itself is a fine-only Class C misdemeanor; officers must issue a citation, not arrest, if the driver signs a promise to appear (§ 543.004). Reckless driving has no mph threshold. 2025 SB 2799 (felony reckless if injury) passed the Senate; final enactment not verified. Statute text read via public.law/Justia mirrors because the official statutes site was blocked."
+}

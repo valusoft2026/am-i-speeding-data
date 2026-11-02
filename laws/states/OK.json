@@ -1,0 +1,74 @@
+{
+  "code": "OK",
+  "name": "Oklahoma",
+  "researched": "2026-11-02",
+
+  "default_limits": {
+    "motorway": null, "trunk": null, "primary": null, "secondary": null, "tertiary": 55,
+    "unclassified": 55, "residential": null, "living_street": null,
+    "basis": "47 O.S. § 11-801 (not read directly). Only secondary sources found: 55 most county roads, 35 state parks, 25 most school zones. Other defaults unverified."
+  },
+
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 10},
+      {"min_over": 11, "max_over": 15, "fine": 20},
+      {"min_over": 16, "max_over": 20, "fine": 35},
+      {"min_over": 21, "max_over": 25, "fine": 75},
+      {"min_over": 26, "max_over": 30, "fine": 135},
+      {"min_over": 31, "max_over": 35, "fine": 155},
+      {"min_over": 36, "max_over": null, "fine": 205}
+    ],
+    "typical_range": [null, null],
+    "max_fine": null,
+    "notes": "Base fines from a secondary source, unverified against statute. Court costs and assessments add much more."
+  },
+
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Varies by court. Example: Lawton municipal court total (fine+costs) $195 for 1–10 over, $295 for 31+ (2017 schedule)."
+  },
+
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": null},
+      {"min_over": 11, "max_over": 25, "points": 2},
+      {"min_over": 26, "max_over": 40, "points": 3},
+      {"min_over": 41, "max_over": null, "points": 4}
+    ],
+    "notes": "Point values from secondary sources that disagree (1–10 over: 0 or 1). 10+ points in 5 years = suspension (OAC 670:15-15-6)."
+  },
+
+  "zones": {
+    "work_zone": "Higher fines (secondary sources say doubled); amount unverified.",
+    "school_zone": "Higher fines (secondary sources say doubled); amount unverified."
+  },
+
+  "tiers": {
+    "court":  {"min_over": null, "min_speed": null, "reason": "No statewide mandatory-court threshold found."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless driving (misdemeanor)",
+               "max_jail_days": 90, "max_fine": 500, "license": null, "citation": "47 O.S. § 11-901 (per secondary source)"}
+  },
+
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not researched; unknown."
+  },
+
+  "sources": [
+    {"title": "OAC 670:15-15-5 points notice (Justia)", "url": "https://regulations.justia.com/states/oklahoma/title-670/chapter-15/subchapter-15/section-670-15-15-5/"},
+    {"title": "OAC 670:15-15-6 suspension at 10 points (Justia)", "url": "https://regulations.justia.com/states/oklahoma/title-670/chapter-15/subchapter-15/section-670-15-15-6/"},
+    {"title": "DrivingLaws.org Oklahoma speeding (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/oklahoma-speeding-laws.htm"},
+    {"title": "DrivingLaws.org Oklahoma points (secondary)", "url": "https://www.drivinglaws.org/resources/the-drivers-license-point-system-oklahoma.htm"},
+    {"title": "DrivingLaws.org Oklahoma reckless driving (secondary)", "url": "https://www.drivinglaws.org/resources/oklahoma-reckless-driving-laws-penalties.htm"},
+    {"title": "FlashPath Oklahoma points (secondary)", "url": "https://flashpath.app/ok/articles/ok_traffic-point-system"},
+    {"title": "DMVRoads Oklahoma points (secondary, conflicts)", "url": "https://www.dmvroads.com/states/oklahoma/dmv-point-system/"},
+    {"title": "Lawton Municipal Court fine schedule", "url": "https://lawtonok.gov/home/showpublisheddocument/1152/638276098176030000"}
+  ],
+  "confidence": "low",
+  "notes": "Official statutes (OSCN, oklegislature.gov) were unreachable this session. Reckless driving: 5–90 days and $100–$500 per secondary source; no mph threshold found. Needs a verification pass before release."
+}

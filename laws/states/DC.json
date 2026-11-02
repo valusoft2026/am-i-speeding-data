@@ -1,0 +1,65 @@
+{
+  "code": "DC",
+  "name": "District of Columbia",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 20, "trunk": 20, "primary": 20, "secondary": 20, "tertiary": 20,
+    "unclassified": 20, "residential": 20, "living_street": 20,
+    "basis": "DDOT: 20 mph on any street/highway with no posted limit (since June 1, 2020); alleys 15. Arterials/freeways are normally posted higher."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 50},
+      {"min_over": 11, "max_over": 15, "fine": 100},
+      {"min_over": 16, "max_over": 20, "fine": 150},
+      {"min_over": 21, "max_over": 25, "fine": 200},
+      {"min_over": 26, "max_over": 30, "fine": 300},
+      {"min_over": 31, "max_over": null, "fine": 500}
+    ],
+    "typical_range": [50, 500],
+    "max_fine": null,
+    "notes": "MPD collateral book (Jan 2025). 'Over 25' is $400 on controlled-access roads, $500 elsewhere. Camera fines same amounts, no points."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Civil infraction handled by DC DMV; no separate court cost found."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": 0},
+      {"min_over": 11, "max_over": 15, "points": 3},
+      {"min_over": 16, "max_over": 20, "points": 4},
+      {"min_over": 21, "max_over": null, "points": 5}
+    ],
+    "notes": "Reckless 6 pts; aggravated reckless 12 pts + revocation. 1-10 over not on DMV chart (0 pts)."
+  },
+  "zones": {
+    "work_zone": "Fines doubled in work zones (DDOT).",
+    "school_zone": "15 mph by schools at posted times/arrival-dismissal; fines doubled (DDOT)."
+  },
+  "tiers": {
+    "court": {"min_over": 20, "min_speed": null, "reason": "20+ over is criminal reckless driving."},
+    "arrest": {"min_over": 20, "min_speed": null, "offense": "Reckless driving (criminal)",
+               "max_jail_days": 90, "max_fine": 500,
+               "license": "6 points; 30+ over = aggravated reckless: up to 180 days, 12 pts, revocation",
+               "citation": "D.C. Code § 50-2201.04(b)(1), (d)(1); § 22-3571.01"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No separate truck default found."
+  },
+  "sources": [
+    {"title": "D.C. Code § 50-2201.04", "url": "https://code.dccouncil.gov/us/dc/council/code/sections/50-2201.04"},
+    {"title": "D.C. Code § 22-3571.01 (via WomensLaw copy)", "url": "https://www.womenslaw.org/laws/dc/statutes/ss-22-357101-fines-criminal-offenses"},
+    {"title": "DDOT speeding laws page", "url": "https://ddot.dc.gov/page/speeding-laws-fines-and-safety-tips"},
+    {"title": "DDOT 20 mph default FAQ", "url": "https://ddot.dc.gov/page/twenty-mph-20-mph-default-speed-limit-frequently-asked-questions"},
+    {"title": "MPD Collateral Book Jan 2025", "url": "https://mpdc.dc.gov/sites/default/files/dc/sites/mpdc/publication/attachments/Collateral_Book_Updated_January_2025.pdf"},
+    {"title": "DC DMV point system chart", "url": "https://dmv.dc.gov/page/point-system-chart"}
+  ],
+  "confidence": "medium",
+  "notes": "Reckless threshold is 20+ over (STEER Act era amendments); 30+ over is aggravated reckless. Reckless max fine $500 read from a WomensLaw copy of § 22-3571.01; one law firm says $1,000 - verify. 18 DCMR fine schedule itself not read."
+}

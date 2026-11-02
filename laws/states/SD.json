@@ -1,0 +1,158 @@
+{
+  "code": "SD",
+  "name": "South Dakota",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 80,
+    "trunk": 65,
+    "primary": 65,
+    "secondary": 65,
+    "tertiary": 65,
+    "unclassified": 65,
+    "residential": 25,
+    "living_street": 25,
+    "basis": "SDCL 32-25-4 (80 interstates), 32-25-1.1 (65 all other streets/highways unless posted), 32-25-12 (25 unposted urban areas), 32-25-9.2 (55 township roads). Divided 4-lane rural highways may be posted 70 (32-25-7.1). OSM mapping approximate."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 5,
+        "fine": 19
+      },
+      {
+        "min_over": 6,
+        "max_over": 10,
+        "fine": 39
+      },
+      {
+        "min_over": 11,
+        "max_over": 15,
+        "fine": 59
+      },
+      {
+        "min_over": 16,
+        "max_over": 20,
+        "fine": 79
+      },
+      {
+        "min_over": 21,
+        "max_over": 25,
+        "fine": 99
+      },
+      {
+        "min_over": 26,
+        "max_over": null,
+        "fine": 154
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": null,
+    "notes": "Statewide UJS fine schedule FY2027 (eff. 7/1/2026), same for interstate, highways and other roads. With $78.50 costs: $97.50 to $232.50. Speeding is a Class 2 misdemeanor (SDCL 32-25-7); statutory max not verified. City ordinance tickets may differ."
+  },
+  "court_costs": {
+    "amount": 78.5,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Fixed statewide: $50 liquidated costs, $23.50 court automation, $5 victim comp."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": null,
+        "points": 0
+      }
+    ],
+    "notes": "Speeding carries 0 points. Reckless driving 8 pts. Suspension at 15 pts/12 mo or 22 pts/24 mo."
+  },
+  "zones": {
+    "work_zone": "Construction zone fine doubles: $38 (1-5 over) to $308 (26+); totals $116.50-$386.50.",
+    "school_zone": "$34 (1-5 over) to $304 (26+); totals $112.50-$382.50."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 26,
+      "min_speed": null,
+      "reason": "Top bracket: fine jumps from $99 to $154 ($232.50 total). Still payable; no mandatory appearance on the schedule."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (Class 1 misdemeanor) - no speed number; requires driving that endangers people or property",
+      "max_jail_days": 365,
+      "max_fine": 2000,
+      "license": "8 points; no mandatory revocation on 1st (30-day revocation on 2nd within 1 year)",
+      "citation": "SDCL 32-24-1, 22-6-2"
+    }
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Transportation Commission may set lower limits by rule for vehicles over 10,000 lb (32-25-6). Rule values not verified."
+  },
+  "sources": [
+    {
+      "title": "SD UJS Fine and Bond Schedule FY2027",
+      "url": "https://ujs.sd.gov/media/c3enonvl/fy2027-fine-and-bond-schedule.pdf"
+    },
+    {
+      "title": "SDCL 32-25-1.1 (Justia 2025)",
+      "url": "https://law.justia.com/codes/south-dakota/title-32/chapter-25/section-32-25-1-1/"
+    },
+    {
+      "title": "SDCL 32-25-4 (Justia 2025)",
+      "url": "https://law.justia.com/codes/south-dakota/title-32/chapter-25/section-32-25-4/"
+    },
+    {
+      "title": "SDCL 32-25-12 (Justia 2025)",
+      "url": "https://law.justia.com/codes/south-dakota/title-32/chapter-25/section-32-25-12/"
+    },
+    {
+      "title": "SDCL 32-25-9.2 (Justia 2025)",
+      "url": "https://law.justia.com/codes/south-dakota/title-32/chapter-25/section-32-25-9-2/"
+    },
+    {
+      "title": "SDCL 32-25-6 (Justia 2025)",
+      "url": "https://law.justia.com/codes/south-dakota/title-32/chapter-25/section-32-25-6/"
+    },
+    {
+      "title": "SDCL 32-25-7, 7.1",
+      "url": "https://sdlegislature.gov/api/Statutes/32-25-7.html?all=true"
+    },
+    {
+      "title": "SDCL 32-12-49.1 point schedule",
+      "url": "https://sdlegislature.gov/api/Statutes/32-12-49.1.html?all=true"
+    },
+    {
+      "title": "SDCL 32-12-49.2 suspension thresholds",
+      "url": "https://sdlegislature.gov/api/Statutes/32-12-49.2.html?all=true"
+    },
+    {
+      "title": "SD DPS point system",
+      "url": "https://dps.sd.gov/driver-licensing/south-dakota-licensing-information/south-dakota-point-system"
+    },
+    {
+      "title": "HB 1175 (2025) aggravated careless driving, introduced",
+      "url": "https://mylrc.sdlegislature.gov/api/Documents/279162.pdf"
+    },
+    {
+      "title": "RecordingLaw - SD reckless driving (secondary)",
+      "url": "https://www.recordinglaw.com/us-laws/reckless-driving-laws/south-dakota-reckless-driving-laws/"
+    },
+    {
+      "title": "DrivingLaws - SD point system (secondary)",
+      "url": "https://www.drivinglaws.org/resources/south-dakota-s-traffic-violation-point-system.html"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "Fines, costs, limits high confidence. Every speeding ticket is technically a Class 2 misdemeanor (SDCL 32-25-4, 32-25-7; max penalty not verified from source), but it is paid off the schedule. Reckless penalty from secondary site (statute text not read). 2025 HB 1175 proposed 'aggravated careless driving' at 20+ over (Class 1); not found in code, enactment unconfirmed."
+}

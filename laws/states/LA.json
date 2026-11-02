@@ -1,0 +1,57 @@
+{
+  "code": "LA",
+  "name": "Louisiana",
+  "researched": "2026-11-02",
+
+  "default_limits": {
+    "motorway": 70, "trunk": 65, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 55, "living_street": 55,
+    "basis": "La. R.S. 32:61(A): 55 on any highway unless a lower limit is posted; 70 interstate/controlled-access; 65 multi-lane divided highways with partial/no access control. trunk=65 assumes divided multi-lane."
+  },
+
+  "fine": {
+    "model": "judge_discretion",
+    "per_mph": null,
+    "base": null,
+    "brackets": [],
+    "typical_range": [null, 175],
+    "max_fine": 175,
+    "notes": "No statewide schedule; parish/city courts set amounts. First offense max $175 (R.S. 32:57(A)), plus $5 LERN fee (R.S. 32:61(C))."
+  },
+
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Varies by parish and court; no statewide figure found."
+  },
+
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No state point system (secondary source; no official OMV page read)."
+  },
+
+  "zones": {
+    "work_zone": "$500–$1,000 fine when workers are on site (R.S. 32:57(H)).",
+    "school_zone": "School-zone speeding cannot be paid by mail (R.S. 32:57(E)); no statewide fine increase found."
+  },
+
+  "tiers": {
+    "court":  {"min_over": 15, "min_speed": null, "reason": "15+ over: no pay-by-mail and no written promise to appear in lieu of bond (R.S. 32:57(E)(2))."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless operation of a vehicle (misdemeanor)",
+               "max_jail_days": 90, "max_fine": 200, "license": null, "citation": "La. R.S. 14:99"}
+  },
+
+  "trucks": {
+    "different_limits": false,
+    "notes": "R.S. 32:61 sets no separate truck limits."
+  },
+
+  "sources": [
+    {"title": "La. R.S. 32:61 maximum speed limit (amended 2025)", "url": "https://www.legis.la.gov/legis/Law.aspx?d=88480"},
+    {"title": "La. R.S. 32:57 penalties (amended 2025)", "url": "https://legis.la.gov/Legis/LawPrint.aspx?d=88472"},
+    {"title": "La. R.S. 14:99 reckless operation (amended 2025)", "url": "https://legis.la.gov/legis/Law.aspx?d=78753"},
+    {"title": "DMV.org Louisiana point system (secondary)", "url": "https://www.dmv.org/la-louisiana/point-system.php"}
+  ],
+  "confidence": "medium",
+  "notes": "Any speeding conviction is technically jailable up to 30 days (R.S. 32:57(A)). Reckless operation has no mph threshold. Unposted streets are legally 55, but cities usually post lower limits. One secondary site claims 75 on interstates; current statute says 70."
+}

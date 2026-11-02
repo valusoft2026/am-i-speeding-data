@@ -1,0 +1,58 @@
+{
+  "code": "NH",
+  "name": "New Hampshire",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 65, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 30, "living_street": 30,
+    "basis": "RSA 265:60 II: 30 business/urban residence district, 35 rural residence district, 45 unimproved rural highway, 55 other, 65 interstate (70 on I-93 MM45 to VT line)"
+  },
+  "fine": {
+    "model": "brackets",
+    "base": 0,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 50},
+      {"min_over": 11, "max_over": 15, "fine": 75},
+      {"min_over": 16, "max_over": 20, "fine": 100},
+      {"min_over": 21, "max_over": 25, "fine": 200},
+      {"min_over": 26, "max_over": null, "fine": 350}
+    ],
+    "typical_range": [null, null],
+    "max_fine": 350,
+    "notes": "Statutory fines (RSA 265:60 V) for non-interstate limits. On 65 mph interstates: 1-5 $65, 6-10 $100, 11-15 $150, 16-20 $250, 21+ $350. On 70 mph I-93: 1-5 $65, 6-10 $100, 11-15 $200, 16-20 $300, 21+ $400. All plus penalty assessment."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "No fixed court cost; a penalty assessment of 24% of the fine (min $2) is added (RSA 106-L:10)."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 24, "points": 3},
+      {"min_over": 25, "max_over": null, "points": 4}
+    ],
+    "notes": "DMV: under 25 over = 3 pts, 25+ over = 4. Reckless = 6. Age 21+: 12 pts/1 yr can suspend up to 3 months."
+  },
+  "zones": {
+    "work_zone": "Limit is at least 10 mph below posted in active work zones (RSA 265:60 II).",
+    "school_zone": "Limit is 10 mph below posted around school opening/closing (RSA 265:60 II)."
+  },
+  "tiers": {
+    "court": {"min_over": 26, "min_speed": null, "reason": "Top fine bracket ($350) and 4 points; 25+ over is the DMV's higher point tier."},
+    "arrest": {"min_over": null, "min_speed": 100, "offense": "Reckless operation at 100+ mph (non-criminal 'violation')",
+               "max_jail_days": 0, "max_fine": null, "license": "90-day revocation (first offense)", "citation": "RSA 265:79 II"}
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not researched."
+  },
+  "sources": [
+    {"title": "RSA 265:60 Basic speed limits and fines", "url": "https://gc.nh.gov/rsa/html/XXI/265/265-60.htm"},
+    {"title": "RSA 265:79 Reckless operation (100 mph paragraph II)", "url": "https://gc.nh.gov/rsa/html/XXI/265/265-79.htm"},
+    {"title": "RSA 106-L:10 Penalty assessment", "url": "https://gc.nh.gov/rsa/html/VII/106-L/106-L-10.htm"},
+    {"title": "NH DMV Demerit Points", "url": "https://dmv.nh.gov/tickets-accidents-or-restorations/demerit-points"},
+    {"title": "Law-firm summary of 2026 reckless changes (secondary)", "url": "https://rocklawnh.espresso.themodernfirm.com/what-is-reckless-driving-in-new-hampshire-the-new-2026-law-explained/"}
+  ],
+  "confidence": "medium",
+  "notes": "100+ mph tier: RSA 265:79 II (eff. 1/1/2026, 2025 ch. 71/278) = min $750 + PA, 90-day revocation, no stated max fine. It is a 'violation', not a crime: no jail, though police may still take custody; not verified. Points at exactly 25 over: DMV wording ('under 25' / '25 or more') used. Residential default is 30 urban, 35 rural residence. Interstate 65 is posted max."
+}

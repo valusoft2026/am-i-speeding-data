@@ -1,0 +1,68 @@
+{
+  "code": "VT",
+  "name": "Vermont",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 65, "trunk": 50, "primary": 50, "secondary": 50, "tertiary": 50,
+    "unclassified": 50, "residential": 50, "living_street": 50,
+    "basis": "23 V.S.A. § 1081(b): 50 mph unless another limit is set. 65 on limited-access highways is set by rule (CVR 14-053-004 art. 1.1, under § 1004). There's no statutory residential default; towns post 25-50 (§ 1007)."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": 0,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 0, "per_mph": 5},
+      {"min_over": 11, "max_over": 20, "fine": 0, "per_mph": 6},
+      {"min_over": 21, "max_over": 30, "fine": 0, "per_mph": 8},
+      {"min_over": 31, "max_over": null, "fine": 0, "per_mph": 12}
+    ],
+    "typical_range": [53, 475],
+    "max_fine": null,
+    "notes": "Judicial Bureau waiver: mph over x $5/$6/$8/$12 by bracket, plus surcharges (see court costs). Totals: 1 over $53, 10 over $105, 20 over $185, 30 over $323, 31 over $475."
+  },
+  "court_costs": {
+    "amount": 47, "range": [null, null],
+    "notes": "Add $47 plus 15% of the fine (rounded up) to the base fine (Judicial Bureau waiver schedule). If you lose a hearing, the judge may also add a court fee."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": 2},
+      {"min_over": 11, "max_over": 20, "points": 3},
+      {"min_over": 21, "max_over": 30, "points": 5},
+      {"min_over": 31, "max_over": null, "points": 8}
+    ],
+    "notes": "23 V.S.A. § 2502 and Judicial Bureau speed chart. Collected points can lead to a DMV suspension; the threshold wasn't verified."
+  },
+  "zones": {
+    "work_zone": "Double the per-mph waiver rate ($10/$12/$16/$24). Chart lists a work zone max of $2,347.",
+    "school_zone": "Double the per-mph waiver rate ($10/$12/$16/$24) where posted."
+  },
+  "tiers": {
+    "court": {"min_over": 30, "min_speed": null, "and_min_speed": 60, "reason": "Criminal excessive speed (30+ over AND 60+ mph) goes to criminal court, not the Judicial Bureau."},
+    "arrest": {"min_over": 30, "min_speed": null, "and_min_speed": 60,
+               "offense": "Excessive speed (criminal): 60+ mph AND 30+ over the limit",
+               "max_jail_days": 90, "max_fine": 300,
+               "license": "8 points",
+               "citation": "23 V.S.A. § 1097"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No separate truck limit found. Commercial vehicles pay higher per-mph waiver rates."
+  },
+  "sources": [
+    {"title": "23 V.S.A. § 1081", "url": "https://legislature.vermont.gov/statutes/section/23/013/01081"},
+    {"title": "23 V.S.A. § 1097 (excessive speed)", "url": "https://legislature.vermont.gov/statutes/section/23/013/01097"},
+    {"title": "23 V.S.A. § 2502 (points)", "url": "https://legislature.vermont.gov/statutes/section/23/025/02502"},
+    {"title": "Leg. Counsel: Speed Limit Setting in Vermont (2/26/2026)", "url": "https://legislature.vermont.gov/Documents/2026/Workgroups/House%20Transportation/Legislative%20Counsel/W~Damien%20Leonard~Speed%20Limit%20Setting%20Vermont~2-26-2026.pdf"},
+    {"title": "VT Judicial Bureau Waiver Penalty Schedule", "url": "https://www.vtcourts.gov/media/8964"},
+    {"title": "VT Judicial Bureau Speed Penalty Chart (eff. 9/30/2019)", "url": "https://www.vtcourts.gov/media/57"},
+    {"title": "VT Judicial Bureau", "url": "https://www.vtcourts.gov/judicial-bureau"},
+    {"title": "VT Courts: traffic violations and points", "url": "https://www.vtcourts.gov/self-help/traffic-violations"},
+    {"title": "VT SHSO speeding law highlights", "url": "https://shso.vermont.gov/node/910"},
+    {"title": "VPR: where your speeding ticket money goes (2018, secondary)", "url": "https://www.vermontpublic.org/post/you-paid-your-speeding-ticket-heres-where-your-money-went"}
+  ],
+  "confidence": "high",
+  "notes": "§ 1097 requires BOTH 60+ mph AND 30+ over, so use and_min_speed (60) as an AND condition, not OR. The schedule's chart totals match the formula exactly. Negligent operation (§ 1091) can also be charged at any speed. The suspension point threshold wasn't verified."
+}

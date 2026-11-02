@@ -1,0 +1,137 @@
+{
+  "code": "RI",
+  "name": "Rhode Island",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 50,
+    "trunk": 50,
+    "primary": 50,
+    "secondary": 50,
+    "tertiary": 50,
+    "unclassified": 50,
+    "residential": 25,
+    "living_street": 25,
+    "basis": "R.I. Gen. Laws § 31-14-2 prima facie limits: 25 in business or residence districts; 50 daytime / 45 nighttime elsewhere (night = 30 min after sunset to 30 min before sunrise). Higher limits (e.g. interstates) apply only where posted after the state alters them. Non-residential values shown are daytime."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 10,
+        "fine": 95
+      },
+      {
+        "min_over": 11,
+        "max_over": null,
+        "fine": 95,
+        "per_mph": 10
+      }
+    ],
+    "typical_range": [
+      95,
+      null
+    ],
+    "max_fine": null,
+    "notes": "1-10 over: $95. 11+ over: $10 per mph over, $205 minimum (app shows $95 + $10/mph, which equals $205 at 11 over; statute wording is ambiguous). Repeat offenses within 12 months cost more per mph (§ 31-41.1-4)."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      4.25,
+      39.25
+    ],
+    "notes": "$1 EMS fee + $3.25 tech surcharge per summons. Another $35 court cost if you're found guilty at a hearing (RI Traffic Tribunal FAQ)."
+  },
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No DMV point system (secondary source). Instead a judge may suspend your license: up to 30 days for 1-10 over, up to 60 days for 11+ over (§ 31-41.1-4(b))."
+  },
+  "zones": {
+    "work_zone": "Not verified.",
+    "school_zone": "20 mph within 300 ft of school entrances on school days in daytime, where signs are posted (§ 31-14-2). Higher school-zone fines were proposed in 2026 (S 2718/H 8481) but not verified as enacted."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 11,
+      "min_speed": null,
+      "reason": "Mandatory per-mph fine ($205+), and a judge may suspend your license up to 60 days."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (misdemeanor). No speed number in the statute; it depends on the conduct.",
+      "max_jail_days": 365,
+      "max_fine": 500,
+      "license": "DMV may suspend up to 1 year (secondary source)",
+      "citation": "R.I. Gen. Laws § 31-27-4"
+    }
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not verified."
+  },
+  "sources": [
+    {
+      "title": "R.I. Gen. Laws § 31-14-2 (prima facie limits)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE31/31-14/31-14-2.htm"
+    },
+    {
+      "title": "R.I. Gen. Laws § 31-14-6 (local alteration)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE31/31-14/31-14-6.htm"
+    },
+    {
+      "title": "R.I. Gen. Laws § 31-41.1-4 (2025, Justia)",
+      "url": "https://law.justia.com/codes/rhode-island/title-31/chapter-31-41-1/section-31-41-1-4"
+    },
+    {
+      "title": "RI Traffic Tribunal FAQ (costs and fees)",
+      "url": "https://portal7.courts.ri.gov/CFSchedule/FrequentlyAsked/FrequentlyAskedQuestions"
+    },
+    {
+      "title": "RI Traffic Tribunal Know Your Rights",
+      "url": "https://www.courts.ri.gov/Courts/traffictribunal/Documents/KnowYourRights.pdf"
+    },
+    {
+      "title": "2026 S 2493 (proposed § 31-27-4 change)",
+      "url": "https://webserver.rilegislature.gov/Billtext26/SenateText26/S2493.htm"
+    },
+    {
+      "title": "S 2493 status (legiplex)",
+      "url": "https://app.azure.legiplex.com/ri/legislature/2026/2026-r/bills/s2493"
+    },
+    {
+      "title": "2026 H 8481 (proposed zone fines)",
+      "url": "https://webserver.rilegislature.gov/BillText26/HouseText26/H8481.htm"
+    },
+    {
+      "title": "2026 S 2718 (proposed zone fines)",
+      "url": "https://webserver.rilegislature.gov/Billtext26/SenateText26/S2718.pdf"
+    },
+    {
+      "title": "RI ACLU on 2026 driving penalty bills",
+      "url": "https://www.riaclu.org/legislation/increased-driving-penalties-s-2310-s-2493-s-3169-s-2402/"
+    },
+    {
+      "title": "DrivingLaws: RI reckless driving (secondary)",
+      "url": "https://www.drivinglaws.org/resources/rhode-island-reckless-driving-laws-penalties.htm"
+    },
+    {
+      "title": "DrivingLaws: RI speeding (secondary)",
+      "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/rhode-island-speeding-laws.htm"
+    },
+    {
+      "title": "DMV.org: RI point system (secondary)",
+      "url": "https://www.dmv.org/ri-rhode-island/point-system.php"
+    },
+    {
+      "title": "R.I. Gen. Laws § 31-27-4 (reckless driving)",
+      "url": "https://webserver.rilegislature.gov/Statutes/TITLE31/31-27/31-27-4.htm"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "Defaults and the fine schedule come from the statute. Reckless-driving penalties ($500, 1 yr) are from a secondary source; the statute text wasn't readable. 2026 S 2493 would make reckless driving at 25+ mph a felony (up to 5 yrs, $1,000-$5,000), but § 31-27-4 was last amended in 2007, so it hasn't been enacted."
+}

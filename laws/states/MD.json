@@ -1,0 +1,65 @@
+{
+  "code": "MD",
+  "name": "Maryland",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55, "trunk": 55, "primary": 50, "secondary": 50, "tertiary": 50,
+    "unclassified": 50, "residential": 30, "living_street": 30,
+    "basis": "Md. Transp. § 21-801.1(b): 30 business district / undivided residential; 35 divided residential; 50 undivided elsewhere; 55 divided elsewhere. Class mapping assumes trunk/motorway divided, others undivided."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 9, "fine": 80},
+      {"min_over": 10, "max_over": 19, "fine": 90},
+      {"min_over": 20, "max_over": 29, "fine": 160},
+      {"min_over": 30, "max_over": 39, "fine": 290},
+      {"min_over": 40, "max_over": null, "fine": 530}
+    ],
+    "typical_range": [80, 530],
+    "max_fine": 500,
+    "notes": "Preset fines (District Court DC-CR-090). On 65+ mph roads: 10-19 = $160, 20-29 = $290. Statutory max for a speeding misdemeanor is $500 (§ 27-101(b)); 40+ preset exceeds it, unverified."
+  },
+  "court_costs": {
+    "amount": 0, "range": [null, null],
+    "notes": "Included in preset fine (incl. $7.50 surcharge), per DC-CR-090."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 9, "points": 1},
+      {"min_over": 10, "max_over": 29, "points": 2},
+      {"min_over": 30, "max_over": null, "points": 6}
+    ],
+    "notes": "20+ over on a posted 65 road = 5 pts. Reckless = 6 pts (§ 16-402)."
+  },
+  "zones": {
+    "work_zone": null,
+    "school_zone": null
+  },
+  "tiers": {
+    "court": {"min_over": 30, "min_speed": null, "reason": "30+ over is reckless driving: must appear, 6 points."},
+    "arrest": {"min_over": 30, "min_speed": null, "offense": "Reckless driving by speed (misdemeanor)",
+               "max_jail_days": 60, "max_fine": 1000,
+               "license": "6 points (8 pts in 2 yrs = suspension)",
+               "citation": "Md. Transp. § 21-901.1(a)(3), (c) (eff. Oct. 1, 2025)"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No separate truck limit in § 21-801.1."
+  },
+  "sources": [
+    {"title": "Md. Transp. § 21-801.1", "url": "https://mgaleg.maryland.gov/2024RS/Statute_Web/gtr/21-801.1.pdf"},
+    {"title": "Md. Transp. § 16-402 (points, 2026)", "url": "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/16-402.pdf"},
+    {"title": "Md. Transp. § 27-101 (penalties)", "url": "https://mgaleg.maryland.gov/2026RS/Statute_Web/gtr/27-101.pdf"},
+    {"title": "HB 744 (2025) reckless at 30+ over", "url": "https://mgaleg.maryland.gov/2025RS/bills/hb/hb0744f.pdf"},
+    {"title": "District Court Schedule of Pre-Set Fines DC-CR-090 (Rev. 10/2026) - speed pages not readable", "url": "https://www.courts.state.md.us/sites/default/files/court-forms/dccr090_10.2026wm.pdf"},
+    {"title": "Waranch law firm: preset fines (secondary)", "url": "https://davidwaranch.com/maryland-speeding-ticket-penalties-by-speed-range/"},
+    {"title": "statespeedinglaws.com (secondary)", "url": "https://statespeedinglaws.com/Maryland-Speeding-Ticket-Costs/"},
+    {"title": "drivinglaws.org (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/maryland-speeding-laws.htm"}
+  ],
+  "confidence": "medium",
+  "notes": "Statutes/points verified on mgaleg. Fine amounts come from 3 secondary sources citing DC-CR-090; the official PDF's speed section could not be extracted, so fines need review. Work/school zone amounts not verified. Speed camera fines (civil, no points) scale $40-$425 since Oct 2025."
+}

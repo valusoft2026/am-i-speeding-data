@@ -1,0 +1,154 @@
+{
+  "code": "NE",
+  "name": "Nebraska",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 75,
+    "trunk": 70,
+    "primary": 65,
+    "secondary": 65,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 25,
+    "living_street": 25,
+    "basis": "Neb. Rev. Stat. § 60-6,186 (per secondary source): 20 business, 25 residential, 50 gravel non-state roads, 55 paved non-state roads, 65 state highways, 70 expressways/other freeways, 75 interstates. Gravel unclassified roads are 50."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 5,
+        "fine": 50
+      },
+      {
+        "min_over": 6,
+        "max_over": 10,
+        "fine": 75
+      },
+      {
+        "min_over": 11,
+        "max_over": 15,
+        "fine": 125
+      },
+      {
+        "min_over": 16,
+        "max_over": 20,
+        "fine": 200
+      },
+      {
+        "min_over": 21,
+        "max_over": 35,
+        "fine": 300
+      },
+      {
+        "min_over": 36,
+        "max_over": null,
+        "fine": 400
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": 400,
+    "notes": "Neb. Rev. Stat. § 60-682.01 as amended by LB530 (2025, eff. 9/3/2025). Court costs extra."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Not found."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 5,
+        "points": 0
+      },
+      {
+        "min_over": 6,
+        "max_over": 10,
+        "points": 2
+      },
+      {
+        "min_over": 11,
+        "max_over": 35,
+        "points": 3
+      },
+      {
+        "min_over": 36,
+        "max_over": null,
+        "points": 4
+      }
+    ],
+    "notes": "§ 60-4,182(10). On highways with 60-6,186(1)(f)-(i) limits (55+ roads): 1 pt up to 10 over, 2 pts 11-15, 3 pts 16-35. 12 points in 2 years = 6-month revocation."
+  },
+  "zones": {
+    "work_zone": "Fine doubled (secondary source).",
+    "school_zone": "Fine doubled (secondary source)."
+  },
+  "tiers": {
+    "court": {
+      "min_over": null,
+      "min_speed": null,
+      "reason": "Not found."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (Class III misdemeanor)",
+      "max_jail_days": 90,
+      "max_fine": 500,
+      "license": null,
+      "citation": "Neb. Rev. Stat. § 60-6,213",
+      "reason": "No fixed mph threshold. Driving more than double the speed limit is prima facie evidence of reckless driving (§ 60-6,213(2)); can't be expressed as min_over."
+    }
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not researched; unknown."
+  },
+  "sources": [
+    {
+      "title": "DrivingLaws.org Nebraska speeding (secondary)",
+      "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/nebraska-speeding-laws.htm"
+    },
+    {
+      "title": "DrivingLaws.org Nebraska reckless driving (secondary)",
+      "url": "https://www.drivinglaws.org/resources/nebraska-reckless-careless-driving-laws-penalties.htm"
+    },
+    {
+      "title": "DrivingLaws.org Nebraska points (secondary, conflicts)",
+      "url": "https://www.drivinglaws.org/resources/nebraska-s-traffic-violation-point-system.html"
+    },
+    {
+      "title": "RecordingLaw Nebraska license points (secondary)",
+      "url": "https://www.recordinglaw.com/tools/license-points-lookup/nebraska/"
+    },
+    {
+      "title": "LB530 (2025) slip law, § 60-682.01 fine amounts",
+      "url": "https://nebraskalegislature.gov/FloorDocs/109/PDF/Slip/LB530.pdf"
+    },
+    {
+      "title": "Neb. Rev. Stat. § 60-4,182 points",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=60-4,182"
+    },
+    {
+      "title": "Neb. Rev. Stat. § 60-6,213 reckless driving",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=60-6,213"
+    },
+    {
+      "title": "Neb. Rev. Stat. § 60-6,186 speed limits",
+      "url": "https://nebraskalegislature.gov/laws/statutes.php?statute=60-6%2C186"
+    }
+  ],
+  "confidence": "low",
+  "notes": "Fines raised by LB530 effective 9/3/2025. Points and residential/interstate limits checked on nebraskalegislature.gov. Reckless penalty (Class III misdemeanor, 3 months/$500) not checked against § 28-106. Willful reckless (§ 60-6,214) carries 30 days to 1 year suspension."
+}

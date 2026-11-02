@@ -1,0 +1,73 @@
+{
+  "code": "AR",
+  "name": "Arkansas",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": null,
+    "trunk": null,
+    "primary": null,
+    "secondary": null,
+    "tertiary": null,
+    "unclassified": null,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "Ark. Code 27-51-201 (2020 text read): 30 in any urban district; 65 urban controlled-access highways; 75 max rural 4+ lane divided controlled-access (ArDOT posts; 70 for CMVs). Text read sets no numeric default for cars on other rural roads, only 'reasonable and prudent' (27-51-201(a)); 50 for trucks 1.5 ton+."
+  },
+  "fine": {
+    "model": "judge_discretion",
+    "per_mph": null,
+    "base": null,
+    "brackets": [],
+    "typical_range": [null, null],
+    "max_fine": 100,
+    "notes": "Speeding is a misdemeanor. 1st offense in a year: up to $100 and/or 10 days; 2nd up to $200/20 days; 3rd up to $500/6 mo (per secondary sources; statute text not read). No statewide fine schedule found."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [null, null],
+    "notes": "Uniform costs set by Ark. Code 16-10-305, plus local fees; amount not verified."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": 3},
+      {"min_over": 11, "max_over": 20, "points": 4},
+      {"min_over": 21, "max_over": 30, "points": 5},
+      {"min_over": 31, "max_over": null, "points": 8}
+    ],
+    "notes": "DFA schedule (Reg. 1993-9). Reckless = 8 pts. 10 pts = warning; 14+ = hearing, possible suspension (3 mo to 1 yr)."
+  },
+  "zones": {
+    "work_zone": "Fines reportedly doubled in construction zones (secondary source only; statute not verified).",
+    "school_zone": "25 mph school-zone limit per secondary source; penalty not verified."
+  },
+  "tiers": {
+    "court": {"min_over": 16, "min_speed": null, "reason": "Excessive speeding: Class C misdemeanor, higher fine and jail exposure."},
+    "arrest": {
+      "min_over": 16,
+      "min_speed": null,
+      "offense": "Excessive speeding, more than 15 mph over posted limit (Class C misdemeanor)",
+      "max_jail_days": 30,
+      "max_fine": 500,
+      "license": "Court may suspend for moving violations (secondary source); 8 pts if 31+ over",
+      "citation": "Ark. Code 27-50-302(a)(7); 5-4-401(b)(3); 5-4-201(b)(3)"
+    }
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Trucks 1.5 ton+: 50 off controlled-access roads; CMVs (26,001 lb+) 70 on rural 75-mph freeways (27-51-201)."
+  },
+  "sources": [
+    {"title": "Ark. Code 27-51-201 (2020, Justia)", "url": "https://law.justia.com/codes/arkansas/2020/title-27/subtitle-4/chapter-51/subchapter-2/section-27-51-201-d-1"},
+    {"title": "Ark. Code 27-51-204 (FindLaw)", "url": "https://codes.findlaw.com/ar/title-27-transportation/ar-code-sect-27-51-204/"},
+    {"title": "Ark. Reg. 1993-9 Driver Services (points) - Cornell LII", "url": "https://www.law.cornell.edu/regulations/arkansas/006-05-93-Ark-Code-R-014"},
+    {"title": "AR DFA Driver Improvements", "url": "https://www.dfa.arkansas.gov/driver-services/driver-improvements"},
+    {"title": "ASMSA Vehicle Safety Program (reproduces DFA points table)", "url": "https://www.asmsa.org/wp-content/uploads/2020/09/ASMSA-Vehicle-Safety-Program-8.20.pdf"},
+    {"title": "AOC CAC fund bench card (27-50-306)", "url": "https://www.arcourts.gov/sites/default/files/Commission%20CYF/bench%20cards/CAC%20fund%20card.pdf"},
+    {"title": "Ark. Admin. of Justice Fund rule (16-10-305 ref) - Cornell LII", "url": "https://www.law.cornell.edu/regulations/arkansas/006-03-09-Ark-Code-R-001"},
+    {"title": "RecordingLaw - AR reckless driving (secondary; cites 27-50-302(a)(7))", "url": "https://www.recordinglaw.com/us-laws/reckless-driving-laws/arkansas-reckless-driving-laws/"},
+    {"title": "DrivingLaws.org - AR speeding (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/arkansas-speeding-laws.htm"}
+  ],
+  "confidence": "low",
+  "notes": "Official AR code site not reachable; statute text via Justia/FindLaw mirrors (2020/2024) and secondary sites. 'In excess of 15 over' = 16+. Any AR speeding is technically a misdemeanor (up to 10 days jail 1st offense). Reckless driving (27-50-308, Class B, 5-90 days, $25-500) has no speed number. 27-50-306: extra $5 if 20+ over with a minor aboard. Rural car default limit unverified - recheck current 27-51-201."
+}

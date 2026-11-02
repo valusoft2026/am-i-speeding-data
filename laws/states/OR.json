@@ -1,0 +1,58 @@
+{
+  "code": "OR",
+  "name": "Oregon",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 65, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "ORS 811.111(1): 65 interstates; 55 elsewhere; 25 residence district (non-arterial) and public parks; 20 business district; 15 alleys/narrow residential roads; 20 school zones when flashing or 7am-5pm school days. Some designated highways 60-70 by sign."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 115},
+      {"min_over": 11, "max_over": 20, "fine": 165},
+      {"min_over": 21, "max_over": 30, "fine": 265},
+      {"min_over": 31, "max_over": null, "fine": 440}
+    ],
+    "typical_range": [null, null],
+    "max_fine": 2000,
+    "notes": "Presumptive fines (ORS 153.019, court schedule SOF-24) for limits under 65. On 65+ mph roads classes shift up: 1-10 over $165, 11-20 $265, 21+ $440. 100+ mph: $1,150. Max by class: D $250, C $500, B $1,000, A $2,000."
+  },
+  "court_costs": {
+    "amount": 0, "range": [null, null],
+    "notes": "No separate court cost on the presumptive fine. Jefferson and Multnomah counties add a $5 surcharge. Restitution/costs may be added if contested."
+  },
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No points system. Adults (18+): 3 convictions/preventable crashes in 24 months = 30-day night restriction; 5 = 30-day suspension (OAR 735-072-0027)."
+  },
+  "zones": {
+    "work_zone": "Higher presumptive fines in posted highway work zones and safety corridors: D $225, C $325, B $525, A $875 (ORS 153.020).",
+    "school_zone": "20 mph when lights flash or 7am-5pm school days; same higher zone fines as work zones (ORS 153.020)."
+  },
+  "tiers": {
+    "court": {"min_over": 31, "min_speed": 100, "reason": "Top Class A fine ($440; 21+ over on 65+ roads). 100+ mph: $1,150 fine and mandatory 30-90 day license suspension."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless driving (Class A misdemeanor) - no speed number; requires reckless endangerment of people or property",
+               "max_jail_days": 364, "max_fine": 6250,
+               "license": "Speeding alone is never criminal, even 100+ mph (violation with 30-90 day suspension). Reckless-driving suspension not verified.",
+               "citation": "ORS 811.140; ORS 811.109(5)"}
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Trucks over 10,000 lb GVWR, truck tractors over 8,000 lb, school/worker/church buses: 55 on any highway unless posted otherwise (ORS 811.111(1)(b)). Designated interstate/highway segments post 60-65 for trucks vs 65-70 for cars."
+  },
+  "sources": [
+    {"title": "ORS 811.111 (violating a speed limit)", "url": "https://oregon.public.law/statutes/ors_811.111"},
+    {"title": "ORS 811.109 (penalties for speed violations)", "url": "https://oregon.public.law/statutes/ors_811.109"},
+    {"title": "ORS chapter 153 (153.018-153.020 fines), 2025 edition", "url": "https://www.oregonlegislature.gov/bills_laws/ors/ors153.html"},
+    {"title": "Oregon Judicial Dept. Schedule of Fines on Violations SOF-24", "url": "https://www.courts.oregon.gov/schedules/Schedule%20of%20Fines%20on%20Violations_SOF24_FINAL.pdf"},
+    {"title": "OAR 735-072-0027 (adult driver improvement program)", "url": "https://www.law.cornell.edu/regulations/oregon/Or-Admin-Code-SS-735-072-0027"},
+    {"title": "SB 615 (2023) impact statement - reckless driving penalties", "url": "https://olis.oregonlegislature.gov/liz/2023R1/Downloads/MeasureAnalysisDocument/76724"}
+  ],
+  "confidence": "medium",
+  "notes": "Speed limits and 100 mph rule read via public.law (2023 ORS + 2024 changes); fines from official 2025 ORS and SOF-24 (eff. 9/1/2024). Reckless driving max from SB 615 summary, not the statute itself. A court may add up to 30 days suspension for 31+ over with a prior within 12 months."
+}

@@ -1,0 +1,61 @@
+{
+  "code": "VA",
+  "name": "Virginia",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "Va. Code § 46.2-870 (55 unless posted; up to 70 only where posted after study), § 46.2-874 (25 in business/residence districts), § 46.2-873.1 (35 on unpaved roads)"
+  },
+  "fine": {
+    "model": "per_mph",
+    "per_mph": 6,
+    "base": 0,
+    "brackets": [],
+    "typical_range": [null, null],
+    "max_fine": 250,
+    "notes": "$6/mph over on prepayable schedule (§ 46.2-878.3). +$100 if 80-85 on a 65 road. $7/mph school/work zone, $8/mph posted residence district. Infraction max = Class 4 misd. fine ($250)."
+  },
+  "court_costs": {
+    "amount": 51, "range": [null, null],
+    "notes": "Fixed $51 district court fee per traffic infraction (§ 16.1-69.48:1)."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 9, "points": 3},
+      {"min_over": 10, "max_over": 19, "points": 4},
+      {"min_over": 20, "max_over": null, "points": 6}
+    ],
+    "notes": "DMV demerit points. Reckless by speed (20+ over or >85) = 6 pts, stays 11 yrs."
+  },
+  "zones": {
+    "work_zone": "Up to $500 fine when workers present (§ 46.2-878.1); $7/mph on prepay schedule.",
+    "school_zone": "25 mph when flashing/posted; up to $250 fine (§ 46.2-873); $7/mph on prepay schedule."
+  },
+  "tiers": {
+    "court": {"min_over": 20, "min_speed": 86, "reason": "Becomes reckless driving: not prepayable, must go to court."},
+    "arrest": {"min_over": 20, "min_speed": 86, "offense": "Reckless driving by speed (Class 1 misdemeanor)",
+               "max_jail_days": 365, "max_fine": 2500,
+               "license": "Court may suspend 10 days to 6 months (§ 46.2-392); over 100 mph: suspension or Intelligent Speed Assistance required (§ 46.2-507, eff. 7/1/2026)",
+               "citation": "Va. Code §§ 46.2-862, 46.2-868, 18.2-11"}
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Trucks, tractor trucks, property-carrying combos, and vehicles towing house trailers: 45 mph on highways other than interstates, 4+ lane roads and primary highways (§ 46.2-870)."
+  },
+  "sources": [
+    {"title": "Va. Code § 46.2-862 / 46.2-868 (Art. 7, reckless driving)", "url": "https://law.lis.virginia.gov/vacodefull/title46.2/chapter8/article7/"},
+    {"title": "Va. Code §§ 46.2-870 to 46.2-878.3 (Art. 8, speed)", "url": "https://law.lis.virginia.gov/vacodefull/title46.2/chapter8/article8/"},
+    {"title": "Va. Code § 18.2-11 (misdemeanor punishments)", "url": "https://law.lis.virginia.gov/vacode/title18.2/chapter1/section18.2-11/"},
+    {"title": "Va. Code § 46.2-392 (reckless suspension)", "url": "https://law.lis.virginia.gov/vacode/46.2-392/"},
+    {"title": "Va. Code § 46.2-113 (infraction penalty)", "url": "https://law.lis.virginia.gov/vacode/46.2-113"},
+    {"title": "Va. Code § 16.1-69.48:1 ($51 fixed fee)", "url": "https://law.lis.virginia.gov/vacode/16.1-69.48:1"},
+    {"title": "VA DMV 3-point violations", "url": "https://www.dmv.virginia.gov/licenses-ids/improvement/points/points-3"},
+    {"title": "VA DMV 4-point violations", "url": "https://www.dmv.virginia.gov/licenses-ids/improvement/points-4"},
+    {"title": "VA DMV 6-point violations", "url": "https://www.dmv.virginia.gov/licenses-ids/improvement/points/points-6"},
+    {"title": "Intelligent Speed Assistance (HB 2096, 2025) summary - secondary", "url": "https://www.recordinglaw.com/news/virginia-intelligent-speed-assistance-program"}
+  ],
+  "confidence": "high",
+  "notes": "Reckless = 20+ over OR over 85 mph regardless of limit. Residence-district 25 applies only in legally defined districts; rural local roads default to 55. Unpaved roads default 35. Some localities' prepay totals add local fees beyond $51."
+}

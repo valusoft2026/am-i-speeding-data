@@ -1,0 +1,289 @@
+{
+  "code": "ND",
+  "name": "North Dakota",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 80,
+    "trunk": 70,
+    "primary": 65,
+    "secondary": 65,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 25,
+    "living_street": 25,
+    "basis": "NDCC 39-09-02(1) as amended by HB 1298 (2025): 25 business/residence districts and parks, 55 gravel/loose-surface roads and unposted paved two-lane county/township roads, 65 paved two-lane highways if posted, 70 divided multilane, 80 interstates (since 8/1/2025). OSM mapping approximate; 65 applies only where posted."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 1,
+        "fine": 20
+      },
+      {
+        "min_over": 2,
+        "max_over": 2,
+        "fine": 20
+      },
+      {
+        "min_over": 3,
+        "max_over": 3,
+        "fine": 20
+      },
+      {
+        "min_over": 4,
+        "max_over": 4,
+        "fine": 20
+      },
+      {
+        "min_over": 5,
+        "max_over": 5,
+        "fine": 20
+      },
+      {
+        "min_over": 6,
+        "max_over": 6,
+        "fine": 20
+      },
+      {
+        "min_over": 7,
+        "max_over": 7,
+        "fine": 21
+      },
+      {
+        "min_over": 8,
+        "max_over": 8,
+        "fine": 24
+      },
+      {
+        "min_over": 9,
+        "max_over": 9,
+        "fine": 27
+      },
+      {
+        "min_over": 10,
+        "max_over": 10,
+        "fine": 30
+      },
+      {
+        "min_over": 11,
+        "max_over": 11,
+        "fine": 33
+      },
+      {
+        "min_over": 12,
+        "max_over": 12,
+        "fine": 36
+      },
+      {
+        "min_over": 13,
+        "max_over": 13,
+        "fine": 39
+      },
+      {
+        "min_over": 14,
+        "max_over": 14,
+        "fine": 42
+      },
+      {
+        "min_over": 15,
+        "max_over": 15,
+        "fine": 45
+      },
+      {
+        "min_over": 16,
+        "max_over": 16,
+        "fine": 68
+      },
+      {
+        "min_over": 17,
+        "max_over": 17,
+        "fine": 71
+      },
+      {
+        "min_over": 18,
+        "max_over": 18,
+        "fine": 74
+      },
+      {
+        "min_over": 19,
+        "max_over": 19,
+        "fine": 77
+      },
+      {
+        "min_over": 20,
+        "max_over": 20,
+        "fine": 80
+      },
+      {
+        "min_over": 21,
+        "max_over": 21,
+        "fine": 83
+      },
+      {
+        "min_over": 22,
+        "max_over": 22,
+        "fine": 86
+      },
+      {
+        "min_over": 23,
+        "max_over": 23,
+        "fine": 89
+      },
+      {
+        "min_over": 24,
+        "max_over": 24,
+        "fine": 92
+      },
+      {
+        "min_over": 25,
+        "max_over": 25,
+        "fine": 95
+      },
+      {
+        "min_over": 26,
+        "max_over": 26,
+        "fine": 98
+      },
+      {
+        "min_over": 27,
+        "max_over": 27,
+        "fine": 101
+      },
+      {
+        "min_over": 28,
+        "max_over": 28,
+        "fine": 104
+      },
+      {
+        "min_over": 29,
+        "max_over": 29,
+        "fine": 107
+      },
+      {
+        "min_over": 30,
+        "max_over": null,
+        "fine": 20,
+        "per_mph": 3
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": null,
+    "notes": "Roads posted 65 or less: $3/mph over, $20 minimum, +$20 at 16+ over (30+ over row computes $20 + $3/mph; HP report examples: 42 over = $146). Roads posted over 65: $5/mph, $20 minimum, +$20 at 16+ over. Set by statute (NDCC 39-06.1-06, HB 1298, eff. 8/1/2025). Cities may set own fees."
+  },
+  "court_costs": {
+    "amount": 0,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Statutory fee only; Highway Patrol says no court administration fee is added to a noncriminal traffic citation. Costs may apply if contested."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 10,
+        "points": 0
+      },
+      {
+        "min_over": 11,
+        "max_over": 15,
+        "points": 1
+      },
+      {
+        "min_over": 16,
+        "max_over": 20,
+        "points": 3
+      },
+      {
+        "min_over": 21,
+        "max_over": 25,
+        "points": 5
+      },
+      {
+        "min_over": 26,
+        "max_over": 35,
+        "points": 9
+      },
+      {
+        "min_over": 36,
+        "max_over": 45,
+        "points": 12
+      },
+      {
+        "min_over": 46,
+        "max_over": null,
+        "points": 15
+      }
+    ],
+    "notes": "Zones 65 or less. Over 65: 1-5 0, 6-10 1, 11-15 3, 16-20 5, 21-25 7, 26-30 10, 31-35 12, 36+ 15. 12+ points = 7-day suspension per point over 11. Under 18: canceled at 6."
+  },
+  "zones": {
+    "work_zone": "Higher fee when workers present and sign says minimum fee. Was $80 + $2/mph over 10; news reports HB 1298 raised it to $150 (not confirmed from enrolled text).",
+    "school_zone": "20 mph when children present. $40 for 1-10 over, +$1/mph beyond 10 (or the regular fee if greater)."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 16,
+      "min_speed": null,
+      "reason": "At 16+ over, +$20 fee and 3+ points (5+ on 65+ roads). Still a noncriminal payable fee."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (class B misdemeanor) - no speed number in statute; officer discretion (e.g. arrests at 119 mph)",
+      "max_jail_days": 30,
+      "max_fine": 1500,
+      "license": "8 points (aggravated reckless with injury: class A, 12 points)",
+      "citation": "NDCC 39-08-03"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No separate truck speed limits found in 39-09-02."
+  },
+  "sources": [
+    {
+      "title": "HB 1298 (2025) enrolled draft 25.0496.04000",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-0496-04000.pdf"
+    },
+    {
+      "title": "HB 1298 conference version 25.0496.03000",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/documents/25-0496-03000.pdf"
+    },
+    {
+      "title": "Valley News Live - governor signs HB 1298, eff. Aug 1 2025",
+      "url": "https://www.valleynewslive.com/2025/05/06/north-dakota-speed-limit-going-up-aug-1-governor-signs-bill"
+    },
+    {
+      "title": "NDDOT point system page",
+      "url": "https://dot.nd.gov/node/5345"
+    },
+    {
+      "title": "ND Highway Patrol HB 1298 study final report (2026)",
+      "url": "https://www.statepatrol.nd.gov/sites/default/files/documents/2027%20Session/2026.HB1298.Study_.FinalReport.pdf"
+    },
+    {
+      "title": "SB 2243 (2025) overview - failed",
+      "url": "https://ndlegis.gov/assembly/69-2025/regular/bill-overview/bo2243.html"
+    },
+    {
+      "title": "Valley News Live - 119 mph reckless arrest (2026)",
+      "url": "https://www.valleynewslive.com/2026/09/13/driver-arrested-after-going-119-mph-i-29-south-grand-forks/"
+    },
+    {
+      "title": "Nolo/DrivingLaws - ND reckless driving (secondary)",
+      "url": "https://www.drivinglaws.org/resources/north-dakotas-reckless-driving-laws-and-penalties.html"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "Fee formula reconstructed from bill text (struck/new text merged) and checked against Highway Patrol 2026 examples and a news-reported $215 for 39 over on I-29. Official codified NDCC not read. 2027 session will consider higher fines/points (HP study). HP report mentions 30+ over as reckless, not confirmed in statute text."
+}

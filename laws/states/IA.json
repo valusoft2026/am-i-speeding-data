@@ -1,0 +1,120 @@
+{
+  "code": "IA",
+  "name": "Iowa",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70,
+    "trunk": 55,
+    "primary": 55,
+    "secondary": 55,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 25,
+    "living_street": 25,
+    "basis": "Iowa Code \u00a7 321.285: 55 default; 70 interstates; 65 divided multilane controlled-access/selected divided highways; 25 residence/school districts; 20 business districts; 45 suburban districts; 35 state parks; unpaved secondary roads 55 day/50 night."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": 0,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 5,
+        "fine": 30
+      },
+      {
+        "min_over": 6,
+        "max_over": 10,
+        "fine": 55
+      },
+      {
+        "min_over": 11,
+        "max_over": 15,
+        "fine": 105
+      },
+      {
+        "min_over": 16,
+        "max_over": 20,
+        "fine": 120
+      },
+      {
+        "min_over": 21,
+        "max_over": null,
+        "fine": 35,
+        "per_mph": 5
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": null,
+    "notes": "Scheduled fines, Iowa Code \u00a7 805.8A(5)(a). Over 20: $135 + $5 per mph above 20 (= $35 + $5 x mph over; 21 over = $140, 30 over = $185). No cap in schedule."
+  },
+  "court_costs": {
+    "amount": 55,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "$55 court costs (\u00a7 602.8106) plus 15% crime services surcharge on the fine. E.g. 6-10 over: $55 + $8.25 + $55 = $118.25."
+  },
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No points. 3+ moving violations in 12 months can suspend license. First two tickets in 12 months for 10 or less over in a 35-55 zone are not counted."
+  },
+  "zones": {
+    "work_zone": "Work zone fines (\u00a7 805.8A(14)(i)): $195 up to 10 over, $390 11-20, $645 21-25, $1,285 over 25.",
+    "school_zone": "25 mph school district limit (\u00a7 321.285); no separate fine verified."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 25,
+      "min_speed": null,
+      "reason": "25+ over is a 'serious violation': license may be suspended (25-29 over may get Driver Improvement Program instead)."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (\u00a7 321.277), simple misdemeanor; no speed number in statute",
+      "max_jail_days": 30,
+      "max_fine": 855,
+      "license": "Speeding 25+ over: possible DOT suspension (\u00a7 321.210)",
+      "citation": "Iowa Code \u00a7\u00a7 321.277, 903.1(1)(a), 321.210"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No separate truck limit found in \u00a7 321.285 summary."
+  },
+  "sources": [
+    {
+      "title": "Iowa Code \u00a7 805.8A (2025)",
+      "url": "https://www.legis.iowa.gov/docs/code/2025/805.8A.pdf"
+    },
+    {
+      "title": "Iowa SF 378 (91st GA) - explanation summarizing \u00a7 321.285 limits",
+      "url": "https://www.legis.iowa.gov/docs/publications/LGI/91/attachments/SF378.html"
+    },
+    {
+      "title": "Iowa DPS Compendium of Scheduled Violations (July 2023)",
+      "url": "https://dps.iowa.gov/media/892/download"
+    },
+    {
+      "title": "Iowa Code \u00a7 602.8106 (2023)",
+      "url": "https://www.legis.iowa.gov:443/docs/code/2023/602.8106.pdf"
+    },
+    {
+      "title": "Iowa Code \u00a7 903.1 (2023)",
+      "url": "https://www.legis.iowa.gov/docs/code/2023/903.1.pdf"
+    },
+    {
+      "title": "Iowa DOT: Habitual/serious violations",
+      "url": "https://iowadot.gov/drivers-licenses-ids/suspensions-revocations/habitual-serious-violations"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "All speeding is technically a simple misdemeanor, but scheduled (mail-in). No speed makes it reckless by itself; reckless driving text (\u00a7 321.277) not read directly. Limits taken from a 2025 bill's summary of \u00a7 321.285, not the code text. 2026 code not fetched; 2023 code used for costs/penalty."
+}

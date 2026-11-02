@@ -1,0 +1,163 @@
+{
+ "code": "KY",
+ "name": "Kentucky",
+ "researched": "2026-11-02",
+ "default_limits": {
+  "motorway": 65,
+  "trunk": 55,
+  "primary": 55,
+  "secondary": 55,
+  "tertiary": 55,
+  "unclassified": null,
+  "residential": 35,
+  "living_street": 35,
+  "basis": "KRS 189.390(3), state highways only: 65 interstates/parkways, 55 other state highways, 35 business/residential districts. Up to 70 where posted on listed interstates/parkways (189.390(4)). Cities/counties set limits on their own roads by ordinance (189.390(5)) - no statewide default there. 15 in off-street parking lots."
+ },
+ "fine": {
+  "model": "brackets",
+  "per_mph": null,
+  "base": null,
+  "brackets": [
+   {
+    "min_over": 1,
+    "max_over": 5,
+    "fine": null,
+    "base": 0,
+    "per_mph": 1
+   },
+   {
+    "min_over": 6,
+    "max_over": 10,
+    "fine": null,
+    "base": 10,
+    "per_mph": 1
+   },
+   {
+    "min_over": 11,
+    "max_over": 20,
+    "fine": null,
+    "base": 0,
+    "per_mph": 2
+   },
+   {
+    "min_over": 21,
+    "max_over": 25,
+    "fine": null,
+    "base": -20,
+    "per_mph": 3
+   },
+   {
+    "min_over": 26,
+    "max_over": null,
+    "fine": null,
+    "range": [
+     60,
+     100
+    ]
+   }
+  ],
+  "typical_range": [
+   60,
+   100
+  ],
+  "max_fine": 100,
+  "notes": "KRS 189.394 chart: bracket fine = base + per_mph x over ($1-5, $16-20, $22-40, $43-55). 26+ over: judge sets $60-$100. Court costs extra."
+ },
+ "court_costs": {
+  "amount": null,
+  "range": [
+   100,
+   null
+  ],
+  "notes": "$100 district court costs (KRS 24A.175(1)) plus other statutory/local fees; total varies."
+ },
+ "points": {
+  "system": true,
+  "brackets": [
+   {
+    "min_over": 1,
+    "max_over": 15,
+    "points": 3
+   },
+   {
+    "min_over": 16,
+    "max_over": 25,
+    "points": 6
+   },
+   {
+    "min_over": 26,
+    "max_over": null,
+    "points": null
+   }
+  ],
+  "notes": "0 pts for 10 or less over on limited-access hwy (KRS 186.572). 26+ over: no points; mandatory hearing, up to 90-day suspension. 12 pts/2 yrs = hearing."
+ },
+ "zones": {
+  "work_zone": "Fine doubled in highway work zones (KRS 189.394).",
+  "school_zone": "Fine doubled near schools when flashers are on (KRS 189.394)."
+ },
+ "tiers": {
+  "court": {
+   "min_over": 26,
+   "min_speed": null,
+   "reason": "Above fine chart: cannot prepay, must appear; $60-100 fine; KYTC hearing, possible 90-day suspension."
+  },
+  "arrest": {
+   "min_over": null,
+   "min_speed": null,
+   "offense": null,
+   "max_jail_days": null,
+   "max_fine": null,
+   "license": null,
+   "citation": null
+  }
+ },
+ "trucks": {
+  "different_limits": false,
+  "notes": "No truck-specific limit in KRS 189.390 text read."
+ },
+ "sources": [
+  {
+   "title": "2022 Ky. Acts ch. 35 (text of KRS 189.390 as amended)",
+   "url": "https://apps.legislature.ky.gov/law/acts/22RS/documents/0035.pdf"
+  },
+  {
+   "title": "KRS 189.394 (Justia 2009)",
+   "url": "https://law.justia.com/codes/kentucky/2009/189-00/394.html"
+  },
+  {
+   "title": "2023 SB 108 (reproduces current 189.394 chart)",
+   "url": "https://apps.legislature.ky.gov/recorddocuments/bill/23RS/sb108/orig_bill.pdf"
+  },
+  {
+   "title": "KRS 189.990 (syfert mirror, eff. 7/15/2024)",
+   "url": "https://www.syfert.com/kentucky/sections/189.990.html"
+  },
+  {
+   "title": "KRS 431.452 (eff. 7/15/2026)",
+   "url": "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=57822"
+  },
+  {
+   "title": "KRS 24A.175 (syfert mirror)",
+   "url": "https://www.syfert.com/kentucky/sections/24A.175.html"
+  },
+  {
+   "title": "601 KAR 13:025 (points)",
+   "url": "https://apps.legislature.ky.gov/law/kar/titles/601/013/025/"
+  },
+  {
+   "title": "KY Drive - Kentucky Point System",
+   "url": "https://drive.ky.gov/Drivers/Pages/Kentucky-Point-System.aspx"
+  },
+  {
+   "title": "2026 HB 625 (pending, not enacted)",
+   "url": "https://apps.legislature.ky.gov/record/26rs/hb625.html"
+  },
+  {
+   "title": "DrivingLaws.org - KY speeding (secondary)",
+   "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/kentucky-speeding-laws.htm"
+  }
+ ],
+ "confidence": "medium",
+ "notes": "No criminal-by-speed threshold: speeding is a non-criminal violation. Reckless driving (KRS 189.290) has no speed number and is fined $20-100; wanton endangerment is a separate crime. Fine chart from 2023 bill reproduction of 189.394; official current page not read. KRS 431.452 (prepayment) amended eff. 7/15/2026 - details not reviewed."
+}

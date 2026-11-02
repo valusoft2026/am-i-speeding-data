@@ -1,0 +1,68 @@
+{
+  "code": "MT",
+  "name": "Montana",
+  "researched": "2026-11-02",
+
+  "default_limits": {
+    "motorway": 80, "trunk": 70, "primary": 70, "secondary": 70, "tertiary": 70,
+    "unclassified": 70, "residential": 25, "living_street": 25,
+    "basis": "MCA 61-8-303(1) (2025, HB 312): interstate 80 (65 inside urbanized areas 50k+); 4-lane national highway segments 10+ mi 75 day/70 night; other public highways 70 day/65 night; urban district 25. Values shown are daytime; subtract 5 at night on non-interstates."
+  },
+
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 20},
+      {"min_over": 11, "max_over": 20, "fine": 70},
+      {"min_over": 21, "max_over": 30, "fine": 120},
+      {"min_over": 31, "max_over": null, "fine": 200}
+    ],
+    "typical_range": [null, null],
+    "max_fine": 200,
+    "notes": "Fixed fines, MCA 61-8-725 (2025). On interstates (61-8-303(1)(a)) 1-10 over is $40; other brackets same. Special speed zones (61-8-309/310) are excluded from this schedule."
+  },
+
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "The 3-1-317 surcharge may not be added to 61-8-303 speeding (61-8-725(3)). Other court costs not verified."
+  },
+
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 11, "max_over": null, "points": 3}
+    ],
+    "notes": "3 pts (MCA 61-11-203). Not recorded if <=10 over by day or <=5 over at night, unless over 90 on interstate, CDL holder, or out-of-state ticket. 30 pts in 3 yrs = habitual offender."
+  },
+
+  "zones": {
+    "work_zone": "Fines reported as at least doubled (secondary source only; statute not read).",
+    "school_zone": "Fines reported as at least doubled (secondary source only; statute not read)."
+  },
+
+  "tiers": {
+    "court":  {"min_over": 11, "min_speed": 91, "reason": "Below 11 over (day) / 6 over (night) the ticket is not recorded and not treated as criminal; above that, and over 90 on interstates, it goes on the record with 3 points and fines jump."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless driving (misdemeanor) - no speed number; requires willful or wanton disregard for safety",
+               "max_jail_days": 90, "max_fine": 500, "license": "no mandatory suspension for one conviction; 5 points", "citation": "MCA 61-8-301; penalty 61-8-715"}
+  },
+
+  "trucks": {
+    "different_limits": true,
+    "notes": "Trucks/truck tractors over 1 ton rated capacity: 70 on interstates, 65 on other public highways (MCA 61-8-312). Certain permitted combinations: 65."
+  },
+
+  "sources": [
+    {"title": "MCA 61-8-303 (2025)", "url": "https://mca.legmt.gov/bills/mca/title_0610/chapter_0080/part_0030/section_0030/0610-0080-0030-0030.html"},
+    {"title": "MCA 61-8-725 (2025) fines", "url": "https://mca.legmt.gov/bills/mca/title_0610/chapter_0080/part_0070/section_0250/0610-0080-0070-0250.html"},
+    {"title": "MCA 61-8-312 (2025) trucks", "url": "https://mca.legmt.gov/bills/mca/title_0610/chapter_0080/part_0030/section_0120/0610-0080-0030-0120.html"},
+    {"title": "MCA 61-11-203 (2025) points", "url": "https://mca.legmt.gov/bills/mca/title_0610/chapter_0110/part_0020/section_0030/0610-0110-0020-0030.html"},
+    {"title": "MT Dept of Admin - habitual offender point schedule", "url": "https://rmtd.mt.gov/_docs/aboutus/publications/files/habitual_traffic_offender_point_schedule.pdf"},
+    {"title": "HB 312 (2025) summary - enacted 5/1/2025", "url": "https://policyrisk.com/state-bill/MT-HB312-2025"},
+    {"title": "RecordingLaw - MT reckless driving (secondary)", "url": "https://www.recordinglaw.com/us-laws/reckless-driving-laws/montana-reckless-driving-laws/"},
+    {"title": "DrivingLaws.org - MT speeding (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/montana-speeding-laws.htm"}
+  ],
+  "confidence": "medium",
+  "notes": "Limits and fines changed by HB 312 (2025). Reckless penalty (61-8-715: up to 90 days, $100-$500) and zone fines came from secondary sources; statute text not read. Passing on 2-lane roads: may exceed limit by 10 mph."
+}

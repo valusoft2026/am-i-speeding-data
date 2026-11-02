@@ -1,0 +1,119 @@
+{
+  "code": "AL",
+  "name": "Alabama",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70,
+    "trunk": 55,
+    "primary": 55,
+    "secondary": 55,
+    "tertiary": 55,
+    "unclassified": 45,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "Ala. Code 32-5A-171: 30 urban district; 35 unpaved; 45 county-paved roads in unincorporated areas; 55 other; 65 on 4+ lane highways; 70 interstate."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 24,
+        "fine": 20
+      },
+      {
+        "min_over": 25,
+        "max_over": null,
+        "fine": 40
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": 100,
+    "notes": "Uniform fine schedule (Ala. R. Jud. Admin. 20) from a 2025 city copy; court costs are added and are most of the total. Construction zone: $250. Max $100 first offense (32-5A-8)."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Vary by court; not found."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 25,
+        "points": 2
+      },
+      {
+        "min_over": 26,
+        "max_over": null,
+        "points": 5
+      }
+    ],
+    "notes": "ALEA. 12 pts in 2 yrs = 60-day suspension. Reckless driving = 6."
+  },
+  "zones": {
+    "work_zone": "$250 fine on uniform schedule.",
+    "school_zone": "Not verified."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 26,
+      "min_speed": null,
+      "reason": "26+ over: 5 points; higher schedule fine from 25+."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (misdemeanor); no speed threshold",
+      "max_jail_days": 90,
+      "max_fine": 500,
+      "license": "Up to 6 months suspension possible; 6 points",
+      "citation": "Ala. Code 32-5A-190"
+    }
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Placarded hazmat/explosives/flammables: 55 max (32-5A-171(5))."
+  },
+  "sources": [
+    {
+      "title": "Ala. Code 32-5A-171 (Justia, 2025)",
+      "url": "https://law.justia.com/codes/alabama/title-32/chapter-5a/article-8/section-32-5a-171/"
+    },
+    {
+      "title": "Ala. Code 32-5A-171 (Justia, 2006)",
+      "url": "https://law.justia.com/codes/alabama/2006/22786/32-5a-171.html"
+    },
+    {
+      "title": "HB638 (2026) quoting 32-5A-171",
+      "url": "https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB638-int.pdf"
+    },
+    {
+      "title": "ALEA Speed Limits",
+      "url": "https://alea.gov/dps/highway-patrol/speed-limits"
+    },
+    {
+      "title": "ALEA Driver License Point System",
+      "url": "https://alea.gov/dps/driver-license/driver-license-point-system"
+    },
+    {
+      "title": "City of Chickasaw fine schedule (Rule 20)",
+      "url": "https://cityofchickasaw.org/wp-content/uploads/2025/12/Fine-Schedule.pdf"
+    },
+    {
+      "title": "Alabama speed laws slide deck (secondary)",
+      "url": "https://www.slideshare.net/slideshow/alspeed/50314878"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "65 applies on 4+ lane highways only; trunk/primary set to 55 since lane count unknown. unclassified=45 assumes county-paved rural road (35 if unpaved). ALEA lists 25 for residential; statute says 30 urban district. 32-5A-8 ($100/10 days) and reckless penalties read only from a secondary slide deck. HB638 (2026) would extend city enforcement to police jurisdiction (eff. Oct 1, 2026 if passed; status unknown)."
+}

@@ -1,0 +1,155 @@
+{
+  "code": "NM",
+  "name": "New Mexico",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 75,
+    "trunk": 75,
+    "primary": 75,
+    "secondary": 75,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "N.M. Stat. § 66-7-301(A) (2021 text): 15 posted school zone, 30 business/residence district, 55 unposted county roads, 75 elsewhere. Mapping assumes tertiary/unclassified = county roads."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 10,
+        "fine": 25
+      },
+      {
+        "min_over": 11,
+        "max_over": 15,
+        "fine": 30
+      },
+      {
+        "min_over": 16,
+        "max_over": 20,
+        "fine": 65
+      },
+      {
+        "min_over": 21,
+        "max_over": 25,
+        "fine": 100
+      },
+      {
+        "min_over": 26,
+        "max_over": 30,
+        "fine": 125
+      },
+      {
+        "min_over": 31,
+        "max_over": 35,
+        "fine": 150
+      },
+      {
+        "min_over": 36,
+        "max_over": null,
+        "fine": 200
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": null,
+    "notes": "§ 66-8-116 penalty assessment schedule (current amounts as shown in 2026 SB 214 text). SB 214 would raise them; not known to have passed. Fees extra."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Not found."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 5,
+        "points": 0
+      },
+      {
+        "min_over": 6,
+        "max_over": 15,
+        "points": 3
+      },
+      {
+        "min_over": 16,
+        "max_over": 25,
+        "points": 5
+      },
+      {
+        "min_over": 26,
+        "max_over": null,
+        "points": 8
+      }
+    ],
+    "notes": "Per secondary source citing 18.19.5 NMAC. Applies in 15/30/75 zones; elsewhere points only at 76+ mph. 12 points in 12 months = 1-year suspension."
+  },
+  "zones": {
+    "work_zone": "Enhanced fines in posted construction zones (§ 66-8-116); amount not found.",
+    "school_zone": "15 mph statutory school-zone limit; fine enhancement not verified."
+  },
+  "tiers": {
+    "court": {
+      "min_over": null,
+      "min_speed": null,
+      "reason": "Not found."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (misdemeanor)",
+      "max_jail_days": 90,
+      "max_fine": 100,
+      "license": "up to 90 days suspension (secondary source)",
+      "citation": "N.M. Stat. § 66-8-113",
+      "reason": "No mph threshold; reckless requires endangering persons or property. First offense 5-90 days and/or $25-$100."
+    }
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not researched; unknown."
+  },
+  "sources": [
+    {
+      "title": "DrivingLaws.org New Mexico speeding (secondary)",
+      "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/new-mexico-speeding-laws.htm"
+    },
+    {
+      "title": "DrivingLaws.org New Mexico reckless driving (secondary)",
+      "url": "https://www.drivinglaws.org/resources/new-mexicos-reckless-driving-laws-and-penalties.html"
+    },
+    {
+      "title": "DrivingLaws.org New Mexico points (secondary)",
+      "url": "https://www.drivinglaws.org/resources/new-mexico-s-traffic-violation-point-system.html"
+    },
+    {
+      "title": "RecordingLaw New Mexico license points (secondary)",
+      "url": "https://www.recordinglaw.com/tools/license-points-lookup/new-mexico/"
+    },
+    {
+      "title": "N.M. Stat. § 66-7-301 (Justia 2021)",
+      "url": "https://law.justia.com/codes/new-mexico/2021/chapter-66/article-7/part-4/section-66-7-301"
+    },
+    {
+      "title": "NM SB 214 (2026) showing current § 66-8-116 and § 66-8-113 text",
+      "url": "https://www.nmlegis.gov/Sessions/26%20Regular/bills/senate/SB0214.HTML"
+    },
+    {
+      "title": "18.19.5.52 NMAC point schedule",
+      "url": "https://regulations.justia.com/states/new-mexico/title-18/chapter-19/part-5/section-18-19-5-52"
+    }
+  ],
+  "confidence": "low",
+  "notes": "Residential 30 confirmed (§ 66-7-301). Fines, reckless penalty and points checked against official-text mirrors. Reckless driving has no mph threshold."
+}

@@ -1,0 +1,77 @@
+{
+  "code": "TN",
+  "name": "Tennessee",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70,
+    "trunk": 65,
+    "primary": 65,
+    "secondary": 65,
+    "tertiary": null,
+    "unclassified": null,
+    "residential": null,
+    "living_street": null,
+    "basis": "Tenn. Code 55-8-152 per TN Governor's Highway Safety Office: statutory max 70 on 4+ lane controlled-access interstate/state highways, 65 other public roads. Cities may set lower limits (max 55) and often set 30 by ordinance (55-8-153). No statewide residential default found."
+  },
+  "fine": {
+    "model": "county_schedule",
+    "per_mph": null,
+    "base": null,
+    "brackets": [],
+    "typical_range": [170, 282],
+    "max_fine": 50,
+    "notes": "Speeding is a Class C misdemeanor: fine up to $50 (40-35-111(e)(3)). Totals with costs vary by county; range shown is Montgomery Co. General Sessions 2026 schedule (fine + costs)."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [null, null],
+    "notes": "Varies by county and court; included in county totals above (Montgomery Co. ~$120-232 beyond the $50 fine). No statewide figure found."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 5, "points": 1},
+      {"min_over": 6, "max_over": 15, "points": 3},
+      {"min_over": 16, "max_over": 25, "points": 4},
+      {"min_over": 26, "max_over": 35, "points": 5},
+      {"min_over": 36, "max_over": 45, "points": 6},
+      {"min_over": 46, "max_over": null, "points": 8}
+    ],
+    "notes": "Tenn. Comp. R. & Regs. 1340-01-04-.03. Reckless = 6 pts. 12 pts in 12 months = suspension (secondary source)."
+  },
+  "zones": {
+    "work_zone": "Higher fines (reportedly $250+) in work zones under 55-8-152 (secondary source; not verified).",
+    "school_zone": "Cities/counties may set school-zone limits, not below 15 mph (55-8-152); penalty not verified."
+  },
+  "tiers": {
+    "court": {"min_over": null, "min_speed": null, "reason": "No statewide mandatory-court speed threshold found."},
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Any speeding is a Class C misdemeanor; reckless driving (Class B) has no speed number",
+      "max_jail_days": 30,
+      "max_fine": 50,
+      "license": "Points only; reckless driving 6 pts",
+      "citation": "Tenn. Code 55-8-152; 40-35-111(e)(3); reckless: 55-10-205"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No truck-specific limit found in sources read; not exhaustively checked."
+  },
+  "sources": [
+    {"title": "TN GHSO - What is considered speeding (55-8-152/153 summary)", "url": "https://tntrafficsafety.org/speeding"},
+    {"title": "TN GHSO speed rack card 2021", "url": "https://tntrafficsafety.org/sites/default/files/speedrackcard_2021.pdf"},
+    {"title": "Montgomery Co. General Sessions state citation fines & fees (1/1/2026)", "url": "https://montgomerytn.gov/storage/departments/circuit/General%20Session%20Court%20State%20Citation%20Fines%20Fees%20Updated%2001-01-26.pdf"},
+    {"title": "Tenn. Comp. R. & Regs. 1340-01-04-.03 (points) - Justia", "url": "https://regulations.justia.com/states/tennessee/title-1340/subtitle-1340-01/chapter-1340-01-04/section-1340-01-04-03"},
+    {"title": "TN AG Op. 16-03 (misdemeanor classes)", "url": "https://www.tn.gov/content/dam/tn/attorneygeneral/documents/ops/2016/op16-003.pdf"},
+    {"title": "MTAS - Rules of the Road", "url": "https://www.mtas.tennessee.edu/reference/rules-road"},
+    {"title": "MTAS - Adoption of state misdemeanors ($50 municipal limit)", "url": "https://mtas.tennessee.edu/reference/adoption-state-misdemeanors"},
+    {"title": "Clarksburg TN municipal code Title 15 (example 30 mph city default)", "url": "https://www.mtas.tennessee.edu/system/files/codes/clarksburg-t15.pdf"},
+    {"title": "RecordingLaw - TN misdemeanor classes (secondary; quotes 40-35-111(e)(3))", "url": "https://www.recordinglaw.com/us-laws/felony-misdemeanor-classes/tennessee-felony-misdemeanor-classes/"},
+    {"title": "DrivingLaws.org - TN speeding (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/tennessee-speeding-laws.htm"},
+    {"title": "2023 SB 1125 (75 mph proposal, not passed)", "url": "https://fastdemocracy.com/bill/tn/113/bills/TNB00046101"}
+  ],
+  "confidence": "medium",
+  "notes": "Statute text of 55-8-152 not read (official code is on Lexis); limits from state GHSO summary. One secondary source says 55 on roads off the state system - conflict, so tertiary/unclassified left null. Every speeding charge is criminal (Class C) but normally cite-and-release; no special criminal speed tier. Montgomery schedule's per-mph columns were unlabeled in extraction, so only the total range is used. City courts limited to $50 fines (16-18-302). 2023 bill to raise interstate limit to 75 did not pass."
+}

@@ -1,0 +1,70 @@
+{
+  "code": "NV",
+  "name": "Nevada",
+  "researched": "2026-11-02",
+
+  "default_limits": {
+    "motorway": 80, "trunk": 80, "primary": null, "secondary": null, "tertiary": null,
+    "unclassified": null, "residential": null, "living_street": null,
+    "basis": "NRS 484B.600(1)(e): 80 mph absolute max on any road; otherwise only the basic 'reasonable and proper' rule and posted limits. Nevada has no statutory unposted residential/urban default; 80 shown only for motorway/trunk."
+  },
+
+  "fine": {
+    "model": "per_mph",
+    "per_mph": 10,
+    "base": 0,
+    "brackets": [],
+    "typical_range": [null, null],
+    "max_fine": 500,
+    "notes": "Civil infraction since 2023. Fine capped at $20 per mph over (NRS 484B.600(5)); civil penalties generally capped at $500 (NRS 484A.7043). $10/mph is one county's schedule (Nye); courts set their own."
+  },
+
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Courts add administrative assessments and fees; amounts vary by court. Misdemeanor (30+ over) assessment is $30-$120 by fine size (NRS 176.059)."
+  },
+
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": 1},
+      {"min_over": 11, "max_over": 20, "points": 2},
+      {"min_over": 21, "max_over": 30, "points": 3},
+      {"min_over": 31, "max_over": 40, "points": 4},
+      {"min_over": 41, "max_over": null, "points": 5}
+    ],
+    "notes": "Per NAC 483.510. 12 points in 12 months = 6-month suspension. Rural daytime tickets up to 5-10 over on 60-80 mph roads: $25, no points (NRS 484B.617)."
+  },
+
+  "zones": {
+    "work_zone": "Fines doubled in work zones (NRS 484B.130).",
+    "school_zone": "Fines doubled in school and pedestrian safety zones (NRS 484B.135/484B.363)."
+  },
+
+  "tiers": {
+    "court":  {"min_over": 21, "min_speed": null, "reason": "21+ over: 3+ demerit points; 12 points in a year suspends license."},
+    "arrest": {"min_over": 30, "min_speed": null, "offense": "Speeding 30+ mph over the posted limit (misdemeanor)",
+               "max_jail_days": 182, "max_fine": 1000, "license": "4-5 demerit points; no automatic suspension", "citation": "NRS 484B.600(7); NRS 193.150"}
+  },
+
+  "trucks": {
+    "different_limits": false,
+    "notes": "No statewide truck-specific statutory limit found; follow posted truck signs."
+  },
+
+  "sources": [
+    {"title": "NRS 484B.600 (FindLaw, current as of 2025-01-01)", "url": "https://codes.findlaw.com/nv/title-43-public-safety-vehicles-watercraft/nv-rev-st-484b-600/"},
+    {"title": "NRS 484B.617 rural $25 rule", "url": "https://nevada.public.law/statutes/nrs_484B.617"},
+    {"title": "NRS 484B.653 reckless driving (Justia 2025)", "url": "https://law.justia.com/codes/nevada/chapter-484b/statute-484b-653"},
+    {"title": "NAC 483.510 demerit points", "url": "https://www.law.cornell.edu/regulations/nevada/NAC-483-510"},
+    {"title": "Nevada DMV Demerit Point System", "url": "https://dmv.nv.gov/dlpoints.htm"},
+    {"title": "Nevada Courts - AB116 criminal traffic offenses", "url": "https://nvcourts.gov/__data/assets/pdf_file/0029/48089/AB116_Criminal_Traffic_Offenses.pdf"},
+    {"title": "Las Vegas Municipal Court - AB116 Explained", "url": "https://files.lasvegasnevada.gov/municourt/AB116_Explained.pdf"},
+    {"title": "Las Vegas Justice Court - 2023 changes", "url": "https://www.lasvegasjusticecourt.us/divisions/traffic_division/2023_changes_to_traffic_violattions.php"},
+    {"title": "NRS 176.059 administrative assessment (Justia 2025)", "url": "https://law.justia.com/codes/nevada/chapter-176/statute-176-059/"},
+    {"title": "NHP Nye County bail list ($10/mph)", "url": "https://nhp.nv.gov/uploadedFiles/nhpnvgov/content/Programs/Nye%20Bail.pdf"},
+    {"title": "DrivingLaws.org Nevada speeding (secondary, zones)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/nevada-speeding-laws.htm"}
+  ],
+  "confidence": "medium",
+  "notes": "Official leg.state.nv.us blocked; statute text read via FindLaw/Justia/public.law. Points: NAC 483.510 used; DMV page as read showed 2/2/4/4/5 - possibly a page-parsing error, verify. Reckless driving (NRS 484B.653) is also a misdemeanor up to 6 months/$1,000 but has no speed threshold. Zone doubling from secondary source."
+}

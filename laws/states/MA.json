@@ -1,0 +1,63 @@
+{
+  "code": "MA",
+  "name": "Massachusetts",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 50, "trunk": 40, "primary": 40, "secondary": 40, "tertiary": 40,
+    "unclassified": 40, "residential": 30, "living_street": 30,
+    "basis": "M.G.L. c. 90 § 17 (unposted): 30 in thickly settled or business districts, 40 on other roads, 50 on divided highways outside those districts. Towns that accept § 17C may set 25 in thickly settled areas (not state highways). Trunk shown as 40; it's 50 if divided."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 50},
+      {"min_over": 11, "max_over": null, "fine": -50, "per_mph": 10}
+    ],
+    "typical_range": [50, null],
+    "max_fine": null,
+    "notes": "$50, plus $10 for each mph beyond 10 over (11 over = $60, 20 over = $150). The 11+ bracket is written as -50 + $10 x mph over. Surcharges are in court costs."
+  },
+  "court_costs": {
+    "amount": 55, "range": [null, null],
+    "notes": "Every speeding ticket adds a $50 head injury surcharge and a $5 public safety surcharge (Trial Court table of citable offenses)."
+  },
+  "points": {
+    "system": true,
+    "brackets": [ {"min_over": 1, "max_over": null, "points": 2} ],
+    "notes": "No license points. Speeding is a minor surchargeable event: 2 insurance (SDIP) surcharge points, or 0 if it's your first violation in 6 years. 3 speeding tickets in 12 months: 30-day suspension. 3 events in 2 yrs: retraining course required; 7 in 3 yrs: 60 days."
+  },
+  "zones": {
+    "work_zone": "Marked construction zone: $100 plus $20 per mph beyond 10 over, plus surcharges (double the normal fine) (c. 90 § 17 / § 17D).",
+    "school_zone": "20 mph in school zones set up by the town (c. 90 § 17)."
+  },
+  "tiers": {
+    "court": {"min_over": null, "min_speed": null, "reason": "No speed level forces a court date; speeding is a civil infraction at any speed. Repeat tickets lead to RMV suspension."},
+    "arrest": {"min_over": null, "min_speed": null,
+               "offense": "Reckless or negligent operation (criminal). No speed number in the statute; it depends on the conduct.",
+               "max_jail_days": 730, "max_fine": 200,
+               "license": "Suspension of at least 60 days for a first offense (secondary source)",
+               "citation": "M.G.L. c. 90 § 24(2)(a)"}
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not verified."
+  },
+  "sources": [
+    {"title": "M.G.L. c. 90 § 17", "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXIV/Chapter90/Section17"},
+    {"title": "M.G.L. c. 90 § 17C", "url": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXIV/Chapter90/Section17C"},
+    {"title": "Mass. law about speed limits (Trial Court Law Libraries)", "url": "https://www.mass.gov/info-details/massachusetts-law-about-speed-limits"},
+    {"title": "Table of citable motor vehicle offenses", "url": "https://www.mass.gov/info-details/table-of-citable-motor-vehicle-offenses"},
+    {"title": "RMV: suspensions from multiple offenses", "url": "https://www.mass.gov/info-details/suspensions-triggered-by-an-accumulation-of-offenses"},
+    {"title": "SDIP and your auto insurance policy", "url": "https://www.mass.gov/info-details/safe-driver-insurance-plan-sdip-and-your-auto-insurance-policy"},
+    {"title": "211 CMR 134 list of traffic law violations", "url": "https://www.mass.gov/info-details/211-cmr-134-safe-driver-insurance-and-merit-rating-plans-list-of-traffic-law-violations"},
+    {"title": "211 CMR 134.13 (surcharge points)", "url": "https://regulations.justia.com/states/massachusetts/211-cmr/title-211-cmr-134-00/section-134-13"},
+    {"title": "211 CMR 134.09", "url": "https://regulations.justia.com/states/massachusetts/211-cmr/title-211-cmr-134-00/section-134-09"},
+    {"title": "H.1871 (194th session, proposed reckless change)", "url": "https://malegislature.gov/Bills/194/H1871.pdf"},
+    {"title": "DrivingLaws: MA reckless driving (secondary)", "url": "https://www.drivinglaws.org/resources/massachusetts-reckless-driving-laws.htm"},
+    {"title": "Calcagni Law: operating negligently (secondary)", "url": "https://mass.calcagnilaw.com/operating-negligently/"}
+  ],
+  "confidence": "medium",
+  "notes": "Defaults, fines, surcharges and SDIP points are official. Reckless penalties (2 weeks to 2 yrs, $20-$200, 60-day suspension) are from secondary sources; § 24 text not read. Pending bill H.1871 (2025-26) would make reckless = 25+ over (up to 5 yrs, $1,000-$5,000); not verified as enacted. Interstates are posted (often 55-65)."
+}

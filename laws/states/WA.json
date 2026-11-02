@@ -1,0 +1,160 @@
+{
+ "code": "WA",
+ "name": "Washington",
+ "researched": "2026-11-02",
+ "default_limits": {
+  "motorway": 60,
+  "trunk": 60,
+  "primary": 60,
+  "secondary": 60,
+  "tertiary": 50,
+  "unclassified": 50,
+  "residential": 25,
+  "living_street": 25,
+  "basis": "RCW 46.61.400(2): 25 city/town streets, 50 county roads, 60 state highways. Defaults depend on jurisdiction, not road type; OSM mapping is approximate (a county residential road defaults to 50, a state-route tertiary to 60). Max posted allowed 75 (RCW 46.61.410)."
+ },
+ "fine": {
+  "model": "brackets",
+  "per_mph": null,
+  "base": null,
+  "brackets": [
+   {
+    "min_over": 1,
+    "max_over": 5,
+    "fine": 33
+   },
+   {
+    "min_over": 6,
+    "max_over": 10,
+    "fine": 43
+   },
+   {
+    "min_over": 11,
+    "max_over": 15,
+    "fine": 58
+   },
+   {
+    "min_over": 16,
+    "max_over": 20,
+    "fine": 73
+   },
+   {
+    "min_over": 21,
+    "max_over": 25,
+    "fine": 88
+   },
+   {
+    "min_over": 26,
+    "max_over": 30,
+    "fine": 108
+   },
+   {
+    "min_over": 31,
+    "max_over": 35,
+    "fine": 133
+   },
+   {
+    "min_over": 36,
+    "max_over": 40,
+    "fine": 158
+   },
+   {
+    "min_over": 41,
+    "max_over": null,
+    "fine": 188
+   }
+  ],
+  "typical_range": [
+   null,
+   null
+  ],
+  "max_fine": 250,
+  "notes": "Base penalties from IRLJ 6.2 for limits over 40 mph. Limits 40 or less: 1-5 $43, 6-10 $48, 11-15 $63, 16-20 $83, 21-25 $108, 26-30 $133, 31-35 $158, 36+ $188. Assessments roughly double the ticket (see court_costs)."
+ },
+ "court_costs": {
+  "amount": 49,
+  "range": [
+   null,
+   null
+  ],
+  "notes": "Fixed $49 add-ons (RCW 46.63.110: $5+$10+$10+$24) plus PSEA of 105% of base (RCW 3.62.090: 70% + half of that). Est. total = base x 2.05 + $49 (e.g. 1-5 over in 60 zone ~ $117). Not confirmed against an official total table.",
+  "percent_of_fine": 105
+ },
+ "points": {
+  "system": false,
+  "brackets": [],
+  "notes": "No points system. 3 moving-violation stops in 12 months or 4 in 24 months = 60-day suspension, then 1-year probation (DOL)."
+ },
+ "zones": {
+  "work_zone": "Speeding penalty doubled in roadway construction zones; cannot be waived or reduced (RCW 46.61.527). Endangering workers is a gross misdemeanor with 60-day suspension.",
+  "school_zone": "20 mph when posted; penalty doubled and cannot be waived, reduced or suspended (RCW 46.61.440)."
+ },
+ "tiers": {
+  "court": {
+   "min_over": null,
+   "min_speed": null,
+   "reason": "All speeding is a civil traffic infraction; no speed triggers a mandatory court appearance or automatic suspension."
+  },
+  "arrest": {
+   "min_over": null,
+   "min_speed": null,
+   "offense": "Reckless driving (gross misdemeanor) - no speed number; requires willful or wanton disregard for safety",
+   "max_jail_days": 364,
+   "max_fine": 5000,
+   "license": "suspension of at least 30 days",
+   "citation": "RCW 46.61.500"
+  }
+ },
+ "trucks": {
+  "different_limits": true,
+  "notes": "Vehicles over 10,000 lb GVW and all vehicle combinations (towing), except auto stages: max 60 mph, even where cars may go 70 (RCW 46.61.410(2)-(3))."
+ },
+ "sources": [
+  {
+   "title": "RCW 46.61.400 (default limits)",
+   "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=46.61.400"
+  },
+  {
+   "title": "RCW 46.61.410 (max 75; trucks 60) - 2023 archive",
+   "url": "https://lawfilesext.leg.wa.gov/law/RCWArchive/2023/htm/RCW%20%2046%20%20TITLE/RCW%20%2046%20.%2061%20%20CHAPTER/RCW%20%2046%20.%2061%20.410.htm"
+  },
+  {
+   "title": "RCW 46.61.500 reckless driving (Justia 2025 RCW)",
+   "url": "https://law.justia.com/codes/washington/title-46/chapter-46-61/section-46-61-500"
+  },
+  {
+   "title": "IRLJ 6.2 monetary penalty schedule",
+   "url": "https://www.courts.wa.gov/court_rules/pdf/IRLJ/CLJ_IRLJ_06_02_00.pdf"
+  },
+  {
+   "title": "RCW 46.63.110 (infraction max, assessments)",
+   "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=46.63.110"
+  },
+  {
+   "title": "RCW 3.62.090 (PSEA)",
+   "url": "https://app.leg.wa.gov/rcw/default.aspx?cite=3.62.090"
+  },
+  {
+   "title": "WA DOL - accumulation of traffic tickets",
+   "url": "https://dol.wa.gov/node/2201"
+  },
+  {
+   "title": "RCW 46.61.440 school zones",
+   "url": "https://app.leg.wa.gov/RCW/default.aspx?cite=46.61.440"
+  },
+  {
+   "title": "SDOT blog - work zone double fines (secondary)",
+   "url": "https://sdotblog.seattle.gov/2014/06/23/speed-in-a-construction-zone-and-your-wallet-will-get-thinner/"
+  },
+  {
+   "title": "ESB 5890 House bill report 2026 (reckless driving background)",
+   "url": "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bill%20Reports/House/5890.E%20HBR%20CS%2026.pdf"
+  },
+  {
+   "title": "BillTrack50 - SB 5890 status (dead 3/12/2026)",
+   "url": "https://www.billtrack50.com/billdetail/1917648"
+  }
+ ],
+ "confidence": "medium",
+ "notes": "No criminal speed threshold: SB 5238 (2025) and ESB 5890 (2026, 30+ over = reckless) both died. Excess speed is prima facie evidence of recklessness (RCW 46.61.465), so arrest is possible at officer discretion. From 2029, reckless convictions add a speed-limiter probation (2025 c 228). Work-zone statute text read via secondary source only."
+}

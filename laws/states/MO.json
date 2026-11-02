@@ -1,0 +1,56 @@
+{
+  "code": "MO",
+  "name": "Missouri",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 75, "trunk": 60, "primary": 60, "secondary": 55, "tertiary": 50,
+    "unclassified": 50, "residential": null, "living_street": null,
+    "basis": "RSMo § 304.010 (eff. 8/28/2026): 75 rural interstates/freeways, 65 rural expressways, 60 urbanized-area interstates/freeways/expressways, 60 other roads outside urbanized areas, 55 max on lettered two-lane state roads; unmarked county roads in 2nd-4th class counties 50. Cities set their own limits by ordinance (no statewide residential default)."
+  },
+  "fine": {
+    "model": "county_schedule",
+    "per_mph": null,
+    "base": 0,
+    "brackets": [],
+    "typical_range": [50, 156],
+    "max_fine": 750,
+    "notes": "Set by local court/violations-bureau schedules; statewide schedule not found. Range from one municipal schedule (Arnold, 2022): $50.50 (1-5 over) to $155.50 (20-25 over); 26+ must appear. Max $750 (class C misd.)."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Varies by court. Example: Arnold municipal $30.50. State-charge circuit costs not verified."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": null, "points": 3}
+    ],
+    "notes": "3 points for speeding under state law; 2 points if charged under a city/county ordinance (RSMo § 302.302)."
+  },
+  "zones": {
+    "work_zone": "Not researched.",
+    "school_zone": "Not researched."
+  },
+  "tiers": {
+    "court": {"min_over": 20, "min_speed": null, "reason": "20+ over is a class B misdemeanor; many courts require appearance (e.g. 26+ in Arnold)."},
+    "arrest": {"min_over": 20, "min_speed": null,
+               "offense": "Speeding 20+ mph over posted limit (class B misdemeanor); under 20 over is class C misdemeanor (max 15 days, $750)",
+               "max_jail_days": 180, "max_fine": 1000,
+               "license": "No automatic suspension found; points accrue.",
+               "citation": "RSMo §§ 304.010.11, 558.011, 558.002"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "§ 304.010 sets no separate truck limits."
+  },
+  "sources": [
+    {"title": "RSMo § 304.010 (eff. 8/28/2026)", "url": "https://revisor.mo.gov/main/OneSection.aspx?section=304.010"},
+    {"title": "MO HB 5391 (2026) text reproducing RSMo § 302.302", "url": "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5391H.01I.pdf"},
+    {"title": "Arnold, MO violations bureau schedule (municipal example)", "url": "https://www.arnoldmo.org/government/police/traffic-violation-schedule-of-fines-and-costs/"},
+    {"title": "MO Supreme Court order on uniform fine schedule (2018)", "url": "https://www.courts.mo.gov/page.jsp?id=132313"},
+    {"title": "News: 75 mph law takes effect 8/28/2026, MoDOT studying (secondary)", "url": "https://www.firstalert4.com/2026/08/28/new-mo-law-allows-higher-speed-limit-some-roads-dont-expect-change-right-away/"},
+    {"title": "MO misdemeanor classes quoting RSMo 558.002/558.011 (secondary)", "url": "https://www.recordinglaw.com/us-laws/felony-misdemeanor-classes/missouri-felony-misdemeanor-classes/"}
+  ],
+  "confidence": "medium",
+  "notes": "All Missouri speeding is a misdemeanor; 20+ over is class B (6 mo/$1,000). NEW 8/28/2026: rural interstate max 75, but MoDOT is still studying and most signs remain 70 for now - trust posted limit. Fines/costs vary by court (low confidence). Points taken from 2026 bill text of § 302.302, not the code page."
+}

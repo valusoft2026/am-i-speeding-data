@@ -1,0 +1,147 @@
+{
+  "code": "NY",
+  "name": "New York",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55,
+    "trunk": 55,
+    "primary": 55,
+    "secondary": 55,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 55,
+    "living_street": 55,
+    "basis": "VTL 1180(b): 55 mph statewide unless a lower limit is set. NYC: 25 mph citywide unless posted (since Nov 7, 2014). Many villages/cities post area-wide limits at their borders."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 10,
+        "fine": 150
+      },
+      {
+        "min_over": 11,
+        "max_over": 30,
+        "fine": 300
+      },
+      {
+        "min_over": 31,
+        "max_over": null,
+        "fine": 600
+      }
+    ],
+    "typical_range": [
+      45,
+      600
+    ],
+    "max_fine": 600,
+    "notes": "Fine shown is the statutory max; the judge sets it. Minimums: $45 (1-10 over), $90 (11-30), $180 (31+). Max rises for repeat offenses within 18 months."
+  },
+  "court_costs": {
+    "amount": 88,
+    "range": [
+      88,
+      93
+    ],
+    "notes": "Surcharges: $55 (VTL 1809) + $5 crime victim fee + $28 (VTL 1809-e) = $88. Town/village courts add $5, so $93."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 10,
+        "points": 3
+      },
+      {
+        "min_over": 11,
+        "max_over": 20,
+        "points": 4
+      },
+      {
+        "min_over": 21,
+        "max_over": 30,
+        "points": 6
+      },
+      {
+        "min_over": 31,
+        "max_over": 40,
+        "points": 8
+      },
+      {
+        "min_over": 41,
+        "max_over": null,
+        "points": 11
+      }
+    ],
+    "notes": "Since 2/16/2026, points count for 24 months and 11+ points may suspend your license. 6+ points in 18 months triggers the Driver Responsibility Assessment."
+  },
+  "zones": {
+    "work_zone": "Minimum fines doubled ($90-$600) and 8 points regardless of speed (since 2/16/2026).",
+    "school_zone": "School speed limits apply during posted times. Enhanced penalties apply."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 31,
+      "min_speed": null,
+      "reason": "Fine up to $600, 8+ points, up to 30 days jail possible. At 41+ over: 11 points, so the license may be suspended."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "None by speed alone. Reckless driving (VTL 1212, misdemeanor) requires dangerous conduct, not just speed.",
+      "max_jail_days": 30,
+      "max_fine": 300,
+      "license": null,
+      "citation": "VTL 1212; VTL 1801 (penalty)"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "None found in sources read."
+  },
+  "sources": [
+    {
+      "title": "VTL 1180 (public.law)",
+      "url": "https://newyork.public.law/laws/n.y._vehicle_and_traffic_law_section_1180"
+    },
+    {
+      "title": "NYS DMV point system",
+      "url": "https://dmv.ny.gov/node/6246"
+    },
+    {
+      "title": "NY GTSC speeding penalties",
+      "url": "https://trafficsafety.ny.gov/penalties-speeding"
+    },
+    {
+      "title": "VTL 1809 (public.law)",
+      "url": "https://newyork.public.law/laws/n.y._vehicle_&_traffic_law_section_1809"
+    },
+    {
+      "title": "VTL 1809-e (public.law)",
+      "url": "https://newyork.public.law/laws/n.y._vehicle_&_traffic_law_section_1809-e"
+    },
+    {
+      "title": "VTL 1801 (public.law)",
+      "url": "https://newyork.public.law/laws/n.y._vehicle_&_traffic_law_section_1801"
+    },
+    {
+      "title": "Erie County Clerk: 2026 point changes",
+      "url": "https://www4.erie.gov/clerk/press/erie-county-clerk-kearns-warns-drivers-major-dmv-point-system-overhaul-coming-new-york-state"
+    },
+    {
+      "title": "NYC 25 mph default (NYC Bronx CB10)",
+      "url": "https://www.nyc.gov/html/bxcb10/downloads/pdf/25MPH_Speed_Limit.pdf"
+    },
+    {
+      "title": "NYC notice: DMV point rules eff. 2/16/2026 (11+ pts in 24 mo)",
+      "url": "https://www.nyc.gov/assets/bic/downloads/pdf/notices/notice-new-dmv-rules-driver-points-03-04-26.pdf"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "Speeding is a traffic infraction, but jail is possible: up to 15 days at 11-30 over and 30 days at 31+ over (VTL 1180(h)(1)). nysenate.gov was unreachable, so statute text came from public.law. One version of VTL 1809 shows other surcharge amounts; verify $88/$93. The app should use 25 in NYC."
+}

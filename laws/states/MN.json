@@ -1,0 +1,61 @@
+{
+  "code": "MN",
+  "name": "Minnesota",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 30, "living_street": 30,
+    "basis": "Minn. Stat. § 169.14 subd. 2: 30 urban district; 55 elsewhere; 65 noninterstate expressways/freeways; 70 rural interstate, 65 interstate in urbanized areas; 10 in alleys; 25 residential roadway / 35 rural residential district only if adopted by road authority."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": 0,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "fine": 40},
+      {"min_over": 11, "max_over": 14, "fine": 50},
+      {"min_over": 15, "max_over": 19, "fine": 60},
+      {"min_over": 20, "max_over": 25, "fine": 140},
+      {"min_over": 26, "max_over": 30, "fine": 200},
+      {"min_over": 31, "max_over": null, "fine": 300}
+    ],
+    "typical_range": [null, null],
+    "max_fine": 300,
+    "notes": "Statewide Payables List (eff. 1/1/2025). 20+ over: fine shown includes the extra speeding surcharge equal to the base fine (§ 169.14 subd. 2(d)). Petty misdemeanor max fine $300 (§ 169.89)."
+  },
+  "court_costs": {
+    "amount": 75, "range": [75, 90],
+    "notes": "$75 state surcharge on every conviction, plus a county law library fee (about $0-$15, varies by county)."
+  },
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No point system. Convictions go on record (some low-level 55/60 zone tickets are not recorded). 3 petty violations in 12 months can be charged as a misdemeanor."
+  },
+  "zones": {
+    "work_zone": "$300 fine + $75 surcharge when workers present (§ 169.14 subds. 5d, 6a); 45 mph limit on 50+ mph roads when a lane is closed and workers present.",
+    "school_zone": "Extra surcharge equal to the fine, minimum $25 (§ 169.14 subd. 5a)."
+  },
+  "tiers": {
+    "court": {"min_over": 20, "min_speed": 101, "reason": "20+ over: fine doubled by surcharge. Over 100 mph: 6-month license revocation."},
+    "arrest": {"min_over": null, "min_speed": null,
+               "offense": "Reckless driving (§ 169.13) or speeding that endangers persons/property (§ 169.89 subd. 1) - misdemeanor",
+               "max_jail_days": 90, "max_fine": 1000,
+               "license": "Over 100 mph: license revoked 6 months (§ 169.14 subd. 1a, § 171.17)",
+               "citation": "Minn. Stat. §§ 169.13, 169.89, 169.14 subd. 1a"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "§ 169.14 sets no separate truck speed limits."
+  },
+  "sources": [
+    {"title": "Minn. Stat. § 169.14 (2026)", "url": "https://www.revisor.mn.gov/statutes/?id=169.14"},
+    {"title": "Minn. Stat. § 169.89 (2026)", "url": "https://www.revisor.mn.gov/statutes/?id=169.89"},
+    {"title": "Minn. Stat. § 169.13 (2026)", "url": "https://www.revisor.mn.gov/statutes/?id=169.13"},
+    {"title": "2025 Statewide Traffic/Criminal Payables List", "url": "https://www.leg.mn.gov/docs/2025/Mandated/250835/2025-Traffic-Criminal-Payables-List-FINAL.pdf"},
+    {"title": "MN House Research: Traffic Citations (2019)", "url": "https://www.house.mn.gov/hrd/pubs/trafcit.pdf"},
+    {"title": "MN House Research: Speed Limits (2006)", "url": "https://www.house.mn.gov/hrd/pubs/ss/sspdlt.pdf"}
+  ],
+  "confidence": "medium",
+  "notes": "No speed number makes speeding criminal; misdemeanor only if reckless/endangering (payables list tells officers to note endangerment at 31+ over). Misdemeanor penalty (90 days/$1,000) taken from House Research summary, not § 609.03 directly. 2026 payables list not found; 2025 used. Speed cameras (pilot to 8/1/2029): $40, $80 if 20+ over."
+}

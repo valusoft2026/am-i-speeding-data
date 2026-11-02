@@ -1,0 +1,56 @@
+{
+  "code": "OH",
+  "name": "Ohio",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "ORC 4511.21(B): 25 in municipalities (35 on state routes outside business districts), 55 outside municipalities, 70 rural freeways (65 urban, 55 congested), 20 school zones, 15 alleys"
+  },
+  "fine": {
+    "model": "county_schedule",
+    "base": 0,
+    "brackets": [],
+    "typical_range": [3, 150],
+    "max_fine": 150,
+    "notes": "Minor misdemeanor, max $150. Each court sets a waiver schedule. Example (Erie Co.): $3-$6/mph over, $150 at 30+ over, plus costs."
+  },
+  "court_costs": {
+    "amount": null, "range": [100, 152],
+    "notes": "Varies by court. Sampled: Erie Co. $100, Cleveland Muni $125, Mentor Muni $152."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 5, "points": 0},
+      {"min_over": 6, "max_over": 29, "points": 2},
+      {"min_over": 30, "max_over": null, "points": 4}
+    ],
+    "notes": "ORC 4510.036: on limits of 55+, 0 pts up to 10 over, 2 pts 11-29. Under 55: 0 pts up to 5 over. 30+ over = 4 pts. 12 pts in 2 yrs = suspension."
+  },
+  "zones": {
+    "work_zone": "Fine doubled when construction-zone sign posted (ORC 4511.21(P)(3)).",
+    "school_zone": "20 mph at school times; over 35 is a 4th-degree misdemeanor."
+  },
+  "tiers": {
+    "court": {"min_over": 30, "min_speed": null, "reason": "4 points; top waiver bracket in many courts."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "4th-degree misdemeanor speeding (location-specific, see notes)",
+               "max_jail_days": 30, "max_fine": 250, "license": null, "citation": "ORC 4511.21(P)(2); 2929.24; 2929.28"}
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not researched."
+  },
+  "sources": [
+    {"title": "ORC 4511.21 Speed limits (eff. 6/30/2025)", "url": "https://codes.ohio.gov/ohio-revised-code/section-4511.21"},
+    {"title": "ORC 4510.036 Point system (eff. 10/24/2024)", "url": "https://codes.ohio.gov/ohio-revised-code/section-4510.036"},
+    {"title": "ORC 2929.24 Misdemeanor jail terms", "url": "https://codes.ohio.gov/ohio-revised-code/section-2929.24"},
+    {"title": "ORC 2929.28 Misdemeanor fines", "url": "https://codes.ohio.gov/ohio-revised-code/section-2929.28"},
+    {"title": "Erie County bond/waiver schedule", "url": "https://www.eriecounty.oh.gov/BondWaiver.aspx"},
+    {"title": "Cleveland Municipal Court fee schedule", "url": "https://clevelandmunicipalcourt.org/clerk-of-courts/criminal-traffic-division/fee-schedules/fee-schedules-2"},
+    {"title": "Mentor Municipal Court costs", "url": "https://mentormunicipalcourt.org/pdf/costs-20230404.pdf"},
+    {"title": "HB 111 (136th GA) status", "url": "https://legislature.ohio.gov/legislation/136/hb111"}
+  ],
+  "confidence": "medium",
+  "notes": "No statewide mph-over criminal threshold. Speeding is an M4 (30 days/$250) if over 35 in a municipal business district or school zone, or over 50 elsewhere in a municipality; also M4/M3 for 3rd/4th speeding conviction in a year. Residential 25 applies only inside municipalities; township roads default 55. HB 111 (extra fine at 30+ over) is only introduced."
+}

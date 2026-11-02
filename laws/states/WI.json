@@ -1,0 +1,57 @@
+{
+  "code": "WI",
+  "name": "Wisconsin",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "Wis. Stat. 346.57(4): 25 in cities/villages (e), 35 outlying/semiurban (f)(g), 65 expressways (gm)1, 70 freeways (gm)2, 55 everywhere else (h), 15 alleys (d), 45 rustic roads (k)"
+  },
+  "fine": {
+    "model": "judge_discretion",
+    "typical_range": [30, 300],
+    "max_fine": 300,
+    "notes": "Civil forfeiture $30-$300 (freeway/expressway $50-$300), plus fees. Deposit set by statewide schedule; per-mph brackets not verified."
+  },
+  "court_costs": {
+    "amount": 137.50, "range": [null, null],
+    "notes": "Fixed $137.50 fees plus 26% penalty surcharge on the forfeiture. Milwaukee County +$3.50."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": 3},
+      {"min_over": 11, "max_over": 19, "points": 4},
+      {"min_over": 20, "max_over": null, "points": 6}
+    ],
+    "notes": "Wis. Admin. Code Trans 101.02"
+  },
+  "zones": {
+    "work_zone": "Forfeiture doubled if workers endangered; injury to a worker: up to $10,000 and 9 months jail",
+    "school_zone": "15 mph passing a school when children present; forfeiture doubled when children present"
+  },
+  "tiers": {
+    "court": {"min_over": 25, "min_speed": null, "reason": "Mandatory 15-day license suspension for 25+ over a 55/65/70 statutory limit (not locally zoned limits)"},
+    "arrest": {"min_over": null, "min_speed": null,
+      "offense": "None by speed alone; speeding is a civil forfeiture",
+      "max_jail_days": null, "max_fine": null,
+      "license": null,
+      "citation": "Wis. Stat. 346.60 (forfeitures); reckless driving 346.62 has no speed threshold"}
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not researched"
+  },
+  "sources": [
+    {"title": "Wis. Stat. 346.57 (Justia, 2025)", "url": "https://law.justia.com/codes/wisconsin/chapter-346/section-346-57/"},
+    {"title": "Wis. Stat. 346.60", "url": "https://docs.legis.wisconsin.gov/document/statutes/346.60"},
+    {"title": "Wis. Stat. 346.60(2)", "url": "https://docs.legis.wisconsin.gov/statutes/statutes/346/ix/60/2"},
+    {"title": "Wis. Stat. 343.30(1n) (15-day suspension)", "url": "https://docs.legis.wisconsin.gov/statutes/statutes/343/iii/30/1q/c/1"},
+    {"title": "WI SPD: COA on 343.30(1n) scope", "url": "https://www.wispd.gov/2023/04/coa-reverses-15-day-suspension-of-operating-privileges/"},
+    {"title": "WisDOT citation deposit distribution", "url": "https://wisconsindot.gov/Pages/safety/enforcement/citation/default.aspx"},
+    {"title": "Trans 101 demerit points (archived admin code insert)", "url": "https://docs.legis.wi.gov/document/administrativecodearchive/430/insert/Trans%20101.pdf"},
+    {"title": "WI uniform deposit schedule 2026 (speed table not readable)", "url": "https://wicourts.gov/publications/fees/docs/bondsched25.pdf"}
+  ],
+  "confidence": "medium",
+  "notes": "The speeding table in the state deposit schedule could not be read, so per-mph deposit amounts are missing. WisDOT example: 11-15 over = $175.30 total. Some 346.57(4) limits apply only where signed. Truck limits not researched."
+}

@@ -1,0 +1,62 @@
+{
+  "code": "DE",
+  "name": "Delaware",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55, "trunk": 55, "primary": 50, "secondary": 50, "tertiary": 50,
+    "unclassified": 50, "residential": 25, "living_street": 25,
+    "basis": "21 Del. C. § 4169(a): 25 business district; 20 or 25 residence district (road owner's choice); 50 two-lane roads; 55 four-lane or divided. Mapping assumes motorway/trunk divided, others two-lane. 65 only where posted (e.g. SR 1)."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": 20,
+    "brackets": [
+      {"min_over": 1, "max_over": 5, "fine": 20, "per_mph": 0},
+      {"min_over": 6, "max_over": 15, "fine": 20, "per_mph": 1},
+      {"min_over": 16, "max_over": 19, "fine": 20, "per_mph": 2},
+      {"min_over": 20, "max_over": null, "fine": 20, "per_mph": 3}
+    ],
+    "typical_range": [20, null],
+    "max_fine": null,
+    "notes": "Fine = $20 + rate x every mph over (§ 4169(c)), e.g. 10 over = $30, 20 over = $80. Repeat within 24 mo: $25 + $2/$3/$4 per mph. No cap stated. Plus court costs and assessments."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Costs and assessments added on top of fine; amounts not found in a readable official source. Varies by court (JP vs. alderman)."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 9, "points": 2},
+      {"min_over": 10, "max_over": 14, "points": 4},
+      {"min_over": 15, "max_over": null, "points": 5}
+    ],
+    "notes": "DMV Reg. 2208. No points if 1-14 over, paid by voluntary assessment, and no speeding conviction in 3 yrs (JP Court). 12 pts in 24 mo = course or 2-mo suspension; 14 = 4-mo suspension."
+  },
+  "zones": {
+    "work_zone": "Extra assessments apply in work zones (§ 4170A(g)); amounts not verified.",
+    "school_zone": "20 mph where posted with times/conditions (§ 4169(a)); fine schedule same formula."
+  },
+  "tiers": {
+    "court": {"min_over": 25, "min_speed": 90, "reason": "25+ over: mandatory 1-month license suspension, +1 month per extra 5 mph (course option at 25-29 over). 90+ mph is a separate reckless-driving offense."},
+    "arrest": {"min_over": null, "min_speed": 90, "offense": "Driving 90 mph or more (reckless driving statute, § 4175(b))",
+               "max_jail_days": 0, "max_fine": 300,
+               "license": "No suspension stated in § 4175(b); 25+ over triggers DMV suspension separately",
+               "citation": "21 Del. C. § 4175(b), (d) (84 Del. Laws c. 70, 2023)"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No truck-specific limits in § 4169; DelDOT may set limits by vehicle type (§ 4169(b))."
+  },
+  "sources": [
+    {"title": "21 Del. C. ch. 41 subch. VIII (§§ 4168-4172)", "url": "https://delcode.delaware.gov/title21/c041/sc08/index.html"},
+    {"title": "21 Del. C. ch. 41 subch. IX (§ 4175 reckless)", "url": "https://delcode.delaware.gov/title21/c041/sc09"},
+    {"title": "84 Del. Laws c. 70 (HB 120, 90 mph)", "url": "https://legis.delaware.gov/SessionLaws/Chapter?id=41689"},
+    {"title": "DE Admin. Code 2 DE 2208 (points)", "url": "https://regulations.delaware.gov/api/AdminCode/title2/2208/469ecc61-020f-482b-9b9f-402cbf2e0628"},
+    {"title": "2 DE 2208-4.0 (Justia mirror, current through 6/1/2025)", "url": "https://regulations.justia.com/states/delaware/title-2/2000/2200/driver-services/2208/section-2208-4-0"},
+    {"title": "DE JP Court traffic FAQ", "url": "https://courts.delaware.gov/help/Traffic/"}
+  ],
+  "confidence": "medium",
+  "notes": "Only speed-number criminal tier is 90+ mph (§ 4175(b), since 2023): fine $150-300 and/or safety course, no jail for 1st. General reckless driving (§ 4175(c), no mph number) = $100-300 and/or 10-30 days. JP Court says most traffic offenses are handled as criminal. Court costs unverified."
+}

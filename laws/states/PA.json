@@ -1,0 +1,61 @@
+{
+  "code": "PA",
+  "name": "Pennsylvania",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "75 Pa.C.S. § 3362(a): 35 in urban districts; 25 in residence districts on local, non-numbered roads; 55 elsewhere; 65/70 on freeways only where posted. Residential 25 assumes a residence district; in other urban districts the default is 35."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": 35,
+    "brackets": [
+      {"min_over": 1, "max_over": 5, "fine": 35, "per_mph": 0},
+      {"min_over": 6, "max_over": null, "fine": 25, "per_mph": 2}
+    ],
+    "typical_range": [35, null],
+    "max_fine": null,
+    "notes": "$35 + $2 per mph beyond 5 over (§ 3362(c)); e.g. 10 over = $45. On 65+ mph limits base is $42.50 (10 over = $52.50). No cap. Summary offense."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Court costs plus surcharges (EMS $10, JCP $10, MCARE, etc. per 2014 PennDOT-funded card) added; current total not found in an official source. Often exceeds the fine."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 5, "points": 0},
+      {"min_over": 6, "max_over": 10, "points": 2},
+      {"min_over": 11, "max_over": 15, "points": 3},
+      {"min_over": 16, "max_over": 25, "points": 4},
+      {"min_over": 26, "max_over": null, "points": 5}
+    ],
+    "notes": "31+ over: 5 pts + PennDOT hearing, possible 15-day suspension and/or driving exam. 11 pts = automatic suspension. Under-18: 26+ over = 90-day suspension."
+  },
+  "zones": {
+    "work_zone": "Fines doubled in active work zones with workers present (e.g. $45 becomes $90). 15-day suspension for 11+ over reported by secondary source; not verified.",
+    "school_zone": "Same $35 + $2/mph formula; 11+ over: up to $500 fine and 3 pts (2014 PennDOT-funded card)."
+  },
+  "tiers": {
+    "court": {"min_over": 31, "min_speed": null, "reason": "31+ over: PennDOT departmental hearing; possible 15-day suspension or special driving exam."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "None by speed. Speeding and reckless driving (§ 3736) are both summary offenses.",
+               "max_jail_days": null, "max_fine": 200,
+               "license": null,
+               "citation": "75 Pa.C.S. § 3736 (reckless driving: summary offense, $200 fine, no speed number)"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "§ 3362(a) as read sets no truck-specific default; PennDOT may post truck limits on specific roads."
+  },
+  "sources": [
+    {"title": "75 Pa.C.S. § 3362", "url": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/75/00.033.062.000..HTM"},
+    {"title": "75 Pa.C.S. § 3736", "url": "https://www.legis.state.pa.us/WU01/LI/LI/CT/HTM/75/00.037.036.000..HTM"},
+    {"title": "PennDOT Point System Fact Sheet (Nov 2013, via Delaware County courts)", "url": "https://www.delcopa.gov/courts/pdf/PAPoints.pdf"},
+    {"title": "PA Driver's Manual ch. 4", "url": "https://www.pa.gov/content/dam/copapwp-pagov/en/dmv/documents/driver-services/driver-licensing/chapter_4.pdf"},
+    {"title": "PA TIPP fine card rev. 1/2014 (PennDOT-funded)", "url": "https://www.iup.edu/student-wellness/files/resources/student_resources/tipp-fine-card-jan-2014-v5.pdf"}
+  ],
+  "confidence": "medium",
+  "notes": "No criminal speeding threshold: PA speeding and reckless driving are summary offenses (fine only, no speed number). Statute text read shows last amendment 2014; points fact sheet dated 2013. Court costs not verified."
+}

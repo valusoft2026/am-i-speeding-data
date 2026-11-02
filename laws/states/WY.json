@@ -1,0 +1,245 @@
+{
+  "code": "WY",
+  "name": "Wyoming",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 75,
+    "trunk": 70,
+    "primary": 70,
+    "secondary": 70,
+    "tertiary": 65,
+    "unclassified": 65,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "W.S. 31-5-301(b): 30 urban/residence districts, 75 interstates (80 where designated), 70 non-interstate state highways, 65 other paved roads, 55 unpaved roads, 20 school zones when signed. OSM mapping approximate; unpaved unclassified/track roads = 55."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 1,
+        "fine": 5
+      },
+      {
+        "min_over": 2,
+        "max_over": 2,
+        "fine": 10
+      },
+      {
+        "min_over": 3,
+        "max_over": 3,
+        "fine": 15
+      },
+      {
+        "min_over": 4,
+        "max_over": 4,
+        "fine": 20
+      },
+      {
+        "min_over": 5,
+        "max_over": 5,
+        "fine": 25
+      },
+      {
+        "min_over": 6,
+        "max_over": 6,
+        "fine": 32
+      },
+      {
+        "min_over": 7,
+        "max_over": 7,
+        "fine": 34
+      },
+      {
+        "min_over": 8,
+        "max_over": 8,
+        "fine": 36
+      },
+      {
+        "min_over": 9,
+        "max_over": 9,
+        "fine": 38
+      },
+      {
+        "min_over": 10,
+        "max_over": 10,
+        "fine": 40
+      },
+      {
+        "min_over": 11,
+        "max_over": 11,
+        "fine": 50
+      },
+      {
+        "min_over": 12,
+        "max_over": 12,
+        "fine": 55
+      },
+      {
+        "min_over": 13,
+        "max_over": 13,
+        "fine": 60
+      },
+      {
+        "min_over": 14,
+        "max_over": 14,
+        "fine": 65
+      },
+      {
+        "min_over": 15,
+        "max_over": 15,
+        "fine": 70
+      },
+      {
+        "min_over": 16,
+        "max_over": 16,
+        "fine": 75
+      },
+      {
+        "min_over": 17,
+        "max_over": 17,
+        "fine": 80
+      },
+      {
+        "min_over": 18,
+        "max_over": 18,
+        "fine": 85
+      },
+      {
+        "min_over": 19,
+        "max_over": 19,
+        "fine": 90
+      },
+      {
+        "min_over": 20,
+        "max_over": 20,
+        "fine": 95
+      },
+      {
+        "min_over": 21,
+        "max_over": 21,
+        "fine": 100
+      },
+      {
+        "min_over": 22,
+        "max_over": 22,
+        "fine": 105
+      },
+      {
+        "min_over": 23,
+        "max_over": 23,
+        "fine": 110
+      },
+      {
+        "min_over": 24,
+        "max_over": 24,
+        "fine": 115
+      },
+      {
+        "min_over": 25,
+        "max_over": 25,
+        "fine": 120
+      },
+      {
+        "min_over": 26,
+        "max_over": 26,
+        "fine": 125
+      },
+      {
+        "min_over": 27,
+        "max_over": 27,
+        "fine": 130
+      },
+      {
+        "min_over": 28,
+        "max_over": 28,
+        "fine": 135
+      },
+      {
+        "min_over": 29,
+        "max_over": 29,
+        "fine": 140
+      },
+      {
+        "min_over": 30,
+        "max_over": null,
+        "fine": -5,
+        "per_mph": 5
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": null,
+    "notes": "Uniform Bail & Forfeiture Schedule (eff. 7/1/2026), interstates/highways/other roads. Fine shown excludes $75 fees. 1-5 over: $5/mph, no fees. 6-10: $30+$2/mph over 5. 11-20: $45+$5/mph over 10. 21+: $95+$5/mph over 20 (30+ over row computes -$5 + $5/mph = $95 + $5/mph over 20). Urban districts: 1-5 $65+$2/mph (no fees); 6-10 $40+$7/mph over 5; 11-20 $95+$7/mph over 10; 21+ $195+$7/mph over 20 (+fees). Statutory max not verified."
+  },
+  "court_costs": {
+    "amount": 75,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Fixed statewide, added only at 6+ over: $20 court costs, $40 court automation, $10 civil legal services, $5 officer training. None at 1-5 over."
+  },
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No points. WYDOT: 4th moving violation in 12 months = 90-day suspension; each further one adds 90 days. Up to 80 mph in 65-75 zones, or under 6 over elsewhere, is not put on the driving record (31-5-301(d); not school/work zone or CDL)."
+  },
+  "zones": {
+    "work_zone": "Construction zones use the urban-district fine table (1-5 over $67-75; 6+ over $40+$7/mph plus fees).",
+    "school_zone": "20 mph when signed. 1-5 over $50+$2/mph; 6-10 $95+$10/mph over 5 plus fees (e.g. 6 over $180 total); 11+ $200+$10/mph over 10 plus fees (e.g. 11 over $285)."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 6,
+      "min_speed": null,
+      "reason": "At 6+ over the $75 fees kick in (total jumps from $25 to $107+ on highways) and the ticket can go on the driving record. All speeding is bond-forfeitable (pay without court) if the officer marks it so."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (misdemeanor) - no speed number; requires willful or wanton disregard for safety",
+      "max_jail_days": 180,
+      "max_fine": 750,
+      "license": "90-day suspension on 1st conviction (WYDOT)",
+      "citation": "W.S. 31-5-229"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No separate truck limits found in 31-5-301. Heavy vehicles pay +$295 on 6+ over tickets (31-5-1201(g))."
+  },
+  "sources": [
+    {
+      "title": "W.S. 31-5-301 (FindLaw)",
+      "url": "https://codes.findlaw.com/wy/title-31-motor-vehicles/wy-st-sect-31-5-301/"
+    },
+    {
+      "title": "Wyoming Uniform Bail and Forfeiture Schedule, rev. 7/1/2026",
+      "url": "https://www.wyocourts.gov/app/uploads/2026/06/2026-Bond-Schedule.pdf"
+    },
+    {
+      "title": "2025 SF0032 (unpaved road limits)",
+      "url": "https://wyoleg.gov/2025/Enroll/SF0032.pdf"
+    },
+    {
+      "title": "2020 HB0012 (removes jail for general traffic violations)",
+      "url": "https://www.wyoleg.gov/2020/Enroll/HB0012.pdf"
+    },
+    {
+      "title": "WYDOT Driving Privilege Withdrawal brochure (2017)",
+      "url": "https://dot.state.wy.us/files/live/sites/wydot/files/shared/Driver_Services/2017-Driving-Privilege-Withdrawal-brochure.pdf"
+    },
+    {
+      "title": "Nolo/DrivingLaws - WY reckless driving (secondary)",
+      "url": "https://www.drivinglaws.org/resources/wyoming-reckless-careless-driving-laws-penalties.htm"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "Fines/limits high confidence (court schedule + statute). Reckless driving jail/fine ($750 / 6 mo) from a secondary legal site; official 31-5-229 text not read. Seat belt worn: $10 off fine. Since 7/1/2025 local authorities may cut unpaved-road limits to 35 without a study (SF0032)."
+}

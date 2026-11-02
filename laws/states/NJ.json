@@ -1,0 +1,64 @@
+{
+  "code": "NJ",
+  "name": "New Jersey",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 50, "trunk": 50, "primary": 50, "secondary": 50, "tertiary": 50,
+    "unclassified": 50, "residential": 25, "living_street": 25,
+    "basis": "N.J.S.A. 39:4-98: 25 business/residential district, 35 suburban business/residential, 50 elsewhere. 65 only where designated and posted (39:4-98.3)."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 9, "fine": 86},
+      {"min_over": 10, "max_over": 14, "fine": 96},
+      {"min_over": 15, "max_over": 19, "fine": 106},
+      {"min_over": 20, "max_over": 24, "fine": 201},
+      {"min_over": 25, "max_over": 29, "fine": 221},
+      {"min_over": 30, "max_over": 34, "fine": 241},
+      {"min_over": 35, "max_over": 39, "fine": 261},
+      {"min_over": 40, "max_over": null, "fine": null}
+    ],
+    "typical_range": [86, 261],
+    "max_fine": 200,
+    "notes": "Payable totals from the Statewide Violations Bureau Schedule (Directive 15-20, 2020) include costs. Some town sites show $1 less. Statute: $50-$200, doubled at 20+ over. 40+ over: must appear in court."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Included in the payable amounts above. A 2008 court schedule listed court costs of up to $33 plus a $6 assessment."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 14, "points": 2},
+      {"min_over": 15, "max_over": 29, "points": 4},
+      {"min_over": 30, "max_over": null, "points": 5}
+    ],
+    "notes": "Per NJ MVC point schedule."
+  },
+  "zones": {
+    "work_zone": "Construction zones, safe corridors and 65 zones: $141 (1-9 over), $161 (10-14), $181 (15-19). 20+ over: must appear in court.",
+    "school_zone": "25 mph statutory school-zone limit during recess or when children are present."
+  },
+  "tiers": {
+    "court": {"min_over": 40, "min_speed": null, "reason": "Court appearance required at 40+ over (20+ over in 65, construction or safe-corridor zones). Fines doubled from 20+ over."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "None by speed alone. Reckless driving (39:4-96) is a motor-vehicle offense that requires reckless conduct.", "max_jail_days": 60, "max_fine": 200, "license": null, "citation": "N.J.S.A. 39:4-96"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "None found in sources read."
+  },
+  "sources": [
+    {"title": "N.J.S.A. 39:4-98 (FindLaw)", "url": "https://codes.findlaw.com/nj/title-39-motor-vehicles-and-traffic-regulation/nj-st-sect-39-4-98/"},
+    {"title": "NJ MVC points schedule", "url": "https://nj.gov/mvc/license/points-schedule.htm"},
+    {"title": "SVBS, Directive 15-20 (via Maplewood)", "url": "https://maplewoodnj.gov/home/showpublisheddocument/685/637798317929470000"},
+    {"title": "Hackettstown SVBS page", "url": "https://hackettstown.net/204/Statewide-Violations-Bureau-Schedule"},
+    {"title": "Paterson fines & penalties (2008)", "url": "https://www.patersonnj.gov/egov/documents/1240410018_485870.pdf"},
+    {"title": "Wyckoff court: reckless driving", "url": "https://www.wyckoffnj.gov/municipal-court/faq/what-difference-between-careless-and-reckless-driving"},
+    {"title": "DrivingLaws NJ speeding (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/new-jersey-speeding-laws.htm"}
+  ],
+  "confidence": "medium",
+  "notes": "Speeding itself carries up to 15 days jail (39:4-104, per secondary source), but no criminal speed threshold was found. The current njcourts SVBS PDF wasn't reachable; Directive 15-20 is marked superseded, so verify the amounts. Reckless driving carries 5 points."
+}

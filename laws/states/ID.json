@@ -1,0 +1,67 @@
+{
+  "code": "ID",
+  "name": "Idaho",
+  "researched": "2026-11-02",
+
+  "default_limits": {
+    "motorway": 75, "trunk": 65, "primary": 65, "secondary": 65, "tertiary": 55,
+    "unclassified": 55, "residential": 35, "living_street": 35,
+    "basis": "I.C. 49-654(2)(a): 35 residential/business/urban districts, 75 interstates, 65 state highways, 55 other locations. Interstates may be raised to 80 and state highways to 70 by study. OSM mapping approximate."
+  },
+
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 15, "fine": 33.50},
+      {"min_over": 16, "max_over": null, "fine": 98.50}
+    ],
+    "typical_range": [null, null],
+    "max_fine": null,
+    "notes": "Statewide fixed schedule (Idaho Infraction Rule 9(b), eff. 7/1/2025). With court costs: $90 (1-15 over), $155 (16+ over). Statutory max for the infraction not verified."
+  },
+
+  "court_costs": {
+    "amount": 56.50, "range": [null, null],
+    "notes": "Fixed statewide: tech $10, county $5, POST $15, surcharge $10, general $16.50."
+  },
+
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 15, "points": 3},
+      {"min_over": 16, "max_over": null, "points": 4}
+    ],
+    "notes": "Work zone speeding 4 pts, school zone 3 pts. Suspension: 12 pts/12 mo = 30 days, 18/24 mo = 90 days, 24/36 mo = 6 months (IDAPA 39.02.71)."
+  },
+
+  "zones": {
+    "work_zone": "Fine $50 + $56.50 costs = $106.50 (I.C. 49-657). Over 20 mph over in an active construction zone with workers present and visible = reckless driving (misdemeanor), since 7/1/2026.",
+    "school_zone": "Fine $100 + $56.50 costs = $156.50 (I.C. 49-658). Over 20 mph over in an active school zone with children present and visible = reckless driving, since 7/1/2026."
+  },
+
+  "tiers": {
+    "court":  {"min_over": 16, "min_speed": null, "reason": "Fine jumps from $90 to $155 total and points from 3 to 4. Still a payable infraction."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless driving (misdemeanor) - no speed number on ordinary roads; requires careless/heedless driving endangering others",
+               "max_jail_days": 180, "max_fine": 1000, "license": "no mandatory suspension on first conviction; mandatory on repeat within 5 years", "citation": "I.C. 49-1401"}
+  },
+
+  "trucks": {
+    "different_limits": false,
+    "notes": "Since 7/1/2026 (HB 664), trucks with 5+ axles over 26,000 lb have the same limits as cars (up to 80 on posted interstates). Before that, heavy trucks were capped lower."
+  },
+
+  "sources": [
+    {"title": "I.C. 49-654 (limits, trucks)", "url": "https://legislature.idaho.gov/statutesrules/idstat/Title49/T49CH6/SECT49-654"},
+    {"title": "HB 664 (2026) bill text", "url": "https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2026/legislation/H0664.pdf"},
+    {"title": "KMVT - trucks 80 mph from July 1, 2026", "url": "https://www.kmvt.com/2026/06/25/idaho-allows-heavy-trucks-drive-80-mph-starting-july-1/"},
+    {"title": "Idaho Infraction Penalty Schedule FY2026", "url": "https://isc.idaho.gov/rules/Infraction-Penalty-Schedule-FY-2026.pdf"},
+    {"title": "I.C. 49-1401 reckless driving", "url": "https://legislature.idaho.gov/statutesrules/idstat/title49/t49ch14/sect49-1401/"},
+    {"title": "HB 490 (2026) reckless in school/work zones", "url": "https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2026/legislation/H0490.pdf"},
+    {"title": "IDAPA 39.02.71 point system (2024 archive)", "url": "https://files.dfm.idaho.gov/dfm-admin-website/rules/2024%20Archive/39/390271.pdf"},
+    {"title": "ITD Violation Point System chart", "url": "https://itd.idaho.gov//wp-content/uploads/2016/07/Idaho-Violation-Point-System.pdf"}
+  ],
+  "confidence": "high",
+  "notes": "Passing allowance: cars/pickups not towing may go up to 15 over to pass on 2-lane roads posted 55+ (49-654(2)(b)); fines then figured from limit+15. Penalty schedule effective 7/1/2025; check for FY2027 update. Infraction max fine not confirmed."
+}

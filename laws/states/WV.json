@@ -1,0 +1,56 @@
+{
+  "code": "WV",
+  "name": "West Virginia",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": null, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "W. Va. Code § 17C-6-1(b): 25 business/residence district, 15 school zone (recess/arrival/dismissal), 55 open country. Interstates/controlled-access set by posting (min 55), no fixed default."
+  },
+  "fine": {
+    "model": "judge_discretion",
+    "per_mph": null,
+    "base": null,
+    "brackets": [],
+    "typical_range": [null, null],
+    "max_fine": 100,
+    "notes": "Misdemeanor; 1st offense fine up to $100 (2nd in 1 yr $200, 3rd in 2 yrs $500). Interstate 10 or less over: max $5 + costs, not reported to DMV."
+  },
+  "court_costs": {
+    "amount": null, "range": [null, null],
+    "notes": "Added by magistrate/municipal court; amount not verified."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": 0},
+      {"min_over": 11, "max_over": 14, "points": 3},
+      {"min_over": 15, "max_over": 19, "points": 5},
+      {"min_over": 20, "max_over": null, "points": 6}
+    ],
+    "notes": "10 or less over = no points (except CDL). Reckless = 6 pts (W. Va. CSR § 91-5-7)."
+  },
+  "zones": {
+    "work_zone": null,
+    "school_zone": "15 mph; fine $100-$500; 15+ over with children present: up to 6 months jail (§ 17C-6-1(f))."
+  },
+  "tiers": {
+    "court": {"min_over": 15, "min_speed": null, "reason": "Points jump to 5-6; 15+ over makes 3rd offense jailable."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless driving (no speed threshold; 'willful or wanton disregard')",
+               "max_jail_days": 90, "max_fine": 500,
+               "license": "6 points",
+               "citation": "W. Va. Code § 17C-5-3"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No general truck limit; coal haulers on coal road system face tripled fines (§ 17C-6-1(h))."
+  },
+  "sources": [
+    {"title": "W. Va. Code § 17C-6-1", "url": "https://code.wvlegislature.gov/17c-6-1/"},
+    {"title": "W. Va. CSR § 91-5-7 (point system)", "url": "https://www.law.cornell.edu/regulations/west-virginia/W-Va-Code-SS-91-5-7"},
+    {"title": "HB 4829 (2026) text incl. current § 17C-5-3", "url": "https://www.wvlegislature.gov/bill_text_html/2026_SESSIONS/rs/bills/hb4829 intr.pdf"},
+    {"title": "HB 4829 status", "url": "https://bills.wvlegislature.gov/bill/history/2026/RS/HB4829"}
+  ],
+  "confidence": "medium",
+  "notes": "No speed-based criminal threshold. All speeding is technically a misdemeanor but fine-only for 1st offense. HB 4829 (2026) would make 30+ over reckless; it stalled in committee. Reckless 1st offense: 5-90 days jail and/or $25-$500. Court costs unknown."
+}

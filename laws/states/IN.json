@@ -1,0 +1,120 @@
+{
+  "code": "IN",
+  "name": "Indiana",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70,
+    "trunk": 55,
+    "primary": 55,
+    "secondary": 55,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "IC 9-21-5-2 (2025, am. P.L.173-2025): 30 urban district, 55 general, 70 interstates outside urbanized areas 50k+, 60 rural 4-lane divided, 65 I-465 and INDOT freeways, 15 alleys"
+  },
+  "fine": {
+    "model": "judge_discretion",
+    "base": 0,
+    "brackets": [],
+    "typical_range": [
+      100,
+      200
+    ],
+    "max_fine": 500,
+    "notes": "Class C infraction; judge sets amount, max $500 (IC 34-28-5-4). Typical $100-$200 total incl. costs (secondary source)."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      132,
+      135
+    ],
+    "notes": "Statutory infraction costs/fees ~$132-$135 (SBOA, IC 33-37); typical_range already includes them."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 15,
+        "points": 2
+      },
+      {
+        "min_over": 16,
+        "max_over": 25,
+        "points": 4
+      },
+      {
+        "min_over": 26,
+        "max_over": null,
+        "points": 6
+      }
+    ],
+    "notes": "140 IAC 1-4.5. Points last 2 yrs; 2+ offenses in 12 months can require a Driver Safety Program."
+  },
+  "zones": {
+    "work_zone": "Higher fines in construction zones; amounts not verified.",
+    "school_zone": "Not verified."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 26,
+      "min_speed": null,
+      "reason": "6 points (top bracket)."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (Class C misdemeanor) - 'unreasonably high speed' endangering others, no speed number",
+      "max_jail_days": 60,
+      "max_fine": 500,
+      "license": null,
+      "citation": "IC 9-21-8-52"
+    }
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Over 26,000 lb (not buses): 65 on rural interstates and toll road (IC 9-21-5-2)."
+  },
+  "sources": [
+    {
+      "title": "IC 9-21-5-2 (2025, Justia)",
+      "url": "https://law.justia.com/codes/indiana/title-9/article-21/chapter-5/section-9-21-5-2"
+    },
+    {
+      "title": "Indiana BMV Driver's Manual ch. 5 (points)",
+      "url": "https://in.gov/bmv/licenses-permits-ids/learners-permits-and-drivers-licenses-overview/learners-permit/drivers-manual/Drivers_Manual_Chapter_5.pdf"
+    },
+    {
+      "title": "140 IAC 1-4.5 point table (city-hosted copy)",
+      "url": "https://www.huntington.in.us/egov/documents/1242071142_832031.pdf"
+    },
+    {
+      "title": "Reckless driving penalties (secondary, law info site)",
+      "url": "https://www.drivinglaws.org/resources/indiana-reckless-driving-laws-penalties.htm"
+    },
+    {
+      "title": "Felony speeding in Indiana (secondary, law firm)",
+      "url": "https://www.indyjustice.com/blog/felony-speeding-indiana/"
+    },
+    {
+      "title": "Indiana speeding fines (secondary)",
+      "url": "https://drivinglaws.org/resources/traffic-tickets/speed-violations/indiana-speeding-laws.htm"
+    },
+    {
+      "title": "Indiana SBOA court costs and fees by case type (2020)",
+      "url": "https://Www.in.gov/sboa/files/Court-Costs-and-Fees-by-Case-Type.Jan2020.pdf"
+    },
+    {
+      "title": "IC 34-28-5-4 infraction judgments (2006 Justia; Class C max $500)",
+      "url": "https://law.justia.com/codes/indiana/2006/title34/ar28/ch5.html"
+    },
+    {
+      "title": "IC 35-50-3-4 Class C misdemeanor (2006 Justia; 60 days/$500)",
+      "url": "https://law.justia.com/codes/indiana/2006/title35/ar50/ch3.html"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "Limits, points, infraction max ($500), costs and Class C misdemeanor penalty (60 days/$500) checked against official/statutory text. Reckless driving being a Class C misdemeanor (IC 9-21-8-52) is from secondary sources only. No speed-based criminal threshold. Interstates in urbanized areas are 65."
+}

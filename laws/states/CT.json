@@ -1,0 +1,182 @@
+{
+  "code": "CT",
+  "name": "Connecticut",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": null,
+    "trunk": null,
+    "primary": null,
+    "secondary": null,
+    "tertiary": null,
+    "unclassified": null,
+    "residential": null,
+    "living_street": null,
+    "basis": "Not verified. The text of CGS 14-219 couldn't be retrieved. Limits are set by the state traffic authority or local traffic authorities and posted. GHSA lists max 65 for rural interstates and 55 for urban interstates. OLR (1994) described 14-219(a) as barring speeds over 55 statewide; 65 on suitable multilane limited-access highways since PA 98-181. Not confirmed against current text, so left null."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 9,
+        "fine": 162
+      },
+      {
+        "min_over": 10,
+        "max_over": 10,
+        "fine": 167
+      },
+      {
+        "min_over": 11,
+        "max_over": 11,
+        "fine": 171
+      },
+      {
+        "min_over": 12,
+        "max_over": 12,
+        "fine": 177
+      },
+      {
+        "min_over": 13,
+        "max_over": 13,
+        "fine": 181
+      },
+      {
+        "min_over": 14,
+        "max_over": 14,
+        "fine": 187
+      },
+      {
+        "min_over": 15,
+        "max_over": 15,
+        "fine": 191
+      },
+      {
+        "min_over": 16,
+        "max_over": 16,
+        "fine": 196
+      },
+      {
+        "min_over": 17,
+        "max_over": 17,
+        "fine": 201
+      },
+      {
+        "min_over": 18,
+        "max_over": 18,
+        "fine": 206
+      },
+      {
+        "min_over": 19,
+        "max_over": 19,
+        "fine": 210
+      },
+      {
+        "min_over": 20,
+        "max_over": 20,
+        "fine": 216
+      },
+      {
+        "min_over": 21,
+        "max_over": 21,
+        "fine": 220
+      },
+      {
+        "min_over": 22,
+        "max_over": null,
+        "fine": 226
+      }
+    ],
+    "typical_range": [
+      162,
+      328
+    ],
+    "max_fine": null,
+    "notes": "Totals including fees, from a secondary source. Higher by actual speed: 71-75 mph $228, 76-80 $269, 81-85 $309. Above 85 mph is reckless driving."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Included in the amounts above. The official breakdown wasn't found."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": null,
+        "points": 1
+      }
+    ],
+    "notes": "1 point for any speeding (Regs. 14-137a-5). About 10 points in 24 months brings a 30+ day suspension."
+  },
+  "zones": {
+    "work_zone": "Higher fines (secondary source: about $50-$90 more).",
+    "school_zone": "Higher fines (secondary source: about $50-$90 more)."
+  },
+  "tiers": {
+    "court": {
+      "min_over": null,
+      "min_speed": 86,
+      "reason": "Above 85 mph is reckless driving, a criminal charge that must be handled in court."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": 86,
+      "offense": "Reckless driving (over 85 mph is a violation per se). Above 100 mph: enhanced penalty, PA 25-19.",
+      "max_jail_days": 30,
+      "max_fine": 300,
+      "license": null,
+      "citation": "CGS 14-222; PA 25-19 (eff. 10/1/2025)"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "Not verified."
+  },
+  "sources": [
+    {
+      "title": "CGS 14-222 (Justia, 2011 version)",
+      "url": "https://law.justia.com/codes/connecticut/2011/title14/chap248/Sec14-222.html"
+    },
+    {
+      "title": "PA 25-19 summary (OLR)",
+      "url": "https://prdext2.cga.ct.gov/2025/SUM/PDF/2025SUM00019-R02HB-07132-SUM.PDF"
+    },
+    {
+      "title": "HB 7260 file copy (100 mph text)",
+      "url": "https://prdext3.cga.ct.gov/2025/TOB/H/PDF/2025HB-07260-R01-HB.PDF"
+    },
+    {
+      "title": "Regs. Conn. State Agencies 14-137a-5 (points)",
+      "url": "https://regulations.justia.com/states/connecticut/title-14/subtitle-137a/section-14-137a-5"
+    },
+    {
+      "title": "OLR 2023-R-0187 speeding suspensions",
+      "url": "https://prdext3.cga.ct.gov/2023/rpt/pdf/2023-R-0187.pdf"
+    },
+    {
+      "title": "Ruane Attorneys: CT points (secondary)",
+      "url": "https://ruaneattorneys.com/ct-criminal-lawyer/traffic/license-issues/points/"
+    },
+    {
+      "title": "DrivingLaws CT speeding (secondary, fines)",
+      "url": "https://www.drivinglaws.org/resources/connecticut-speeding-laws.html"
+    },
+    {
+      "title": "GHSA CT speed limits",
+      "url": "https://ghsa.org/node/2921"
+    },
+    {
+      "title": "OLR 94-R-1025 (14-219 summary, 1994)",
+      "url": "https://cga.ct.gov/PS94/rpt%5Colr%5Chtm/94-R-1025.htm"
+    }
+  ],
+  "confidence": "low",
+  "notes": "The arrest tier is solid: above 85 mph is reckless driving, first offense $100-$300 and/or 30 days. Above 100 mph: $200-$600 and/or 30 days. No defaults and no official fine schedule were verified; fines are from a secondary source. Speeding suspension starts at the 4th offense; OLR says points may not be assessed on mail-in payment."
+}

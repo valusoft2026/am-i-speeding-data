@@ -1,0 +1,62 @@
+{
+  "code": "HI",
+  "name": "Hawaii",
+  "researched": "2026-11-02",
+
+  "default_limits": {
+    "motorway": null, "trunk": null, "primary": null, "secondary": null, "tertiary": null,
+    "unclassified": null, "residential": null, "living_street": null,
+    "basis": "No statewide statutory default found. HRS 291C-102 enforces limits set by county ordinance or by official signs (state DOT on state highways). Use posted/OSM maxspeed only."
+  },
+
+  "fine": {
+    "model": "judge_discretion",
+    "per_mph": null,
+    "base": null,
+    "brackets": [],
+    "typical_range": [167, 317],
+    "max_fine": 200,
+    "notes": "Max $200 first offense (HRS 291C-161). Court bail schedule not found online. Typical range is from 2025 HDOT speed-camera citations ($167-$317, rising with mph over)."
+  },
+
+  "court_costs": {
+    "amount": 7, "range": [7, 17],
+    "notes": "$7 driver education assessment on every moving violation (HRS 286G-3), plus $10 neurotrauma surcharge if more than 10 over (HRS 291C-102(b))."
+  },
+
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No points system. Violations tracked on a traffic abstract (2026 House Res. 88 urged DOT to consider points)."
+  },
+
+  "zones": {
+    "work_zone": "Higher fine in construction zones (HRS 291C-104); secondary source says $250 + $100 surcharge. Not verified officially.",
+    "school_zone": "Higher fine in school zones (HRS 291C-104); secondary source says $250 + surcharge. Not verified officially."
+  },
+
+  "tiers": {
+    "court":  {"min_over": 11, "min_speed": null, "reason": "Over 10 mph adds $10 surcharge; HDOT cameras target 11+ over. Still a payable infraction."},
+    "arrest": {"min_over": 30, "min_speed": 80, "offense": "Excessive speeding (petty misdemeanor); 3rd within 5 years is a misdemeanor",
+               "max_jail_days": 5, "max_fine": 1000, "license": "30-day suspension (or 15 days + 15 days work-only restricted)", "citation": "HRS 291C-105"}
+  },
+
+  "trucks": {
+    "different_limits": false,
+    "notes": "No statewide truck-specific limits found; limits are set by sign/ordinance. Not verified."
+  },
+
+  "sources": [
+    {"title": "HRS 291C-102 (official)", "url": "https://data.capitol.hawaii.gov/hrscurrent/Vol05_Ch0261-0319/HRS0291C/HRS_0291C-0102.htm"},
+    {"title": "Act 170, SLH 2025 (SB97) amending HRS 291C-105, eff. 7/1/2025", "url": "https://data.capitol.hawaii.gov/sessions/sessionlaws/Years/SLH2025/SLH2025_Act170.pdf"},
+    {"title": "HB54 HD2 (2026) excessive speeding bill text (current-law penalties)", "url": "https://data.capitol.hawaii.gov/sessions/session2026/Bills/HB54_HD2_.HTM"},
+    {"title": "Act 69, SLH 2007 amending HRS 291C-161 (fine maximums)", "url": "https://data.capitol.hawaii.gov/sessions/sessionlaws/Years/SLH2007/SLH2007_Act69.pdf"},
+    {"title": "HRS 286G-3 driver education assessment (Justia 2025)", "url": "https://law.justia.com/codes/hawaii/title-17/chapter-286g/section-286g-3"},
+    {"title": "HR 88 HD1 (2026) - traffic abstract, no points", "url": "https://data.capitol.hawaii.gov/sessions/session2026/bills/HR88_HD1_.HTM"},
+    {"title": "Spectrum News - HDOT camera fines $167-$317 (Nov 2025)", "url": "https://spectrumlocalnews.com/hi/hawaii/news/2025/11/03/safety-cameras-at-10-intersections-begin-issuing-high-speed-citations"},
+    {"title": "HDOT sample camera notice (22 over = $177)", "url": "https://hidot.hawaii.gov/wp-content/uploads/2025/10/HDOT-SPD_FN-Notice-of-Traffic-Infraction_sample.pdf"},
+    {"title": "DrivingLaws.org - Hawaii speeding (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/hawaii-speeding-laws.htm"}
+  ],
+  "confidence": "medium",
+  "notes": "Excessive speeding (30+ over or 80+ mph) is criminal: first offense $500-$1,000 fine, 36 hrs community service or 48 hrs-5 days jail, 30-day suspension, plus $75 driver ed assessment, $25 neurotrauma, up to $100 trauma surcharge (Act 170, 2025). Ordinary fine schedule and zone fines not verified from official source."
+}

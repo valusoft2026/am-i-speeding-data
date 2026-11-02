@@ -1,0 +1,67 @@
+{
+  "code": "IL",
+  "name": "Illinois",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 70, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 30, "living_street": 30,
+    "basis": "625 ILCS 5/11-601: 30 in urban districts, 15 in alleys, 70 on interstates outside urban districts, 65 only on 4-lane divided highways designated by IDOT (posted), 55 all other roads"
+  },
+  "fine": {
+    "model": "brackets",
+    "brackets": [
+      {"min_over": 1, "max_over": 25, "fine": 164},
+      {"min_over": 26, "max_over": null, "fine": null}
+    ],
+    "typical_range": [164, null],
+    "max_fine": 1000,
+    "notes": "1-25 over is a petty offense: pay-by-mail guilty plea is a flat $164 (Schedule 12, all-in). In court: fine ($25 min, $1,000 max) plus $226 assessment. 26+ over is a misdemeanor, court decides."
+  },
+  "court_costs": {
+    "amount": 0, "range": [0, 226],
+    "notes": "Included in the $164 mail-in amount. If convicted in court, Schedule 10 assessment is $226 (+ up to $28 in Cook County)."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 10, "points": 5},
+      {"min_over": 11, "max_over": 14, "points": 15},
+      {"min_over": 15, "max_over": 25, "points": 20},
+      {"min_over": 26, "max_over": null, "points": 50}
+    ],
+    "notes": "Secretary of State point values (92 Ill. Adm. Code 1040.20). Court supervision is not a conviction and adds no points."
+  },
+  "zones": {
+    "work_zone": "Min $250 fine first offense (workers present or not, if posted)",
+    "school_zone": "20 mph on school days 6:30am-4pm when children present; min $150 fine first offense; 26+ over = aggravated (55 points)"
+  },
+  "tiers": {
+    "court": {"min_over": 26, "min_speed": null, "reason": "Becomes a criminal misdemeanor; 50 points; mail-in $164 plea covers only minor (petty) traffic offenses"},
+    "arrest": {"min_over": 26, "min_speed": null,
+      "offense": "Speeding 26+ over (Class B misdemeanor); 35+ over is Class A",
+      "max_jail_days": 180, "max_fine": 1500,
+      "license": "50 points per conviction",
+      "citation": "625 ILCS 5/11-601.5; 730 ILCS 5/5-4.5-60 (Class B); 5-4.5-55 (Class A: <1 yr, $2,500)"}
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Vehicles 8,001 lb+ in Cook, DuPage, Kane, Lake, McHenry, Will counties: 60 on interstates, 55 elsewhere"
+  },
+  "sources": [
+    {"title": "625 ILCS 5/11-601 (speed limits)", "url": "https://ilga.gov/Documents/legislation/ilcs/documents/062500050K11-601.htm"},
+    {"title": "625 ILCS 5/11-601.5 (26+ over misdemeanor)", "url": "https://www.ilga.gov/documents/legislation/ilcs/documents/062500050K11-601.5.htm"},
+    {"title": "730 ILCS 5/5-4.5-55 (Class A sentence)", "url": "https://www.ilga.gov/Documents/legislation/ilcs/documents/073000050K5-4.5-55.htm"},
+    {"title": "730 ILCS 5/5-4.5-60 (Class B sentence) - law firm reproduction of statute", "url": "https://www.combswaterkotte.com/illinois-criminal-laws/chapter-730-ilcs-5-5-sentencing/730-ilcs-5-5-4-5-60-class-b-misdemeanors-sentence/"},
+    {"title": "730 ILCS 5/5-4.5-75 (petty offense max $1,000)", "url": "https://ilga.gov/Documents/legislation/ilcs/documents/073000050K5-4.5-75.htm"},
+    {"title": "92 Ill. Adm. Code 1040.20 (points)", "url": "https://ilga.gov/ftp/JCAR/AdminCode/092/092010400000200R.html"},
+    {"title": "Ill. S. Ct. Rule 529 (written plea, Schedule 12)", "url": "https://rulesofcivilprocedure.com/il/supreme-court-rules/rule-529/"},
+    {"title": "McHenry County Circuit Clerk - $164 Schedule 12", "url": "https://www.mchenrycircuitclerk.org/?p=591"},
+    {"title": "DuPage Circuit Clerk plea form - $164", "url": "https://epay.dupagecircuitclerk.gov/Clerk/images/Plea_Form.pdf"},
+    {"title": "705 ILCS 135/15-50 Schedule 10 $226 (FindLaw)", "url": "https://codes.findlaw.com/il/chapter-705-courts/il-st-sect-705-135-15-50/"},
+    {"title": "Rock Island County traffic financial sentencing order", "url": "https://rockislandcountyil.gov/DocumentCenter/View/371/Traffic-Financial-Sentencing-Order-PDF"},
+    {"title": "P.A. 102-58 (school zone 11-605)", "url": "https://ilga.gov/ftp/Public%20Acts/102/102-0058.htm"},
+    {"title": "P.A. 99-212 (construction zone 11-605.1)", "url": "https://ilga.gov/ftp/Public%20Acts/99/099-0212.htm"}
+  ],
+  "confidence": "high",
+  "notes": "Statutory limits, misdemeanor thresholds and points verified from ilga.gov. Work-zone $250 read from P.A. 99-212 (2015 text), not the current compiled section. Class B misdemeanor max read from a law-firm copy of the statute. Residential=30 assumes urban district; rural unposted roads are 55."
+}

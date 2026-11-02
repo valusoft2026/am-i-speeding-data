@@ -1,0 +1,64 @@
+{
+  "code": "CO",
+  "name": "Colorado",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 65, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 30, "living_street": 30,
+    "basis": "C.R.S. 42-4-1101(2): 20 narrow winding mountain roads/blind curves; 25 business district; 30 residence district; 40 open mountain highways; 55 other open highways; 65 surfaced 4-lane interstates and freeways/expressways (trunk expressways may be 65). Absolute max 75 (8)(b)."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 4, "fine": 30},
+      {"min_over": 5, "max_over": 9, "fine": 70},
+      {"min_over": 10, "max_over": 19, "fine": 135},
+      {"min_over": 20, "max_over": 24, "fine": 200},
+      {"min_over": 25, "max_over": null, "fine": null}
+    ],
+    "typical_range": [null, null],
+    "max_fine": 200,
+    "notes": "State penalty-assessment schedule (42-4-1701(4)). 25+ over is a misdemeanor: no ticket fine, court sets $150-$300. Max shown is top of schedule; municipal courts use own schedules."
+  },
+  "court_costs": {
+    "amount": null, "range": [6, 32],
+    "notes": "Paying the ticket: surcharge added to fine ($6/$10/$16/$32 by bracket). If convicted in county court: ~$24 docket fee (JDF 1, 2023). Municipal courts vary."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": 4, "points": 0},
+      {"min_over": 5, "max_over": 9, "points": 1},
+      {"min_over": 10, "max_over": 19, "points": 4},
+      {"min_over": 20, "max_over": 39, "points": 6},
+      {"min_over": 40, "max_over": null, "points": 12}
+    ],
+    "notes": "C.R.S. 42-2-127(5)(f). Adults suspended at 12 pts in 12 months or 18 in 24; 40+ over alone reaches 12."
+  },
+  "zones": {
+    "work_zone": "Fine and surcharge doubled in designated work zones; 25+ over there is a class 1 misdemeanor (up to 1 yr, $1,000).",
+    "school_zone": "Fine and surcharge doubled in school zones (42-4-1701(4)(d)). Wildlife crossing zones also doubled."
+  },
+  "tiers": {
+    "court": {"min_over": 25, "min_speed": 100, "reason": "25+ over (or 25+ over the 75 max) is a misdemeanor: no pay-by-mail, must appear in court."},
+    "arrest": {"min_over": 25, "min_speed": 100, "offense": "Speeding 25+ mph over (class 2 misdemeanor traffic offense)",
+               "max_jail_days": 90, "max_fine": 300,
+               "license": "6 points (25-39 over) or 12 points (40+ over, triggers suspension for adults)",
+               "citation": "C.R.S. 42-4-1101(12)(b), 42-4-1701(3)(a)(II)(A)"}
+  },
+  "trucks": {
+    "different_limits": true,
+    "notes": "Only narrow case: trash trucks (single rear axle, over 20,000 lb) 45 mph where higher is posted (42-4-1101(2)(e)). Commercial vehicle speeding on steep-grade zones is doubled."
+  },
+  "sources": [
+    {"title": "C.R.S. 42-4-1101 (speed limits)", "url": "https://colorado.public.law/statutes/crs_42-4-1101"},
+    {"title": "C.R.S. 42-4-1701 (penalty schedule, misdemeanor penalties)", "url": "https://colorado.public.law/statutes/crs_42-4-1701"},
+    {"title": "C.R.S. 42-2-127 (point schedule)", "url": "https://colorado.public.law/statutes/crs_42-2-127"},
+    {"title": "Colorado Legislative Council: Penalties for speeding violations", "url": "https://content.leg.colorado.gov/content/penalties-speeding-violations"},
+    {"title": "Colorado Judicial JDF 1 court filing fees and costs", "url": "https://coloradojudicial.gov/sites/default/files/2024-09/JDF1.pdf"}
+  ],
+  "confidence": "medium",
+  "notes": "Statute text read via public.law (2024 C.R.S., current through fall 2025), not leg.colorado.gov directly. Limits are prima facie (except 75 max). Misdemeanor minimum is 10 days jail or $150 fine. 2026 bills on speed cameras not reflected."
+}

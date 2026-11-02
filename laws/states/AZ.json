@@ -1,0 +1,112 @@
+{
+  "code": "AZ",
+  "name": "Arizona",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 65,
+    "trunk": 65,
+    "primary": 65,
+    "secondary": 65,
+    "tertiary": 65,
+    "unclassified": 65,
+    "residential": 25,
+    "living_street": 25,
+    "basis": "A.R.S. § 28-701(B) prima facie limits: 15 approaching a school crossing, 25 in business/residential districts, 65 in other locations. 75 on interstates only where posted."
+  },
+  "fine": {
+    "model": "judge_discretion",
+    "per_mph": null,
+    "base": 0,
+    "brackets": [],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": 250,
+    "notes": "Civil traffic violation; court sets fine up to $250 plus surcharges (§ 28-1598). Up to 10 over in qualifying zones = 'waste of a finite resource': $15 + surcharges (§ 28-702.01). Typical amounts not verified."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "State surcharges added on top of the fine; amounts not verified from an official source."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": null,
+        "points": 3
+      }
+    ],
+    "notes": "3 points (secondary sources). Waste-of-finite-resource tickets (up to 10 over) are not reported and carry no points. 8 pts/12 mo = traffic school; 13+ = suspension."
+  },
+  "zones": {
+    "work_zone": null,
+    "school_zone": "15 mph prima facie approaching a school crossing (§ 28-701); over 35 there is a criminal misdemeanor (§ 28-701.02)."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 11,
+      "min_speed": null,
+      "reason": "Over 10 mph is no longer a 'waste of finite resource' ticket: full fine, reported to MVD, 3 points."
+    },
+    "arrest": {
+      "min_over": 21,
+      "min_speed": null,
+      "offense": "Excessive speed / criminal speeding (class 3 misdemeanor)",
+      "max_jail_days": 30,
+      "max_fine": 500,
+      "license": "3 points; no automatic suspension",
+      "citation": "A.R.S. § 28-701.02",
+      "reason": "§ 28-701.02: criminal at 21+ over posted limit anywhere (no 85 mph rule in current text); also over 45 on an unposted business/residential street, or over 35 approaching a school crossing (not expressible as min_over/min_speed)."
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No truck-specific statewide limit found in the text reviewed; obey posted truck limits."
+  },
+  "sources": [
+    {
+      "title": "A.R.S. § 28-701 (prima facie limits)",
+      "url": "https://azleg.gov/ars/28/00701.htm"
+    },
+    {
+      "title": "AZ HB2059 (57th Leg. 2nd Reg., prefiled 12/15/2025) - shows current § 28-701.02 and § 28-702.01 text",
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/HB2059P.htm"
+    },
+    {
+      "title": "AZ HB2409 (57th Leg. 1st Reg., 2025) - shows § 28-701.02 base text",
+      "url": "https://www.azleg.gov/legtext/57leg/1r/bills/hb2409p.htm"
+    },
+    {
+      "title": "AZ HB2366 (2021) - shows older 85 mph text",
+      "url": "https://azleg.gov/legtext/55leg/1R/bills/HB2366P.htm"
+    },
+    {
+      "title": "Salwin Law - criminal speed (secondary: 30 days, $500, 3 points)",
+      "url": "https://www.salwinlaw.com/criminal-defense/criminal-traffic/criminal-speed-ars-28-701-02/"
+    },
+    {
+      "title": "Arizona Law Group - criminal speeding (secondary)",
+      "url": "https://www.arizonalawgroup.com/ars-28-701-02-arizonas-criminal-speeding-law/"
+    },
+    {
+      "title": "A.R.S. § 28-701.02 (current text)",
+      "url": "https://www.azleg.gov/ars/28/00701-02.htm"
+    },
+    {
+      "title": "A.R.S. § 13-707 (class 3 misdemeanor: 30 days)",
+      "url": "https://azleg.gov/ars/13/00707.htm"
+    },
+    {
+      "title": "AZ Court Help - civil traffic fines ($250 + surcharges)",
+      "url": "https://azcourthelp.org/faq/traffic-fine-payments/531-civil-traffic-fines"
+    }
+  ],
+  "confidence": "low",
+  "notes": "Arrest threshold confirmed from azleg.gov § 28-701.02: more than 20 over anywhere; no 85 mph text (older law-firm pages are outdated). Class 3 misdemeanor = 30 days (§ 13-707); $500 fine not checked against § 13-802. Points (3) not verified from AAC R17-4-404 table."
+}

@@ -1,0 +1,133 @@
+{
+  "code": "ME",
+  "name": "Maine",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": null,
+    "trunk": 45,
+    "primary": 45,
+    "secondary": 45,
+    "tertiary": 45,
+    "unclassified": 45,
+    "residential": 25,
+    "living_street": 25,
+    "basis": "29-A M.R.S. §2074(1): 25 business/residential/built-up areas, 45 all other ways unless posted; 15 school zones at school times"
+  },
+  "fine": {
+    "model": "brackets",
+    "base": 0,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 9,
+        "fine": 114
+      },
+      {
+        "min_over": 10,
+        "max_over": 14,
+        "fine": 129
+      },
+      {
+        "min_over": 15,
+        "max_over": 19,
+        "fine": 170
+      },
+      {
+        "min_over": 20,
+        "max_over": 24,
+        "fine": 230
+      },
+      {
+        "min_over": 25,
+        "max_over": 29,
+        "fine": 278
+      },
+      {
+        "min_over": 30,
+        "max_over": null,
+        "range": [
+          null,
+          1000
+        ]
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": null,
+    "notes": "Statewide Violations Bureau schedule (eff. 9/24/2025), surcharges included. 30+ over is a Class E crime: judge sets fine, up to $1,000 (17-A §1704), plus up to 6 months jail."
+  },
+  "court_costs": {
+    "amount": 0,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Included in scheduled amount (surcharges + $25 flat fees built in)."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 14,
+        "points": 4
+      },
+      {
+        "min_over": 15,
+        "max_over": 29,
+        "points": 6
+      }
+    ],
+    "notes": "BMV rule 29-250 ch.1 §4: <15 over 4 pts, 15-29 over 6 pts; 12 pts in 1 yr = suspension. Points for 30+ (criminal) not found."
+  },
+  "zones": {
+    "work_zone": "Construction zone fines higher: $203 (1-9 over) up to $531 (25-29 over).",
+    "school_zone": "15 mph at school times; fines roughly double: $203 (1-9 over) up to $531 (25-29 over)."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 15,
+      "min_speed": null,
+      "reason": "Points jump from 4 to 6."
+    },
+    "arrest": {
+      "min_over": 30,
+      "min_speed": null,
+      "offense": "Criminal speeding (Class E crime)",
+      "max_jail_days": 180,
+      "max_fine": 1000,
+      "license": null,
+      "citation": "29-A M.R.S. §2074(3); 17-A §§1604, 1704"
+    }
+  },
+  "trucks": {
+    "different_limits": null,
+    "notes": "Not researched."
+  },
+  "sources": [
+    {
+      "title": "29-A M.R.S. §2074 Rates of speed",
+      "url": "https://legislature.maine.gov/statutes/29-A/title29-Asec2074.html"
+    },
+    {
+      "title": "Maine Violations Bureau Schedule of Amounts Due",
+      "url": "https://courts.informe.org/courts/traffic/schedule.pdf"
+    },
+    {
+      "title": "BMV rule 29-250 ch.1 §4 demerit points (Justia copy)",
+      "url": "https://regulations.justia.com/states/maine/29/250/bureau-of-motor-vehicles/chapter-1/section-250-1-4"
+    },
+    {
+      "title": "17-A M.R.S. §1604 (Class E: 6 months)",
+      "url": "https://legislature.maine.gov/statutes/17-A/title17-Asec1604.html"
+    },
+    {
+      "title": "17-A M.R.S. §1704 (Class E: $1,000)",
+      "url": "https://mainelegislature.org/statutes/17-A/title17-Asec1704.html"
+    }
+  ],
+  "confidence": "high",
+  "notes": "Interstates/Turnpike are always posted (no unposted statutory freeway limit found), so motorway is null; statute's catch-all is 45. License suspension for criminal speeding not verified. Points read from Justia copy of BMV rule (current through 6/2025)."
+}

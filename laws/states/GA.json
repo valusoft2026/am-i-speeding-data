@@ -1,0 +1,163 @@
+{
+  "code": "GA",
+  "name": "Georgia",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55,
+    "trunk": 55,
+    "primary": 55,
+    "secondary": 55,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "O.C.G.A. 40-6-181(b): 30 urban/residential district; 35 unpaved county road; 55 other locations. 70 interstate / 65 divided highways apply only when posted."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 5,
+        "fine": 0
+      },
+      {
+        "min_over": 6,
+        "max_over": 10,
+        "fine": 25
+      },
+      {
+        "min_over": 11,
+        "max_over": 14,
+        "fine": 100
+      },
+      {
+        "min_over": 15,
+        "max_over": 18,
+        "fine": 125
+      },
+      {
+        "min_over": 19,
+        "max_over": 23,
+        "fine": 150
+      },
+      {
+        "min_over": 24,
+        "max_over": 33,
+        "fine": 500
+      },
+      {
+        "min_over": 34,
+        "max_over": null,
+        "fine": 1000
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": 1000,
+    "notes": "Brackets are statutory MAXIMUM first-offense fines (40-6-1(b)); courts set actual amounts. 34+ over has no special cap, so general misdemeanor max $1,000 applies (17-10-3). Surcharges extra."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      null,
+      null
+    ],
+    "notes": "Varies by court; state surcharges added on top of fine. No statewide figure found."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 14,
+        "points": 0
+      },
+      {
+        "min_over": 15,
+        "max_over": 18,
+        "points": 2
+      },
+      {
+        "min_over": 19,
+        "max_over": 23,
+        "points": 3
+      },
+      {
+        "min_over": 24,
+        "max_over": 33,
+        "points": 4
+      },
+      {
+        "min_over": 34,
+        "max_over": null,
+        "points": 6
+      }
+    ],
+    "notes": "15 points in 24 months = suspension (DDS)."
+  },
+  "zones": {
+    "work_zone": "Same point scale applies (40-6-188); fine amounts not verified.",
+    "school_zone": "Not verified."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 34,
+      "min_speed": 85,
+      "reason": "34+ over: no fine cap (up to $1,000/12 mo), 6 points. 85+ mph (or 75+ on two-lane road): $200 Super Speeder state fee, license suspended if unpaid."
+    },
+    "arrest": {
+      "min_over": null,
+      "min_speed": null,
+      "offense": "Reckless driving (misdemeanor); no speed threshold",
+      "max_jail_days": 365,
+      "max_fine": 1000,
+      "license": "4 points",
+      "citation": "O.C.G.A. 40-6-390"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No truck-specific limit in 40-6-181 text reviewed."
+  },
+  "sources": [
+    {
+      "title": "O.C.G.A. 40-6-1 (Justia, 2025)",
+      "url": "https://law.justia.com/codes/georgia/title-40/chapter-6/article-1/section-40-6-1"
+    },
+    {
+      "title": "O.C.G.A. 40-6-1 (Justia, 2020)",
+      "url": "https://law.justia.com/codes/georgia/2020/title-40/chapter-6/article-1/section-40-6-1"
+    },
+    {
+      "title": "O.C.G.A. 40-6-181 text (law-firm reproduction)",
+      "url": "https://wfirm.com/determining-liability-after-a-car-wreck-in-georgia-speed-limits-ocga-40-6-181/"
+    },
+    {
+      "title": "GA DDS Points Schedule",
+      "url": "https://dds.georgia.gov/node/27051"
+    },
+    {
+      "title": "GA DDS Super Speeder",
+      "url": "https://dds.georgia.gov/node/1151"
+    },
+    {
+      "title": "O.C.G.A. 40-6-189 (FindLaw)",
+      "url": "https://codes.findlaw.com/ga/title-40-motor-vehicles-and-traffic/ga-code-sect-40-6-189/"
+    },
+    {
+      "title": "O.C.G.A. 40-6-390 (Justia, 2006)",
+      "url": "https://law.justia.com/codes/georgia/2006/40/40-6-390.html"
+    },
+    {
+      "title": "O.C.G.A. 17-10-3 (Justia)",
+      "url": "https://law.justia.com/codes/georgia/title-17/chapter-10/article-1/section-17-10-3"
+    }
+  ],
+  "confidence": "medium",
+  "notes": "All GA speeding is a misdemeanor (40-6-1(a)), so custodial arrest is legally possible at any speed; no statutory 'criminal speed' number. 40-6-181 read from law-firm copy; reckless text from 2006 version. Super Speeder fee is owed to DDS, not the court."
+}

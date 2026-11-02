@@ -1,0 +1,64 @@
+{
+  "code": "NC",
+  "name": "North Carolina",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55, "trunk": 55, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 35, "living_street": 35,
+    "basis": "G.S. 20-141(b): 35 inside municipal corporate limits, 55 outside (all classes). Mapping assumes residential streets are in town; any road inside city limits defaults to 35. Up to 70 only where DOT posts (20-141(d))."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {"min_over": 1, "max_over": 5, "fine": 10},
+      {"min_over": 6, "max_over": 10, "fine": 15},
+      {"min_over": 11, "max_over": 15, "fine": 30},
+      {"min_over": 16, "max_over": null, "fine": 50}
+    ],
+    "typical_range": [10, 200],
+    "max_fine": 100,
+    "notes": "Chief judges' waiver (prepay) fines, plus costs. 16+ over is waivable ($50) only if speed was 55 or under; above that, judge sets fine (Class 3 misd., max $200). Infraction max $100 (20-176(b))."
+  },
+  "court_costs": {
+    "amount": 191, "range": [null, null],
+    "notes": "AOC chart eff. 12/1/2020: $191 Ch. 20 infraction, $193 Ch. 20 misdemeanor. Newer chart not checked; may have risen."
+  },
+  "points": {
+    "system": true,
+    "brackets": [],
+    "notes": "Based on actual speed, not mph over: 3 pts if over 55 mph; 2 pts ('other moving violation') if 55 or under; school zone 3. 12 pts in 3 yrs = suspension (20-16). Insurance points separate."
+  },
+  "zones": {
+    "work_zone": "$250 extra penalty when work-zone penalty signs posted (20-141(j2)).",
+    "school_zone": "$250 penalty on school property (20-141(e1)); waiver list: $250 + costs; 3 pts."
+  },
+  "tiers": {
+    "court": {"min_over": 16, "min_speed": 81, "reason": "Criminal speeding; not prepayable if over 55 mph. 30-day license suspension if 16+ over AND over 55, or over 80 (20-16.1)."},
+    "arrest": {"min_over": 16, "min_speed": 81, "offense": "Speeding more than 15 over or over 80 mph (Class 3 misdemeanor)",
+               "max_jail_days": 0, "max_fine": 200,
+               "license": "30-day suspension if 16+ over and over 55 mph, or over 80 (20-16.1(a)); 60 days if 2nd within 1 yr",
+               "citation": "G.S. 20-141(j1), 15A-1340.23, 20-16.1"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "20-141(b) limits apply to all vehicles (school buses excepted). Oversize permit loads 15+ over = Class 2 misd. (20-141(j3))."
+  },
+  "sources": [
+    {"title": "G.S. 20-141", "url": "https://www.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_20/GS_20-141.pdf"},
+    {"title": "G.S. 20-16 (points, suspensions)", "url": "https://house.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_20/GS_20-16.pdf"},
+    {"title": "G.S. 20-16 (HTML)", "url": "https://ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_20/GS_20-16.html"},
+    {"title": "G.S. 20-16.1", "url": "https://ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_20/GS_20-16.1.pdf"},
+    {"title": "G.S. 20-176", "url": "https://ftp.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_20/GS_20-176.pdf"},
+    {"title": "G.S. 15A-1340.23", "url": "https://ftp.ncleg.gov/EnactedLegislation/Statutes/PDF/BySection/Chapter_15A/GS_15A-1340.23.pdf"},
+    {"title": "NC Courts waiver list (eff. 12/1/2019)", "url": "https://www.nccourts.gov/assets/documents/forms/traffic-waiver_0.pdf"},
+    {"title": "NC Courts waiver list (eff. 12/1/2018)", "url": "https://www.nccourts.gov/assets/documents/publications/traffic-waiver.pdf"},
+    {"title": "NC AOC 2020 criminal costs chart", "url": "https://www.nccourts.gov/assets/documents/publications/2020-criminal-costs-chart.pdf"},
+    {"title": "NC Courts traffic violations", "url": "https://nccourts.gov/help-topics/traffic-and-vehicles/traffic-violations"},
+    {"title": "NCDMV speeding suspensions", "url": "https://www.ncdot.gov:443/dmv/license-id/license-suspension/Pages/speeding.aspx"},
+    {"title": "2025 HB 112 (75 mph bill, not enacted per text seen)", "url": "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H112v1.html"}
+  ],
+  "confidence": "medium",
+  "notes": "Criminal = more than 15 over OR over 80 mph. First offender with 3 or fewer priors: fine only, no jail (15A-1340.23(d)); up to 20 days with more priors. Waiver list and costs chart may be outdated (latest found 2019/2020). 2025 HB 112 (75 mph interstates) showed no action past committee. DA reductions common."
+}

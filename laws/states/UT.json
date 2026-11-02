@@ -1,0 +1,173 @@
+{
+ "code": "UT",
+ "name": "Utah",
+ "researched": "2026-11-02",
+ "default_limits": {
+  "motorway": 55,
+  "trunk": 55,
+  "primary": 55,
+  "secondary": 55,
+  "tertiary": 55,
+  "unclassified": 55,
+  "residential": 25,
+  "living_street": 25,
+  "basis": "Utah Code § 41-6a-601(2): 25 in urban districts, 55 elsewhere, 20 in reduced-speed school zones. Posted limits up to 65 (75 on freeways, higher if UDOT study) under § 41-6a-602."
+ },
+ "fine": {
+  "model": "brackets",
+  "per_mph": null,
+  "base": null,
+  "brackets": [
+   {
+    "min_over": 1,
+    "max_over": 10,
+    "fine": 130
+   },
+   {
+    "min_over": 11,
+    "max_over": 15,
+    "fine": 160
+   },
+   {
+    "min_over": 16,
+    "max_over": 20,
+    "fine": 210
+   },
+   {
+    "min_over": 21,
+    "max_over": 25,
+    "fine": 280
+   },
+   {
+    "min_over": 26,
+    "max_over": 30,
+    "fine": 380
+   },
+   {
+    "min_over": 31,
+    "max_over": null,
+    "fine": 170,
+    "per_mph": 10
+   }
+  ],
+  "typical_range": [
+   130,
+   480
+  ],
+  "max_fine": 750,
+  "notes": "Suggested fines (Judicial Council schedule, as copied in a county court's 2023 bail schedule). 31+ over: $480 + $10 per mph beyond 31. At 100+ mph court must impose at least 150% of scheduled fine. Infraction max $750."
+ },
+ "court_costs": {
+  "amount": null,
+  "range": [
+   53,
+   60
+  ],
+  "notes": "Security surcharge $60 (justice court) / $53 (district) is already included in the suggested fines above. +$50 if not paid within 14 days (county schedule)."
+ },
+ "points": {
+  "system": true,
+  "brackets": [
+   {
+    "min_over": 1,
+    "max_over": 10,
+    "points": 35
+   },
+   {
+    "min_over": 11,
+    "max_over": 20,
+    "points": 55
+   },
+   {
+    "min_over": 21,
+    "max_over": null,
+    "points": 75
+   }
+  ],
+  "notes": "Reckless = 80 pts. 200 pts in 3 yrs (70 if age 20 or under) can mean suspension. Points drop off after 3 yrs."
+ },
+ "zones": {
+  "work_zone": "Higher construction-zone fines: $180 (1-10 over) up to $680 (26-30 over) on county schedule.",
+  "school_zone": "20 mph when posted. School-zone speeding is a class C misdemeanor (§ 41-6a-604) with higher fines; possible crossing-guard service."
+ },
+ "tiers": {
+  "court": {
+   "min_over": null,
+   "min_speed": 100,
+   "reason": "At 100+ mph the court must impose at least 150% of the scheduled fine (§ 41-6a-601(4))."
+  },
+  "arrest": {
+   "min_over": null,
+   "min_speed": 105,
+   "offense": "Reckless driving (class B misdemeanor); 105+ mph is reckless by law",
+   "max_jail_days": 180,
+   "max_fine": 1000,
+   "license": "80 points; counts toward 200-point suspension",
+   "citation": "Utah Code §§ 41-6a-528, 76-3-204, 76-3-301"
+  }
+ },
+ "trucks": {
+  "different_limits": false,
+  "notes": "No separate statutory truck limit found; UDOT may post limits by vehicle type (§ 41-6a-602(2))."
+ },
+ "sources": [
+  {
+   "title": "Utah Code § 41-6a-601 (eff. 5/4/2022)",
+   "url": "https://le.utah.gov/xcode/Title41/Chapter6A/C41-6a-S601_2022050420220504.html"
+  },
+  {
+   "title": "Utah Code § 41-6a-602 (eff. 5/4/2022)",
+   "url": "https://le.utah.gov/xcode/Title41/Chapter6A/C41-6a-S602_2022050420220504.pdf"
+  },
+  {
+   "title": "Utah Code § 41-6a-528 reckless driving (eff. 5/4/2022)",
+   "url": "https://le.utah.gov/xcode/Title41/Chapter6a/C41-6a-S528_2022050420220504.html"
+  },
+  {
+   "title": "SB 53 (2022) Driver Speeding Amendments, introduced text",
+   "url": "https://le.utah.gov/~2022/bills/sbillint/SB0053.htm"
+  },
+  {
+   "title": "HB 235 (2022) speed limit authority",
+   "url": "https://le.utah.gov/~2022/bills/hbillenr/HB0235.pdf"
+  },
+  {
+   "title": "HB 225 (2025) School Zone Speeding Amendments",
+   "url": "https://le.utah.gov/Session/2025/bills/amended/AV_HB0225_2025-02-26_09-20-03.pdf"
+  },
+  {
+   "title": "HB 178 (2026) school zone, eff. 5/6/2026",
+   "url": "https://le.utah.gov/Session/2026/bills/enrolled/HB0178.pdf"
+  },
+  {
+   "title": "Utah Code § 76-3-301 fines",
+   "url": "https://le.utah.gov/xcode/Title76/Chapter3/C76-3-S301_2023050320230503.html"
+  },
+  {
+   "title": "St. George City Code 1-4-1 (restates § 76-3-204 jail terms)",
+   "url": "https://stgeorge.municipal.codes/Code/1-4-1"
+  },
+  {
+   "title": "Utah 2026 Uniform Fine Schedule (surcharge info; speeding rows not extractable)",
+   "url": "https://legacy.utcourts.gov/rules/appendices/Appendix_C/Uniform_Fine_Schedule.pdf"
+  },
+  {
+   "title": "Wayne County UT justice court citation/bail schedule (2023, form 9/2024)",
+   "url": "https://waynecountyutah.org/uploads/citation-and-court-fees.pdf"
+  },
+  {
+   "title": "Utah DLD points system",
+   "url": "https://dld.utah.gov/points-system/"
+  },
+  {
+   "title": "Utah Admin. Code R708-3-4 (Justia)",
+   "url": "https://regulations.justia.com/states/utah/public-safety/title-r708/rule-r708-3/section-r708-3-4/"
+  },
+  {
+   "title": "DrivingLaws.org UT speeding (secondary, confirms fine brackets)",
+   "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/utah-speeding-laws.htm"
+  }
+ ],
+ "confidence": "medium",
+ "notes": "Ordinary speeding is an infraction (§ 41-6a-601(4)), not a class C misdemeanor; school-zone speeding is class C. Only 105+ mph is reckless by speed; no mph-over threshold (a 2022 bill proposing 100 mph/25 over was enacted as 105 only). Fines from a 2023 county copy of the state schedule; 2026 rows unverified. Reckless also gets a 90% criminal surcharge."
+}

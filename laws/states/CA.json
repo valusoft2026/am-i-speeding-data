@@ -1,0 +1,69 @@
+{
+  "code": "CA",
+  "name": "California",
+  "researched": "2026-11-02",
+
+  "default_limits": {
+    "motorway": 65, "trunk": 65, "primary": 55, "secondary": 55, "tertiary": 55,
+    "unclassified": 55, "residential": 25, "living_street": 25,
+    "basis": "Veh. Code § 22349(a) 65 max on highways; § 22349(b) 55 on two-lane undivided highways unless posted higher; § 22352 25 in business/residence districts, 15 in alleys. 70 only where posted (§ 22356). Trunk=65 assumes multi-lane/divided; a two-lane undivided trunk is 55."
+  },
+
+  "fine": {
+    "model": "brackets",
+    "base": 0,
+    "brackets": [
+      {"min_over": 1, "max_over": 15, "fine": 158},
+      {"min_over": 16, "max_over": 25, "fine": 287},
+      {"min_over": 26, "max_over": null, "fine": 410}
+    ],
+    "typical_range": [233, 485],
+    "max_fine": 100,
+    "notes": "Base fines are only $35/$70/$100; state & county penalty assessments roughly 4.5x them. Amounts shown are Santa Clara 2025 total bail (varies a few dollars by county; other counties list ~$238/$367/$490 incl. fees). max_fine = $100 statutory base (VC 42001); over 100 mph base up to $500."
+  },
+
+  "court_costs": {
+    "amount": 75, "range": [null, null],
+    "notes": "$40 court operations (PC 1465.8) + $35 conviction assessment (GC 70373) per conviction, on top of total bail. Traffic school adds a $49 fee."
+  },
+
+  "points": {
+    "system": true,
+    "brackets": [
+      {"min_over": 1, "max_over": null, "points": 1}
+    ],
+    "notes": "1 point for speeding (VC 12810(f)); 2 points if over 100 mph (VC 12810(d), § 22348(b)) or reckless driving. Traffic school can mask 1 point."
+  },
+
+  "zones": {
+    "work_zone": "Highway construction zone fines doubled base (VC 42009): total bail $287 / $445 / $568 (Santa Clara 2025).",
+    "school_zone": "25 mph prima facie near schools when children present and posted (VC 22352); cities may adopt 20 mph school zones (2026 change)."
+  },
+
+  "tiers": {
+    "court":  {"min_over": 26, "min_speed": 101, "reason": "26+ over is the top fine bracket; over 100 mph (VC 22348(b)) raises the base fine cap to $500, 2 points, and court may suspend license up to 30 days."},
+    "arrest": {"min_over": null, "min_speed": null, "offense": "Reckless driving (VC 23103) - no speed threshold; requires willful or wanton disregard for safety",
+               "max_jail_days": 90, "max_fine": 1000, "license": "2 points; no automatic suspension for first offense", "citation": "Cal. Veh. Code § 23103"}
+  },
+
+  "trucks": {
+    "different_limits": true,
+    "notes": "55 mph max on all highways for trucks with 3+ axles, any truck or passenger vehicle towing a trailer, school buses with pupils, farm labor vehicles, explosives haulers (VC 22406). They must use the right lane (VC 22348(c)) and cannot use 70 mph zones."
+  },
+
+  "sources": [
+    {"title": "Cal. Veh. Code § 22349 (65 / 55 two-lane)", "url": "https://california.public.law/codes/vehicle_code_section_22349"},
+    {"title": "Cal. Veh. Code § 22352 (prima facie 25/15)", "url": "https://california.public.law/codes/vehicle_code_section_22352"},
+    {"title": "Cal. Veh. Code § 22356 (70 where posted)", "url": "https://california.public.law/codes/vehicle_code_section_22356"},
+    {"title": "Cal. Veh. Code § 22348 (over 100 mph)", "url": "https://california.public.law/codes/vehicle_code_section_22348"},
+    {"title": "Cal. Veh. Code § 22406 (truck/towing 55)", "url": "https://california.public.law/codes/vehicle_code_section_22406"},
+    {"title": "Cal. Veh. Code § 23103 (reckless driving)", "url": "https://california.public.law/codes/vehicle_code_section_23103"},
+    {"title": "Cal. Veh. Code § 12810 (points)", "url": "https://california.public.law/codes/vehicle_code_section_12810"},
+    {"title": "Cal. Veh. Code § 42001 (infraction fine max)", "url": "https://california.public.law/codes/vehicle_code_section_42001"},
+    {"title": "Santa Clara Superior Court 2025 Traffic Bail Schedule (speed chart, fees)", "url": "https://santaclara.courts.ca.gov/system/files/traffic/traffic-bail-schedule-2025.pdf"},
+    {"title": "San Luis Obispo Superior Court speed chart ($238/$367/$490 totals, 2017)", "url": "https://www.slo.courts.ca.gov/documents/san-luis-obispo/2017_Speed_Chart.pdf"},
+    {"title": "Crescenta Valley Weekly - Speed Law Changes in 2026 (secondary)", "url": "https://www.crescentavalleyweekly.com/news/02/05/2026/speed-law-changes-in-2026/"}
+  ],
+  "confidence": "medium",
+  "notes": "Statutes high confidence (read via california.public.law mirror; leginfo.ca.gov blocked). Fine totals from Santa Clara 2025 county schedule; could not extract the statewide 2026 UBPS speed chart page, but base fines unchanged since 2017. No criminal speed threshold: even 100+ mph is an infraction. Speed cameras (AB 645 pilot cities) use separate civil fines $50-$500."
+}

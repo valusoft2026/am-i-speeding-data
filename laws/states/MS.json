@@ -1,0 +1,59 @@
+{
+  "code": "MS",
+  "name": "Mississippi",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 65, "trunk": 65, "primary": 65, "secondary": 65, "tertiary": 65,
+    "unclassified": 65, "residential": null, "living_street": null,
+    "basis": "Miss. Code § 63-3-501: 65 mph max on state highways unless otherwise provided; Transportation Commission may raise Interstates and 4+ lane controlled-access roads to 70 (posted); toll roads up to 80. No statewide unposted residential/urban default found; local authorities set those (posted)."
+  },
+  "fine": {
+    "model": "judge_discretion",
+    "per_mph": null,
+    "base": null,
+    "brackets": [],
+    "typical_range": [null, 100],
+    "max_fine": 100,
+    "notes": "Speeding is a misdemeanor: 1st conviction up to $100 fine or up to 10 days jail (§ 63-9-11). Amount set by court/local schedule. State assessments (~$91+) are added on top."
+  },
+  "court_costs": {
+    "amount": 91, "range": [91, 191],
+    "notes": "$91 mandatory state assessments (§ 99-19-73(1) $90.50 + $0.50). Plus trauma fee $10/$20/$30 for 10-20/20-30/30+ over, $10 if Highway Patrol ticket or up to $10 local, small optional local fees, and municipal court costs up to $50."
+  },
+  "points": {
+    "system": false,
+    "brackets": [],
+    "notes": "No points system; convictions go on driving record. Secondary source."
+  },
+  "zones": {
+    "work_zone": "Higher fines in highway work zones (§ 63-3-516): reported up to $250 1st, $500 2nd+ (secondary source).",
+    "school_zone": "Posted school-zone limits apply; no statewide extra-fine amount verified."
+  },
+  "tiers": {
+    "court": {"min_over": null, "min_speed": null, "reason": "No statewide speed threshold for mandatory court found; fines are at the court's discretion."},
+    "arrest": {"min_over": null, "min_speed": null,
+               "offense": "Reckless driving (general; no speed number in statute)",
+               "max_jail_days": null, "max_fine": 100,
+               "license": "3 reckless convictions in 12 months: 1-year revocation",
+               "citation": "Miss. Code §§ 63-3-1201, 63-9-11"}
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "§ 63-3-501 sets no separate truck limit."
+  },
+  "sources": [
+    {"title": "Miss. Code § 63-3-501 (FindLaw, current through Jan 2025)", "url": "https://codes.findlaw.com/ms/title-63-motor-vehicles-and-traffic-regulations/ms-code-sect-63-3-501/"},
+    {"title": "Miss. Code § 63-3-501 (Syfert mirror)", "url": "https://syfert.com/mississippi/sections/63-3-501.html"},
+    {"title": "HB 74 (2025) to raise limits - died in Senate committee", "url": "https://legiscan.com/MS/bill/HB74/2025"},
+    {"title": "HB 74 (2025) introduced text", "url": "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/0001-0099/HB0074IN.pdf"},
+    {"title": "HB 436 (2026) to raise limits - no action after referral", "url": "https://app.azure.legiplex.com/ms/legislature/2026/2026-r/bills/hb436"},
+    {"title": "HB 912 (2002) committee substitute quoting § 63-9-11 penalty", "url": "https://billstatus.ls.state.ms.us/documents/2002/html/HB/0900-0999/HB0912CS.htm"},
+    {"title": "MS State Auditor Assessment Guide (July 2025)", "url": "https://www.osa.ms.gov/sites/default/files/Resources/Local%20Governments/AssessmentGuide.pdf"},
+    {"title": "Justia Miss. Code Title 63 Ch. 9 index", "url": "https://law.justia.com/codes/mississippi/title-63/chapter-9"},
+    {"title": "DrivingLaws.org MS speeding (secondary)", "url": "https://www.drivinglaws.org/resources/traffic-tickets/speed-violations/mississippi-speeding-laws.htm"},
+    {"title": "DrivingLaws.org MS reckless/careless (secondary)", "url": "https://www.drivinglaws.org/resources/mississippi-reckless-careless-driving-laws-penalties.htm"},
+    {"title": "WJTV: penalties for bad driving in MS (2024, secondary)", "url": "https://www.wjtv.com/news/state/penalties-for-bad-driving-in-mississippi/amp"}
+  ],
+  "confidence": "medium",
+  "notes": "No speed makes it automatically reckless. Reckless: 1st $5-$100 fine; 2nd+ up to 10 days jail/$500 (secondary sources; statute text not read). Every speeding ticket is technically a misdemeanor (up to 10 days jail, § 63-9-11 text read via 2002 bill). Bills to raise limits to 70/75 failed in 2025 and stalled in 2026."
+}

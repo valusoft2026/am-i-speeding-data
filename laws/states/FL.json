@@ -1,0 +1,151 @@
+{
+  "code": "FL",
+  "name": "Florida",
+  "researched": "2026-11-02",
+  "default_limits": {
+    "motorway": 55,
+    "trunk": 55,
+    "primary": 55,
+    "secondary": 55,
+    "tertiary": 55,
+    "unclassified": 55,
+    "residential": 30,
+    "living_street": 30,
+    "basis": "Fla. Stat. 316.183(2): 30 in business/residence districts, 55 at all other locations. Higher limits (up to 70 on limited-access) only where set and posted under 316.187."
+  },
+  "fine": {
+    "model": "brackets",
+    "per_mph": null,
+    "base": null,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 5,
+        "fine": 0
+      },
+      {
+        "min_over": 6,
+        "max_over": 9,
+        "fine": 25
+      },
+      {
+        "min_over": 10,
+        "max_over": 14,
+        "fine": 100
+      },
+      {
+        "min_over": 15,
+        "max_over": 19,
+        "fine": 150
+      },
+      {
+        "min_over": 20,
+        "max_over": 29,
+        "fine": 175
+      },
+      {
+        "min_over": 30,
+        "max_over": null,
+        "fine": 250
+      }
+    ],
+    "typical_range": [
+      null,
+      null
+    ],
+    "max_fine": 500,
+    "notes": "Base civil penalty, 318.18(3)(b); 1-5 over = warning. Up to $500 if contested at hearing (318.14(5)). 30+ over doubled on 2nd within 12 months."
+  },
+  "court_costs": {
+    "amount": null,
+    "range": [
+      106,
+      119
+    ],
+    "notes": "Varies by county; statewide + local add-ons. Observed add-on over base fine: Lake $106, Miami-Dade $119 (e.g. 10-14 over totals $206/$219)."
+  },
+  "points": {
+    "system": true,
+    "brackets": [
+      {
+        "min_over": 1,
+        "max_over": 15,
+        "points": 3
+      },
+      {
+        "min_over": 16,
+        "max_over": null,
+        "points": 4
+      }
+    ],
+    "notes": "322.27(3)(d): 6 pts if speeding causes a crash. 12 pts/12 mo = up to 30-day suspension."
+  },
+  "zones": {
+    "work_zone": "Fine doubled when construction workers present (318.18(3)(e)).",
+    "school_zone": "Fine doubled; $50 for up to 5 over (318.18(3)(c))."
+  },
+  "tiers": {
+    "court": {
+      "min_over": 30,
+      "min_speed": null,
+      "reason": "Mandatory court hearing for 30+ over (318.19(5), as amended by 2025 HB 351); no pay-by-mail."
+    },
+    "arrest": {
+      "min_over": 50,
+      "min_speed": 100,
+      "offense": "Dangerous excessive speeding (criminal; Fla. Stat. 316.1922)",
+      "max_jail_days": 30,
+      "max_fine": 500,
+      "license": "None for 1st conviction; 2nd within 5 yrs = 180-day to 1-yr revocation",
+      "citation": "Fla. Stat. 316.1922 (eff. July 1, 2025)"
+    }
+  },
+  "trucks": {
+    "different_limits": false,
+    "notes": "No truck-specific limit found in 316.183; not exhaustively checked."
+  },
+  "sources": [
+    {
+      "title": "Fla. Stat. 316.1922 (2025)",
+      "url": "https://www.flsenate.gov/Laws/Statutes/2025/316.1922"
+    },
+    {
+      "title": "Laws of Fla. ch. 2025-77 (HB 351)",
+      "url": "https://laws.flrules.org/2025/77"
+    },
+    {
+      "title": "HB 351 enrolled text",
+      "url": "https://flsenate.gov/Session/Bill/2025/351/BillText/er/PDF"
+    },
+    {
+      "title": "Fla. Stat. 316.183 (2025)",
+      "url": "https://flsenate.gov/Laws/Statutes/2025/316.183"
+    },
+    {
+      "title": "Fla. Stat. 318.18 (2025)",
+      "url": "https://flsenate.gov/Laws/Statutes/2025/318.18"
+    },
+    {
+      "title": "Fla. Stat. 318.19 (2025)",
+      "url": "https://flsenate.gov/Laws/Statutes/2025/318.19"
+    },
+    {
+      "title": "Fla. Stat. 318.14 (2024)",
+      "url": "https://flsenate.gov/Laws/Statutes/2024/318.14"
+    },
+    {
+      "title": "Fla. Stat. 322.27 (2025)",
+      "url": "https://flsenate.gov/Laws/Statutes/2025/322.27"
+    },
+    {
+      "title": "Lake County Clerk fine schedule",
+      "url": "https://lakeclerkfl.gov/forms/traffic/traffic_fine_schedule.pdf"
+    },
+    {
+      "title": "Miami-Dade Clerk civil traffic",
+      "url": "https://www.miamidadeclerk.gov/clerk/civil-traffic-infractions.page"
+    }
+  ],
+  "confidence": "high",
+  "notes": "316.1922 at 100+ mph also requires driving that threatens people/property or interferes with traffic; 50+ over alone suffices. Reckless driving (316.192, up to 90 days) has no speed number. Senate bill summary said mandatory hearing at 50+, but enrolled bill and 2025 statute text say 30+; used 30. Points for 316.1922 not stated in 322.27."
+}
