@@ -131,12 +131,18 @@ def unpack(blob):
     return pts
 
 
+CELL = 0.005          # ~500 m grid for street-density ("urban") detection
+URBAN_MIN = 12        # minor streets within the 3x3 cells around a road -> urban
+
+
 class Roads(osmium.SimpleHandler):
     def __init__(self, db):
         super().__init__()
         self.db = db
         self.n = 0
         self.posted = 0
+        self.cells = {}       # (i, j) -> count of minor streets (classes 6-8)
+        self.minor = []       # (way id, cell) for classes 5-8, to flag urban later
 
     def way(self, w):
         tags = w.tags
@@ -167,6 +173,11 @@ class Roads(osmium.SimpleHandler):
              1 if tags.get("oneway") in ("yes", "1") else 0, name, pack(coords)))
         self.db.execute("INSERT INTO roads_idx VALUES(?,?,?,?,?)",
                         (w.id, min(lats), max(lats), min(lons), max(lons)))
+        if cls >= 5:
+            cell = (int(sum(lats) / len(lats) // CELL), int(sum(lons) / len(lons) // CELL))
+            if cls >= 6:
+                self.cells[cell] = self.cells.get(cell, 0) + 1
+            self.minor.append((w.id, cell))
         self.n += 1
         if speed:
             self.posted += 1
@@ -184,14 +195,22 @@ def main():
         CREATE TABLE meta(key TEXT PRIMARY KEY, value TEXT);
         CREATE TABLE roads(id INTEGER PRIMARY KEY, class INTEGER NOT NULL,
             speed_mph INTEGER, hgv_mph INTEGER, trailer_mph INTEGER,
-            oneway INTEGER NOT NULL, name TEXT, geom BLOB NOT NULL);
+            oneway INTEGER NOT NULL, name TEXT, geom BLOB NOT NULL,
+            urban INTEGER NOT NULL DEFAULT 0);
         CREATE VIRTUAL TABLE roads_idx USING rtree(id, min_lat, max_lat, min_lon, max_lon);
     """)
     h = Roads(db)
     h.apply_file(src, locations=True)
+    # Unposted minor roads in areas dense with streets (subdivisions, town grids) are
+    # "urban": the app uses the state's residential/business-district default there.
+    def dense(cell):
+        i, j = cell
+        return sum(h.cells.get((i + a, j + b), 0) for a in (-1, 0, 1) for b in (-1, 0, 1)) >= URBAN_MIN
+    urban_ids = [(wid,) for wid, cell in h.minor if dense(cell)]
+    db.executemany("UPDATE roads SET urban = 1 WHERE id = ?", urban_ids)
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     db.executemany("INSERT INTO meta VALUES(?,?)", [
-        ("state", state), ("built_utc", built), ("schema", "2"),
+        ("state", state), ("built_utc", built), ("schema", "3"), ("urban_roads", str(len(urban_ids))),
         ("geom", "zigzag-varint delta, 1e-5 deg, first point absolute"),
         ("roads", str(h.n)), ("posted", str(h.posted)),
         ("attribution", "© OpenStreetMap contributors, ODbL"),
@@ -200,7 +219,7 @@ def main():
     db.execute("VACUUM")
     db.close()
     pct = 100 * h.posted // max(h.n, 1)
-    print(f"{state}: {h.n} roads, {h.posted} with posted limit ({pct}%)")
+    print(f"{state}: {h.n} roads, {h.posted} with posted limit ({pct}%), {len(urban_ids)} minor roads marked urban")
     print(f"{out}: {os.path.getsize(out) / 1e6:.1f} MB")
 
 
