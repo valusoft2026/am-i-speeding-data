@@ -1,0 +1,16 @@
+{
+  "code": "MO",
+  "available": false,
+  "dataset": "",
+  "publisher": "",
+  "url": "https://mapping.modot.mo.gov/server/rest/services/Pavement_TMS_052026/FeatureServer/5",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "",
+  "commercial_ok": "unclear",
+  "notes": "No MoDOT speed-limit layer found. MoDOT public ArcGIS (mapping.modot.mo.gov, e.g. Pavement_TMS_052026/FeatureServer/5 'MoDOT Road') has no speed field. Speed limits live in MoDOT's internal TMS, not published.",
+  "confidence": "medium"
+}

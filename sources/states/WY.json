@@ -1,0 +1,16 @@
+{
+  "code": "WY",
+  "available": false,
+  "dataset": null,
+  "publisher": "Wyoming DOT",
+  "url": "https://services3.arcgis.com/HVjI8GKrRtjcQ4Ry/ArcGIS/rest/services/WyDOT_Highways_OpenData/FeatureServer",
+  "service_url": null,
+  "format": null,
+  "coverage": null,
+  "fields": null,
+  "updated": null,
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No WYDOT speed-limit GIS layer found. WYDOT's open-data FeatureServer has only WyDOT_Highways (county roads/highways/mileposts, no speed field); WYDOT LRS Routes layer (webgis.jub.com WyDOT_Truck_Study/MapServer/2) has no speed fields. gis.wyoroad.info/data exists but README was unreadable. Only FHWA-hosted HPMS copies on geo.dot.gov (HPMS_FULL_WY_2022, Wyoming_2018_PR) and the FHWA 2022 NHS speed-limit study cover WY.",
+  "confidence": "medium"
+}

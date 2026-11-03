@@ -1,0 +1,16 @@
+{
+  "code": "CO",
+  "available": false,
+  "dataset": "",
+  "publisher": "Colorado DOT",
+  "url": "https://dtdapps.codot.gov/otis/catalog/SpeedOn",
+  "service_url": "",
+  "format": "other",
+  "coverage": "state highways (State Highway System)",
+  "fields": "speedLim, priSpeedLim, secSpeedLim (Route, RefPt, EndRefPt)",
+  "updated": "catalog says current as of 8/9/2013",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "CDOT OTIS catalog documents a SpeedOn table (linear-referenced speed limits on the state highway system) but says it is NOT directly downloadable; copies by request via OTIS Contact Us. No CDOT public speed-limit feature service found (CDOT TrafficData FeatureServer has no speed field). Worth emailing CDOT Data Management Unit.",
+  "confidence": "medium"
+}

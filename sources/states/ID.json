@@ -1,0 +1,16 @@
+{
+  "code": "ID",
+  "available": true,
+  "dataset": "Roads and Highways - HPMS Off-Highway (OH) Speed Limits (HPMS_OHSpeedLimits)",
+  "publisher": "Idaho Transportation Department",
+  "url": "https://gisportalp.itd.idaho.gov/lrs/rest/services/RHGeneralService/MapServer/21/iteminfo?f=pjson",
+  "service_url": "https://gisportalp.itd.idaho.gov/lrs/rest/services/RHGeneralService/FeatureServer/21",
+  "format": "arcgis-featureserver",
+  "coverage": "HPMS-inventory segments off the State Highway System (local/off-highway roads in HPMS); on-system state highway speed layer not found",
+  "fields": "SpeedLimit (mph); RouteId, FromMeasure, ToMeasure, FromDate, ToDate",
+  "updated": "updated annually for FHWA HPMS submittal; archiving started 2024-10-15",
+  "license": "'as is' without warranty; credit ITD as source. No license grant stated.",
+  "commercial_ok": "unclear",
+  "notes": "Also mirrored at gisp.itd.idaho.gov/server/rest/services/GDWarehouse/HPMS/MapServer/11 and RH_General_Service_OTIS/MapServer/44. LRS event layer with time-aware FromDate/ToDate: filter ToDate IS NULL for current. maxRecordCount 2000, JSON/geoJSON/PBF. Did not find a speed layer for state highways themselves.",
+  "confidence": "medium"
+}

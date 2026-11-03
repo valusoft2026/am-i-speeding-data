@@ -1,0 +1,16 @@
+{
+  "code": "WV",
+  "available": false,
+  "dataset": "",
+  "publisher": "West Virginia DOT",
+  "url": "https://transportation.wv.gov/gis-data",
+  "service_url": "",
+  "format": "other",
+  "coverage": "none found",
+  "fields": "",
+  "updated": "",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "WVDOT GIS page points to data-wvdot.opendata.arcgis.com (transport assets, boundaries, LRS). WVDOT ArcGIS Transportation FeatureServer has no speed layer (fuel sites, bridges, rail, etc.). No speed-limit dataset found in searches. Possible fallback: FHWA HPMS speed-limit submissions; or ask DOTSupport@wv.gov.",
+  "confidence": "medium"
+}

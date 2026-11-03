@@ -1,0 +1,16 @@
+{
+  "code": "DE",
+  "available": true,
+  "dataset": "DE Roadways Main - SPEED LIMIT",
+  "publisher": "Delaware DOT (via FirstMap)",
+  "url": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Transportation/DE_Roadways_Main/MapServer/15",
+  "service_url": "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Transportation/DE_Roadways_Main/MapServer/15",
+  "format": "arcgis-mapserver",
+  "coverage": "DelDOT roads (DelDOT maintains ~90% of DE public roads); exact extent not stated",
+  "fields": "SPEED_LIMIT (string), VALUE_TEXT (speed limit source); RDWAY_ID, BEG_MP, END_MP, DIR_FLAG, UPDT",
+  "updated": "per-record UPDT field; no layer date seen",
+  "license": "none stated (copyrightText 'DelDOT')",
+  "commercial_ok": "unclear",
+  "notes": "Polyline layer, JSON/geoJSON/PBF. SPEED_LIMIT is a string - parse to int. A FeatureServer version exists on firstmaptest (test host) - use the production MapServer.",
+  "confidence": "high"
+}

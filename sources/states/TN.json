@@ -1,0 +1,16 @@
+{
+  "code": "TN",
+  "available": false,
+  "dataset": "",
+  "publisher": "",
+  "url": "https://libguides.utk.edu/tngis/open",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "",
+  "commercial_ok": "unclear",
+  "notes": "No TDOT speed-limit GIS data found. TN open-data guides (UTK libguide) list no TDOT road/speed layers; TDOT TRIMS is not public. Statewide portal tn-tnmap.opendata.arcgis.com could not be opened (blocked).",
+  "confidence": "low"
+}

@@ -1,0 +1,16 @@
+{
+  "code": "VA",
+  "available": true,
+  "dataset": "VDOT Posted Speed Limits",
+  "publisher": "Virginia DOT",
+  "url": "https://services.arcgis.com/p5v98VHDX9Atv3l7/ArcGIS/rest/services/VDOT_Posted_Speed_Limits/FeatureServer/0",
+  "service_url": "https://services.arcgis.com/p5v98VHDX9Atv3l7/ArcGIS/rest/services/VDOT_Posted_Speed_Limits/FeatureServer/0",
+  "format": "arcgis-featureserver",
+  "coverage": "VDOT-maintained roads (state-maintained incl. secondary); statutory and resolution-based speed zones",
+  "fields": "CAR_SPEED_LIMIT, TRUCK_SPEED_LIMIT (also SPEEDZONE_TYPE_DSC, AUTHORITY_DSC)",
+  "updated": "2026-10-02 (layer last edit date)",
+  "license": "none stated (copyrightText blank)",
+  "commercial_ok": "unclear",
+  "notes": "Polyline layer SDE_VDOT_SPEED_LIMIT_MSTR_RTE, derived from VDOT Traffic Engineering speed zone records on the VA LRS. Query formats JSON/geoJSON/PBF. Excludes roads maintained by independent cities/towns and Arlington/Henrico counties (not VDOT-maintained).",
+  "confidence": "high"
+}

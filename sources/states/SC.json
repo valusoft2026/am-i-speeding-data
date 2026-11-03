@@ -1,0 +1,16 @@
+{
+  "code": "SC",
+  "available": false,
+  "dataset": "",
+  "publisher": "",
+  "url": "https://www.scdot.org/travel/travel-mappinggis.aspx",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "",
+  "commercial_ok": "unclear",
+  "notes": "No SCDOT speed-limit GIS layer found. SCDOT mapping page lists shapefile downloads (info2.scdot.org/GISMapping, redirect loop prevented reading it) and an ArcGIS Online org (scdot.maps.arcgis.com), but nothing mentions speed limits. Speed limits only in HPMS submissions to FHWA.",
+  "confidence": "medium"
+}

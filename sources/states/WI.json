@@ -1,0 +1,16 @@
+{
+  "code": "WI",
+  "available": false,
+  "dataset": "",
+  "publisher": "Wisconsin DOT",
+  "url": "https://wisconsindot.gov/Pages/doing-bus/local-gov/traffic-ops/speed-management/wisconsin-statutes-supporting-information.aspx",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No statewide WisDOT speed-limit GIS layer found in 3 searches. Only finds: a UW TOPS Lab PDF map of posted speeds for Milwaukee (files.topslab.wisc.edu/its/topms/map/PostedSpeedsMke.pdf); FHWA geo.dot.gov WisconsinInventory service requires a token; WISLR (local roads) is a login-based system. HPMS submissions may carry speed limit but no public WisDOT layer was opened.",
+  "confidence": "medium"
+}

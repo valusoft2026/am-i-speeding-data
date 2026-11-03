@@ -1,0 +1,16 @@
+{
+  "code": "VT",
+  "available": false,
+  "dataset": "VTrans Road Centerline (RDSMALL_ARC) SPEEDLIMIT placeholder",
+  "publisher": "Vermont Agency of Transportation",
+  "url": "https://maps.vtrans.vermont.gov/Maps/Publications/VTrans_Road_Centerline_User_Guide_20201231.pdf",
+  "service_url": "https://maps.vtrans.vermont.gov/arcgis/rest/services/Master/vtrans/FeatureServer/3",
+  "format": "arcgis-featureserver",
+  "coverage": "none usable (field exists on state/town/private road centerlines but is unpopulated)",
+  "fields": "SPEEDLIMIT (documented as 'place holder for future use')",
+  "updated": "user guide dated 2020-12-31",
+  "license": "none stated (licenseInfo 'VTrans' on related service)",
+  "commercial_ok": "unclear",
+  "notes": "No published speed-limit layer found. Road centerline has a SPEEDLIMIT field that the 2020 user guide says is a placeholder; population not verified. Other VTrans services (AMP_ReferenceLayers, BackgroundReferenceData) have no speed data. Worth a sample query to see if SPEEDLIMIT has since been filled.",
+  "confidence": "medium"
+}

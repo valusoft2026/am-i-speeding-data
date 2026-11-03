@@ -1,0 +1,16 @@
+{
+  "code": "KS",
+  "available": true,
+  "dataset": "Speed Limits",
+  "publisher": "Kansas DOT (KDOT)",
+  "url": "https://kanplan.ksdot.gov/arcgis_web_adaptor/rest/services/Transportation/Speed_Limits/MapServer/info/iteminfo",
+  "service_url": "https://kanplan.ksdot.gov/arcgis_web_adaptor/rest/services/Transportation/Speed_Limits/FeatureServer",
+  "format": "arcgis-featureserver",
+  "coverage": "state highways only (state highway system)",
+  "fields": "not confirmed (layer field list could not be opened)",
+  "updated": "not shown",
+  "license": "KDOT disclaimer: protected from discovery/admission in litigation under 23 USC 409; no warranties, no liability. No usage license stated.",
+  "commercial_ok": "unclear",
+  "notes": "Description: 'Posted speed limit along the state highway system.' Copyright 'KDOT'. MapServer supports JSON/GeoJSON/PBF queries, maxRecordCount 1000. Also mirrored at wfs.ksdot.org host. Layer ID and field names need verifying from FeatureServer/0.",
+  "confidence": "medium"
+}

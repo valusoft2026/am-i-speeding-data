@@ -1,0 +1,16 @@
+{
+  "code": "MN",
+  "available": false,
+  "dataset": "",
+  "publisher": "Minnesota DOT",
+  "url": "https://mndot.org/maps",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No MnDOT posted-speed-limit GIS dataset found in 3 searches (Minnesota Geospatial Commons / MnDOT GDMA pages surfaced no speed layer). Only statute/legislative pages and a House research PDF. Worth a direct check of gisdata.mn.gov before final.",
+  "confidence": "low"
+}

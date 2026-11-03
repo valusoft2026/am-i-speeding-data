@@ -1,0 +1,16 @@
+{
+  "code": "CA",
+  "available": false,
+  "dataset": null,
+  "publisher": "Caltrans",
+  "url": "https://gisdata.dot.ca.gov/arcgis/rest/services/CHhighway/SHN_Lines/FeatureServer/layers",
+  "service_url": null,
+  "format": null,
+  "coverage": null,
+  "fields": null,
+  "updated": null,
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No Caltrans posted-speed-limit GIS layer found. Caltrans GIS has State Highway Network lines/postmiles and AADT but no speed field identified; 'speed' services are transit (CHrailroad) speeds. Speed zones are set by local Engineering & Traffic Surveys published as PDFs per city. Some counties publish their own (e.g. Sonoma County Ordinance_Speed_Limits).",
+  "confidence": "medium"
+}

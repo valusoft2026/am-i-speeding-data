@@ -1,0 +1,16 @@
+{
+  "code": "FL",
+  "available": true,
+  "dataset": "Maximum Roadway Speed (maxspeed) - RCI Feature 311",
+  "publisher": "Florida DOT (Transportation Data & Analytics Office)",
+  "url": "https://www.fdot.gov/statistics/gis/default.shtm",
+  "service_url": "https://ftp.fdot.gov/public/file/k6lvcs-0pegq78ghurk2aa/maxspeed.zip",
+  "format": "shapefile",
+  "coverage": "State Highway System + HPMS sample roadways (RCI-inventoried roads); not local streets",
+  "fields": "SPEED (max posted speed); also ROADWAY, ROAD_SIDE, BEGIN_POST, END_POST, COUNTY",
+  "updated": "2026-10-31 (metadata publication date; updated weekly every Saturday)",
+  "license": "No license; FDOT 'as is / as available' no-warranty + disclaimer of liability (in maxspeed.shp.xml). Access constraints: None.",
+  "commercial_ok": "unclear",
+  "notes": "Direct ~4 MB zip, no registration (ftp.fdot.gov Guest access). Projection UTM 17N NAD83. Disclaimer only, no use restriction stated - likely fine (FL public records) but no explicit commercial grant. Metadata: https://ftp.fdot.gov/public/file/o0obqzl6wkwmbw6p9rbeiq/maxspeed.shp.xml. Also mirrored at UF GeoPlan RCI_Groups MapServer/8 (not official).",
+  "confidence": "high"
+}

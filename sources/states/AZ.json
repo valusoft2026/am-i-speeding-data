@@ -1,0 +1,16 @@
+{
+  "code": "AZ",
+  "available": true,
+  "dataset": "SpeedLimit_2024 (HPMS_2024_Data)",
+  "publisher": "Likely Arizona DOT (ATIS/HPMS submittal; AGOL org not named on page)",
+  "url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/ArcGIS/rest/services/HPMS_2024_Data/FeatureServer/48",
+  "service_url": "https://services6.arcgis.com/clPWQMwZfdWn4MQZ/ArcGIS/rest/services/HPMS_2024_Data/FeatureServer/48",
+  "format": "arcgis-featureserver",
+  "coverage": "HPMS speed-limit extent (NHS/Interstate + HPMS sample panel sections), not all roads",
+  "fields": "SpeedLimit, SpeedLimitDirection(_Value), SpeedLimitType(_Value), RouteId, FromMeasure, ToMeasure, DateAdopted, DateInstalledConfirmed",
+  "updated": "data last edited 2025-09-26; layer last edit 2026-08-24",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "Publisher not explicitly stated; extent is Arizona and sibling layer 6 AllRoadsNetwork_2024 describes ATIS (ADOT's All Roads Network) so very likely ADOT's AGOL org. Also HPMS_2023_Data exists. Excludes temporary work-zone limits. maxRecordCount 2000, JSON/geoJSON/PBF. No speed dataset on an official azdot.gov page found.",
+  "confidence": "medium"
+}

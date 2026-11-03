@@ -1,0 +1,16 @@
+{
+  "code": "IL",
+  "available": true,
+  "dataset": "Illinois Highway System File (IRIS roadway inventory)",
+  "publisher": "Illinois DOT, Office of Planning and Programming",
+  "url": "https://idot.illinois.gov/transportation-system/network-overview/highway-system/interactive-data-tools.html",
+  "service_url": "http://apps1.dot.illinois.gov/gist2/",
+  "format": "shapefile",
+  "coverage": "statewide all public roads (state and local system), per county/district/state",
+  "fields": "SP_LIM (IRIS Item 87 - Speed Zone Speed Limit)",
+  "updated": "2025-02-28 publication (content year 2024); year selector back to 1996",
+  "license": "IDOT licence in metadata (https://apps1.dot.illinois.gov/gist2/gisdata/hwy_metadat.txt): reproduction or redistribution of the data sets 'or products derived therefrom' outside the licensee's organization is expressly forbidden; no duplication for use by others without IDOT OPP permission. Click-through terms required before download.",
+  "commercial_ok": "no",
+  "notes": "Best coverage in this batch but licence forbids redistributing derived products - shipping it in an app would need written permission from IDOT Office of Planning and Programming. Download is a button behind click-through terms; no stable direct URL found (bad fit for an unattended GitHub Action). Area selection limited to 10 counties per request, or statewide file.",
+  "confidence": "high"
+}

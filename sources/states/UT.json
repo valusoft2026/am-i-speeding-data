@@ -1,0 +1,16 @@
+{
+  "code": "UT",
+  "available": true,
+  "dataset": "UDOT Speed Limits (2021)",
+  "publisher": "Utah DOT",
+  "url": "https://maps.udot.utah.gov/central/rest/services/TrafficAndSafety/UDOT_Speed_Limits/MapServer/info/iteminfo?f=pjson",
+  "service_url": "https://maps.udot.utah.gov/central/rest/services/TrafficAndSafety/UDOT_Speed_Limits/MapServer/0",
+  "format": "arcgis-mapserver",
+  "coverage": "state routes only",
+  "fields": "Speed_Limit; Route, Name, Direction (P/N), Beg_MP, End_MP, TEO, Completion_Date, Status_",
+  "updated": "Sept 2021 per title/summary (description says Sept 2019, from 2019 Mandli sign inventory)",
+  "license": "'For informational purposes and must be field verified'; UDOT makes no warranty. No license grant stated. Contact udotgis@utah.gov.",
+  "commercial_ok": "unclear",
+  "notes": "Stale (2019-2021). Excludes I-80 variable speed limits. 'N' direction only for divided highways; 'P' covers both directions on undivided. maxRecordCount 2000, query supports JSON/geoJSON/PBF. UDOT says a newer dataset is planned.",
+  "confidence": "high"
+}

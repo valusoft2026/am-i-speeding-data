@@ -1,0 +1,16 @@
+{
+  "code": "NM",
+  "available": false,
+  "dataset": "",
+  "publisher": "New Mexico DOT",
+  "url": "https://gis.doit.nm.gov/nmgis/rest/services/NMDOT/NMDOT_State_Owned_Roads/MapServer/0/iteminfo?f=pjson",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No NMDOT speed-limit GIS layer found in 3 searches. NMDOT State-Owned Routes layer (Jan 2026 RIS extract) shows only ownership/district attributes. City of Albuquerque has its own speed-limit services (dmdmaps.cabq.gov, coagisweb.cabq.gov), city roads only and not state.",
+  "confidence": "medium"
+}

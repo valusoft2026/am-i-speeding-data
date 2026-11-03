@@ -1,0 +1,16 @@
+{
+  "code": "TX",
+  "available": false,
+  "dataset": "",
+  "publisher": "Texas DOT",
+  "url": "https://www.txdot.gov/inside-txdot/division/transportation-planning/roadway-inventory.html",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No TxDOT posted-speed-limit GIS layer found. Roadway Inventory (annual zip downloads, e.g. https://www.txdot.gov/content/dam/docs/division/tpp/roadway-inventory/2025.zip, and maps.txdot.gov TxDOT_Roadway_Inventory_with_Assets FeatureServer) does not name speed limits among its attributes; not confirmed either way. TxDOT design manual's Open Data Portal section lists no speed data. Regional only: NCTCOG_Speed_Limits FeatureServer (Dallas-Fort Worth COG, not state).",
+  "confidence": "medium"
+}

@@ -1,0 +1,16 @@
+{
+  "code": "NV",
+  "available": true,
+  "dataset": "NDOT_ALRS SpeedLimit layer",
+  "publisher": "Nevada DOT",
+  "url": "https://gis.dot.nv.gov/rhgis/rest/services/EAMS/NDOT_ALRS/MapServer",
+  "service_url": "https://gis.dot.nv.gov/rhgis/rest/services/EAMS/NDOT_ALRS/MapServer/42",
+  "format": "arcgis-mapserver",
+  "coverage": "unknown - NDOT Roads & Highways LRS event layer (likely state-maintained/HPMS routes)",
+  "fields": "not verified (layer metadata blank)",
+  "updated": "not stated",
+  "license": "none stated (item info blank)",
+  "commercial_ok": "unclear",
+  "notes": "Layer 'SpeedLimit' (id 42) in NDOT's internal-looking EAMS/NDOT_ALRS MapServer (80+ HPMS/asset layers, LRServer extension, SR 26911, maxRecordCount 2000, JSON/geoJSON/PBF). All metadata blank; not part of NDOT's public ALRS_Download open-data service (which has only routes/mileposts/street names). Not confirmed it is query-accessible or stable.",
+  "confidence": "low"
+}

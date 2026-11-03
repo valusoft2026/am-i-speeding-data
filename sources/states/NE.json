@@ -1,0 +1,16 @@
+{
+  "code": "NE",
+  "available": true,
+  "dataset": "Speed_Limits",
+  "publisher": "State of Nebraska enterprise GIS (giscat.ne.gov; NDOT data presumed)",
+  "url": "https://giscat.ne.gov/Enterprise/rest/services/Speed_Limits/MapServer/info/iteminfo",
+  "service_url": "https://giscat.ne.gov/Enterprise/rest/services/Speed_Limits/MapServer/0",
+  "format": "arcgis-mapserver",
+  "coverage": "state highways only (keyed by HWY_NUM + reference posts; presumed state highway system)",
+  "fields": "SPD_LMT_Q (also HWY_NUM, BEG_REF_POST_NUM, END_REF_POST_NUM, LANE_DIR_CDE)",
+  "updated": "not shown",
+  "license": "none stated (item description, license, copyright all blank)",
+  "commercial_ok": "unclear",
+  "notes": "Polyline layer, maxRecordCount 2000, query formats JSON/GeoJSON/PBF. No metadata at all, so publisher/coverage are inferred from field names. LANE_DIR_CDE suggests direction-specific limits.",
+  "confidence": "medium"
+}

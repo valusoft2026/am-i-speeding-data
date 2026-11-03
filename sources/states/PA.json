@@ -1,0 +1,16 @@
+{
+  "code": "PA",
+  "available": true,
+  "dataset": "PennDOT RMS Administrative Classifications (roadwayadmin) - Posted Speed Limit",
+  "publisher": "Pennsylvania DOT",
+  "url": "https://gis.penndot.pa.gov/gis/rest/services/opendata/roadwayadmin/MapServer/info/iteminfo",
+  "service_url": "https://gis.penndot.pa.gov/gis/rest/services/opendata/roadwayadmin/MapServer",
+  "format": "arcgis-mapserver",
+  "coverage": "state-owned roads in PennDOT RMS (segments)",
+  "fields": "Posted Speed Limit (exact field name not confirmed; see PennDOT RMS data dictionary)",
+  "updated": "not seen",
+  "license": "none stated (licenseInfo empty)",
+  "commercial_ok": "unclear",
+  "notes": "Item metadata says Posted Speed Limit in RMS is supplied by Engineering Districts and 'should be verified with the PennDOT Engineering Districts'. Could not open layer field list (host blocked). PASDA also publishes PA State Roads (RMS) as shapefile/GeoJSON: https://www.pasda.psu.edu/json/PaStateRoads2026_07.geojson (dataset=54) - speed field not confirmed. Local/municipal roads not covered.",
+  "confidence": "low"
+}

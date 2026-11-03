@@ -1,0 +1,16 @@
+{
+  "code": "AK",
+  "available": false,
+  "dataset": null,
+  "publisher": "Alaska DOT&PF",
+  "url": "https://community.openstreetmap.org/t/offer-of-alaska-speed-limit-data/141434",
+  "service_url": null,
+  "format": null,
+  "coverage": null,
+  "fields": null,
+  "updated": null,
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No public DOT&PF speed-limit GIS service found. A Feb 2026 OSM community post says DOT&PF has a GIS layer of state-road speed limits it wants to contribute to OSM - if that lands in OSM (ODbL) the app gets it indirectly; worth contacting. FHWA 2022 NHS speed study credits DOT&PF speed data.",
+  "confidence": "medium"
+}

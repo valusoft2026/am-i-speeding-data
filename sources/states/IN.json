@@ -1,0 +1,16 @@
+{
+  "code": "IN",
+  "available": true,
+  "dataset": "INDOT LRSE_Speed_Limits",
+  "publisher": "Indiana DOT, Road Inventory group",
+  "url": "https://gis.indot.in.gov/ro/rest/services/RAH_GIO_Collaboration/LRSE_Speed_Limits/MapServer/info/iteminfo",
+  "service_url": "https://gisdata.in.gov/server/rest/services/Hosted/LRSE_Speed_Limits/FeatureServer/11",
+  "format": "arcgis-featureserver",
+  "coverage": "INDOT road inventory routes (state highway system; some county/urban defaults referenced)",
+  "fields": "speed_limit_i (increasing dir), speed_limit_d (decreasing dir)",
+  "updated": "data reflects 2010-2015 inventory",
+  "license": "as-is, no warranty, not a legal document; user assumes risk. No open license stated.",
+  "commercial_ok": "unclear",
+  "notes": "Stale (2010-2015). Unsigned segments filled with statutory defaults (30 urban residential, 55, 60, 70) - can't tell posted from default without checking extra fields. maxRecordCount 2000, JSON/geoJSON/PBF. Mirror on gis.indot.in.gov/ro/.../LRSE_Speed_Limits/FeatureServer/11. Item metadata on gisdata.in.gov requires token, layer itself was readable.",
+  "confidence": "medium"
+}

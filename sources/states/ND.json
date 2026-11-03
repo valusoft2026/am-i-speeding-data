@@ -1,0 +1,16 @@
+{
+  "code": "ND",
+  "available": true,
+  "dataset": "Speed Zones (State/Federal Roads)",
+  "publisher": "North Dakota DOT",
+  "url": "https://www.dot.nd.gov/node/5677",
+  "service_url": "https://www.dot.nd.gov/gis/downloads/speed_zones.gdb.zip",
+  "format": "gdb",
+  "coverage": "state and federal (state highway system) roads",
+  "fields": "not confirmed (zip not opened)",
+  "updated": "page says updated weekly",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "Zipped Esri file geodatabase listed on NDDOT GIS & Mapping page; weekly refresh suits a monthly pipeline. Download not inspected (sandbox proxy blocked), so field names and geometry type need checking. Page also points to ND GIS Hub for other services.",
+  "confidence": "medium"
+}

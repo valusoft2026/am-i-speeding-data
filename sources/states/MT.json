@@ -1,0 +1,16 @@
+{
+  "code": "MT",
+  "available": true,
+  "dataset": "SPEED_LIMIT (MDT Standard service)",
+  "publisher": "Montana DOT",
+  "url": "https://app.mdt.mt.gov/arcgis/rest/services/Standard/SPEED_LIMIT/MapServer/info/iteminfo",
+  "service_url": "https://app.mdt.mt.gov/arcgis/rest/services/Standard/SPEED_LIMIT/FeatureServer/0",
+  "format": "arcgis-featureserver",
+  "coverage": "NHS and Primary routes only",
+  "fields": "unknown (layer field list page failed to load; layer 0 'SPEED LIMIT', polyline)",
+  "updated": "not stated",
+  "license": "As-is, no warranty disclaimer in item licenseInfo; no license grant stated",
+  "commercial_ok": "unclear",
+  "notes": "FeatureServer capabilities: Query only, maxRecordCount 1000 (page with resultOffset). MapServer also available. Contact listed: Corey Richardson, corichardson@mt.gov. Field names need checking at /FeatureServer/0?f=pjson.",
+  "confidence": "high"
+}

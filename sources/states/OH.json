@@ -1,0 +1,16 @@
+{
+  "code": "OH",
+  "available": true,
+  "dataset": "ODOT TIMS Road Inventory (SPEED_LIMIT_NBR)",
+  "publisher": "Ohio DOT, Office of Technical Services",
+  "url": "https://tims.dot.state.oh.us/ags/rest/services/Roadway_Information/Road_Inventory/MapServer/0/metadata",
+  "service_url": "https://tims.dot.state.oh.us/ags/rest/services/Roadway_Information/Road_Inventory/MapServer/0",
+  "format": "arcgis-mapserver",
+  "coverage": "statewide all public roads (state, county, township, municipal; ~418k segments)",
+  "fields": "SPEED_LIMIT_NBR",
+  "updated": "metadata 2026-07-09; annual update; per-record LAST_MODIFIED_DATE",
+  "license": "no formal license; 'deemed to be public information', no-warranty disclaimer. OSM wiki cites ODOT email: 'No copyright applies to the data published by TIMS.'",
+  "commercial_ok": "yes",
+  "notes": "FeatureServer variant also exists (Road_Inventory/FeatureServer/0) and bulk download at https://gis.dot.state.oh.us/tims_classic/Data/Download (per OSM wiki, not opened). Separate Speed_Zones layer (Roadway_Information/Speed_Zones/MapServer/0) lists only ODOT-approved zones below statutory limits. Same field also in odotgis SafetyMapViewer/MapServer/1. Check how many local segments have SPEED_LIMIT_NBR populated.",
+  "confidence": "high"
+}

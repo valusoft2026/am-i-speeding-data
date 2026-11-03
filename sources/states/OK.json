@@ -1,0 +1,16 @@
+{
+  "code": "OK",
+  "available": false,
+  "dataset": "",
+  "publisher": "Oklahoma DOT",
+  "url": "https://services6.arcgis.com/RBtoEUQ2lmN0K3GY/ArcGIS/rest/services/Speed_Limit_Signs_2011/FeatureServer",
+  "service_url": "https://services6.arcgis.com/RBtoEUQ2lmN0K3GY/ArcGIS/rest/services/Speed_Limit_Signs_2011/FeatureServer/0",
+  "format": "arcgis-featureserver",
+  "coverage": "sign points on state highways, 2011 only",
+  "fields": "SIGNTEXT, MUTCDNAME",
+  "updated": "2011 collection cycle",
+  "license": "'For reference use only'; ODOT makes no guarantees of accuracy",
+  "commercial_ok": "unclear",
+  "notes": "Only finding is a 2011 point layer of speed-limit SIGN locations (copyright ODOT GIS Management Branch), not road segments and 15 years old. ODOT open data portal (gis-okdot.opendata.arcgis.com) surfaced no speed-limit segment layer. Could at most seed sign-based hints.",
+  "confidence": "medium"
+}

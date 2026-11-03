@@ -1,0 +1,16 @@
+{
+  "code": "MD",
+  "available": true,
+  "dataset": "OneSpatial Maryland MDOTSHA (speed limit events)",
+  "publisher": "Maryland DOT State Highway Administration",
+  "url": "https://gisportalapps.sha.maryland.gov/arcgis/rest/services/1Spatial/OneSpatial_Maryland_MDOTSHA/MapServer/layers",
+  "service_url": "https://gisportalapps.sha.maryland.gov/arcgis/rest/services/1Spatial/OneSpatial_Maryland_MDOTSHA/FeatureServer/0",
+  "format": "arcgis-featureserver",
+  "coverage": "likely MDOT SHA state-maintained routes (not confirmed in layer metadata)",
+  "fields": "SPEEDLIMIT (alias 'Speed Limit (MPH)'); ROUTE_ID, FROM_MEASURE, TO_MEASURE, CARDINALITY",
+  "updated": "not shown",
+  "license": "none stated (copyrightText blank, no description)",
+  "commercial_ok": "unclear",
+  "notes": "Undocumented polyline layer 'OneSpatial WFS Event'; maxRecordCount 2000, JSON/geoJSON/PBF. Also on MD iMAP/AGOL: 'MDOT SHA Roadway Posted Speed Limit Signs' (POINT sign inventory, updated 2019-11-04, 'Non-Restricted Access') - points only. Maryland iMAP's general license (as-is, free redistribution with metadata, attribute State of Maryland) applies to geodata.md.gov services, not confirmed for this one.",
+  "confidence": "medium"
+}

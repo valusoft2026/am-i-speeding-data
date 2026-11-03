@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Turn an OpenStreetMap roads extract into the compact SQLite file the app reads.
 
-Usage: python3 build_state.py <roads.osm.pbf> <out.sqlite> <STATE>
+Usage: python3 build_state.py <roads.osm.pbf> <out.sqlite> <STATE> [dot_speeds.json]
+
+With a DOT file (from dot_sources.py), official posted limits from the state DOT replace or fill
+in OpenStreetMap's, and roads are split where the official limit changes. Column src says where a
+road's limit came from: 0 = none (app uses state default), 1 = OpenStreetMap, 2 = state DOT.
 
 Keeps drivable roads only. Stores the posted limit when OSM has one (mph),
 plus truck/trailer limits. Roads with no posted limit are stored with
@@ -20,6 +24,8 @@ import os
 import datetime
 
 import osmium
+
+from dot_match import DotIndex, split_by_dot
 
 ROAD_CLASSES = {
     "motorway": 1, "motorway_link": 1,
@@ -136,11 +142,13 @@ URBAN_MIN = 12        # minor streets within the 3x3 cells around a road -> urba
 
 
 class Roads(osmium.SimpleHandler):
-    def __init__(self, db):
+    def __init__(self, db, dot=None):
         super().__init__()
         self.db = db
+        self.dot = dot          # dot_match.DotIndex or None
         self.n = 0
         self.posted = 0
+        self.from_dot = 0
         self.cells = {}       # (i, j) -> count of minor streets (classes 6-8)
         self.minor = []       # (way id, cell) for classes 5-8, to flag urban later
 
@@ -155,7 +163,6 @@ class Roads(osmium.SimpleHandler):
             return
         if len(coords) < 2:
             return
-        coords = simplify(coords)
         fwd = parse_speed(tags.get("maxspeed:forward"))
         bwd = parse_speed(tags.get("maxspeed:backward"))
         speed = parse_speed(tags.get("maxspeed"))
@@ -164,29 +171,51 @@ class Roads(osmium.SimpleHandler):
         hgv = parse_speed(tags.get("maxspeed:hgv"))
         trailer = parse_speed(tags.get("maxspeed:trailer"))
         name = tags.get("name") or tags.get("ref") or None
+        oneway = 1 if tags.get("oneway") in ("yes", "1") else 0
+
+        parts = split_by_dot(coords, self.dot) if self.dot else [(coords, None, None)]
+        for k, (line, dot_speed, dot_truck) in enumerate(parts):
+            row_id = w.id if k == 0 else w.id + (k << 40)  # extra pieces get unique ids
+            if dot_speed:
+                self._insert(row_id, cls, line, dot_speed, dot_truck or hgv, trailer, oneway, name, 2)
+                self.from_dot += 1
+            else:
+                self._insert(row_id, cls, line, speed, hgv, trailer, oneway, name, 1 if speed else 0)
+        if cls >= 6:
+            lats = [c[0] for c in coords]
+            lons = [c[1] for c in coords]
+            cell = (int(sum(lats) / len(lats) // CELL), int(sum(lons) / len(lons) // CELL))
+            self.cells[cell] = self.cells.get(cell, 0) + 1
+
+    def _insert(self, row_id, cls, coords, speed, hgv, trailer, oneway, name, src):
+        coords = simplify(coords)
         lats = [c[0] for c in coords]
         lons = [c[1] for c in coords]
         self.db.execute(
-            "INSERT INTO roads(id,class,speed_mph,hgv_mph,trailer_mph,oneway,name,geom)"
-            " VALUES(?,?,?,?,?,?,?,?)",
-            (w.id, cls, speed, hgv, trailer,
-             1 if tags.get("oneway") in ("yes", "1") else 0, name, pack(coords)))
+            "INSERT INTO roads(id,class,speed_mph,hgv_mph,trailer_mph,oneway,name,geom,src)"
+            " VALUES(?,?,?,?,?,?,?,?,?)",
+            (row_id, cls, speed, hgv, trailer, oneway, name, pack(coords), src))
         self.db.execute("INSERT INTO roads_idx VALUES(?,?,?,?,?)",
-                        (w.id, min(lats), max(lats), min(lons), max(lons)))
+                        (row_id, min(lats), max(lats), min(lons), max(lons)))
         if cls >= 5:
             cell = (int(sum(lats) / len(lats) // CELL), int(sum(lons) / len(lons) // CELL))
-            if cls >= 6:
-                self.cells[cell] = self.cells.get(cell, 0) + 1
-            self.minor.append((w.id, cell))
+            self.minor.append((row_id, cell))
         self.n += 1
         if speed:
             self.posted += 1
 
 
 def main():
-    if len(sys.argv) != 4:
+    if len(sys.argv) not in (4, 5):
         sys.exit(__doc__)
     src, out, state = sys.argv[1], sys.argv[2], sys.argv[3].upper()
+    dot, credit = None, None
+    if len(sys.argv) == 5 and os.path.exists(sys.argv[4]):
+        import json
+        d = json.load(open(sys.argv[4]))
+        credit = d.get("credit")
+        dot = DotIndex(d["segments"])
+        print(f"{state}: using {len(d['segments'])} official segments from {credit}")
     if os.path.exists(out):
         os.remove(out)
     db = sqlite3.connect(out)
@@ -196,10 +225,10 @@ def main():
         CREATE TABLE roads(id INTEGER PRIMARY KEY, class INTEGER NOT NULL,
             speed_mph INTEGER, hgv_mph INTEGER, trailer_mph INTEGER,
             oneway INTEGER NOT NULL, name TEXT, geom BLOB NOT NULL,
-            urban INTEGER NOT NULL DEFAULT 0);
+            urban INTEGER NOT NULL DEFAULT 0, src INTEGER NOT NULL DEFAULT 0);
         CREATE VIRTUAL TABLE roads_idx USING rtree(id, min_lat, max_lat, min_lon, max_lon);
     """)
-    h = Roads(db)
+    h = Roads(db, dot)
     h.apply_file(src, locations=True)
     # Unposted minor roads in areas dense with streets (subdivisions, town grids) are
     # "urban": the app uses the state's residential/business-district default there.
@@ -210,7 +239,8 @@ def main():
     db.executemany("UPDATE roads SET urban = 1 WHERE id = ?", urban_ids)
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     db.executemany("INSERT INTO meta VALUES(?,?)", [
-        ("state", state), ("built_utc", built), ("schema", "3"), ("urban_roads", str(len(urban_ids))),
+        ("state", state), ("built_utc", built), ("schema", "4"), ("urban_roads", str(len(urban_ids))),
+        ("dot_credit", credit or ""), ("dot_roads", str(h.from_dot)),
         ("geom", "zigzag-varint delta, 1e-5 deg, first point absolute"),
         ("roads", str(h.n)), ("posted", str(h.posted)),
         ("attribution", "© OpenStreetMap contributors, ODbL"),
@@ -219,7 +249,8 @@ def main():
     db.execute("VACUUM")
     db.close()
     pct = 100 * h.posted // max(h.n, 1)
-    print(f"{state}: {h.n} roads, {h.posted} with posted limit ({pct}%), {len(urban_ids)} minor roads marked urban")
+    print(f"{state}: {h.n} roads, {h.posted} with posted limit ({pct}%), {h.from_dot} from the state DOT, "
+          f"{len(urban_ids)} minor roads marked urban")
     print(f"{out}: {os.path.getsize(out) / 1e6:.1f} MB")
 
 

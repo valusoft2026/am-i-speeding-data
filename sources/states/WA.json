@@ -1,0 +1,16 @@
+{
+  "code": "WA",
+  "available": true,
+  "dataset": "WSDOT - Roadway Data Speed Limits (Legal Speed Limits)",
+  "publisher": "Washington State DOT",
+  "url": "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/MapServer/info/iteminfo?f=pjson",
+  "service_url": "https://data.wsdot.wa.gov/arcgis/rest/services/Shared/RoadwayCharacteristicData/FeatureServer/4",
+  "format": "arcgis-featureserver",
+  "coverage": "state routes only",
+  "fields": "SpeedLimit; RouteIdentifier, BeginAccumulatedRouteMile, EndAccumulatedRouteMile, BeginStateRouteMilepost, EndStateRouteMilepost, SnapshotDate, LRSDate",
+  "updated": "geo.wa.gov hub item modified 2023-08-29 (per opennetzero mirror); SnapshotDate field per record",
+  "license": "'For Planning use only.' WSDOT not liable; data user must indemnify WSDOT. No license grant.",
+  "commercial_ok": "unclear",
+  "notes": "Extract from the State Highway Log. Also listed on Washington Geospatial Open Data Portal (geo.wa.gov/maps/WSDOT::wsdot-roadway-data-speed-limits, not opened). maxRecordCount 1000, JSON/geoJSON/PBF. 'Planning use only' + indemnity clause is a caution for a consumer app.",
+  "confidence": "high"
+}

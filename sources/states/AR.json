@@ -1,0 +1,16 @@
+{
+  "code": "AR",
+  "available": false,
+  "dataset": "",
+  "publisher": "",
+  "url": "https://gis.arkansas.gov/Metadata/HTML/asdi.Transportation.ROAD_INVENTORY_ARDOT_export.html",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "",
+  "commercial_ok": "unclear",
+  "notes": "ARDOT Road Inventory on Arkansas GIS Office (gis.arkansas.gov, FeatureServer/17) has no speed limit field per metadata (last updated 2017; service itself not reachable to confirm newer schema). No ARDOT speed-limit layer found on gis.ardot.gov.",
+  "confidence": "medium"
+}

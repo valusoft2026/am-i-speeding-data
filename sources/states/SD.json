@@ -1,0 +1,16 @@
+{
+  "code": "SD",
+  "available": false,
+  "dataset": "",
+  "publisher": "South Dakota DOT",
+  "url": "https://sdgis.sd.gov/dot/rest/services/TIM/DOT_Local_Roads_viewer/MapServer?f=pitemx",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "No SDDOT speed-limit GIS layer found in 3 searches. sdgis.sd.gov hosts DOT services (mileage markers, local roads viewer, airports) but none described as speed limits. Speed zones exist only as administrative rules (ARSD 70:01:02, by county). FHWA geo.dot.gov HPMS items for SD are token-protected.",
+  "confidence": "medium"
+}

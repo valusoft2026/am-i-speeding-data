@@ -1,0 +1,16 @@
+{
+  "code": "DC",
+  "available": false,
+  "dataset": "DC Speed Limits Data (DDOT, sign-inventory derived)",
+  "publisher": "District DOT (DDOT)",
+  "url": "https://ddotwiki.atlassian.net/wiki/spaces/GIS0225/pages/2053603441/DC+Speed+Limits+Data",
+  "service_url": "",
+  "format": "other",
+  "coverage": "DC roadways (from DDOT sign inventory), per side of road",
+  "fields": "not documented",
+  "updated": "wiki page 2022-02-25, marked DEVELOPING",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "DDOT wiki documents a line dataset built by script from speed-limit signs snapped to centerlines, but no public service or download URL was found on the wiki or Open Data DC searches. Only related public layer found: retired 'Slow Streets' (15 mph). DC default limit is 25 mph citywide, so a flat default may suffice.",
+  "confidence": "medium"
+}

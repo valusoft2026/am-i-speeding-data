@@ -1,0 +1,16 @@
+{
+  "code": "CT",
+  "available": true,
+  "dataset": "CTDOT OSTA State Highway Speed Limits",
+  "publisher": "Connecticut DOT, Office of the State Traffic Administration (OSTA)",
+  "url": "https://catalog.data.gov/dataset/ctdot-office-of-the-state-traffic-administration-osta-interactive-map",
+  "service_url": "https://gisportal.dot.ct.gov/server/rest/services/OpenData/CTDOT_Office_of_the_State_Traffic_Administration_OSTA/FeatureServer/9",
+  "format": "arcgis-featureserver",
+  "coverage": "state highways only (OSTA-approved speed zones on state roadways)",
+  "fields": "SpeedLimit (also RouteID, Direction, ApprovedDate, OSTANumber, StateOrLocalRoad)",
+  "updated": "data.gov: data modified 2022-08-16, metadata 2025-02-12; layer last_edited_date not shown",
+  "license": "none stated (data.gov: 'No license information was provided'; copyright text credits OSTA/UConn CTSRC)",
+  "commercial_ok": "unclear",
+  "notes": "Polyline, maxRecordCount 5000, JSON/geoJSON/PBF query. Segments without an approved zone are labelled 'No approved speed zone' (no value). Local roads excluded: under PA 21-28 towns set local limits without OSTA. Parent group also has School Zone/local speed layers per data.gov description (not opened). Same data mirrored on AGOL: services.arcgis.com/04HiymDgLlsbhaV4/.../State_Highway_Speed_Limits/FeatureServer (not opened).",
+  "confidence": "high"
+}

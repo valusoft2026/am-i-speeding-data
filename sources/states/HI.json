@@ -1,0 +1,16 @@
+{
+  "code": "HI",
+  "available": false,
+  "dataset": null,
+  "publisher": "Hawaii DOT / Hawaii Statewide GIS Program",
+  "url": "https://geodata.hawaii.gov/arcgis/rest/services/Transportation/MapServer/12",
+  "service_url": null,
+  "format": null,
+  "coverage": null,
+  "fields": null,
+  "updated": null,
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "Statewide GIS 'HPMS Roads' layer (2024 data, source date 2025-09-22) has 24 attributes but no speed limit field. No HDOT speed-limit dataset found; only press releases on individual changes.",
+  "confidence": "medium"
+}

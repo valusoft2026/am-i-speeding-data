@@ -1,0 +1,16 @@
+{
+  "code": "NC",
+  "available": true,
+  "dataset": "NCDOT Speed Limit (RoadSpeedLimit, quarterly publication)",
+  "publisher": "North Carolina DOT (GIS Unit / Traffic Safety)",
+  "url": "https://xfer.services.ncdot.gov/gisdot/Metadata/QuarterlyPublication/2026_Quarter2/RoadSpeedLimit.pdf",
+  "service_url": "https://gis11.services.ncdot.gov/arcgis/rest/services/NCDOT_SpeedLimitQtr/MapServer/0",
+  "format": "arcgis-mapserver",
+  "coverage": "state-maintained roads only (layers: 0 State Maintained, 1 Primary Routes, 2 Interstate); municipal non-system streets excluded",
+  "fields": "SpeedLimit (mph, SmallInteger); RouteId, BeginMp, EndMp, Direction",
+  "updated": "2026 Q2 publication (metadata pub date 2026-08-03; service says latest publication 06/28/2026)",
+  "license": "none stated; metadata disclaimer: not a legal document, 'intended for visualization and reference only', no liability",
+  "commercial_ok": "unclear",
+  "notes": "No public file download found for RoadSpeedLimit: metadata gives only an internal LAN path (Supplemental.gdb) and the Feb 2026 GIS announcement lists it under web services, not downloadable data. Use the MapServer query endpoint (JSON/geoJSON/PBF). ~111k polylines. Statutory defaults 35 mph in municipalities / 55 outside where no ordinance. Contact gishelp@ncdot.gov for a file. Road Characteristics Arcs gdb on connect.ncdot.gov GIS-Data-Layers page might also carry speed (page not reachable from here).",
+  "confidence": "high"
+}

@@ -1,0 +1,16 @@
+{
+  "code": "NJ",
+  "available": false,
+  "dataset": "NJDOT Roadway Network (Straight Line Diagrams)",
+  "publisher": "New Jersey DOT",
+  "url": "https://services.arcgis.com/HggmsDF7UJsNN1FK/ArcGIS/rest/services/NJDOT_Roadway_Network/FeatureServer",
+  "service_url": "",
+  "format": "other",
+  "coverage": "none found (SLD network covers state/county/NHS routes but has no speed field)",
+  "fields": "",
+  "updated": "2023 SLD",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "NJDOT_Roadway_Network layer 0 has 21 fields, none for speed. Speed limits appear only in Straight Line Diagram PDFs (nj.gov/transportation/refdata/sldiag). No GIS speed-limit layer found on NJGIN.",
+  "confidence": "medium"
+}

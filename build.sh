@@ -13,6 +13,10 @@ fi
 osmium tags-filter "$SRC" \
   w/highway=motorway,trunk,primary,secondary,tertiary,unclassified,residential,living_street,motorway_link,trunk_link,primary_link,secondary_link,tertiary_link \
   -o "raw/$CODE-roads.osm.pbf" --overwrite --no-progress
-"$PY" build_state.py "raw/$CODE-roads.osm.pbf" "out/$CODE.sqlite" "$CODE"
+# Official state DOT speed limits, where the state publishes them (skipped otherwise).
+# If the DOT server is down, build from OpenStreetMap alone rather than fail.
+rm -f "raw/dot_$CODE.json"
+"$PY" dot_sources.py "$CODE" "raw/dot_$CODE.json" || echo "WARNING: $CODE DOT download failed; using OpenStreetMap only"
+"$PY" build_state.py "raw/$CODE-roads.osm.pbf" "out/$CODE.sqlite" "$CODE" "raw/dot_$CODE.json"
 gzip -9 -f "out/$CODE.sqlite"
 ls -lh "out/$CODE.sqlite.gz"

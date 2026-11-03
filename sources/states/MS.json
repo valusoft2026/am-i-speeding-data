@@ -1,0 +1,16 @@
+{
+  "code": "MS",
+  "available": false,
+  "dataset": "",
+  "publisher": "",
+  "url": "https://maris.mississippi.edu/METAdata/METAdata_Transportation/MS_MDOTLRM_Nov25_meta.html",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "",
+  "commercial_ok": "unclear",
+  "notes": "MDOT road centerlines/LRM are published via MARIS (Nov 2025, 'Use limitations: none') but have no speed limit field (fields: SRI, MP_START, MP_END, ROUTE_CLAS, ROAD_NAME, ...). No MDOT speed-limit layer found.",
+  "confidence": "medium"
+}

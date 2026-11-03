@@ -1,0 +1,16 @@
+{
+  "code": "NH",
+  "available": false,
+  "dataset": "",
+  "publisher": "New Hampshire DOT",
+  "url": "https://maps.dot.nh.gov/arcgis_server/rest/services/Highways/NHDOT_HIGHWAYS_Legislative_Class/MapServer/info/iteminfo",
+  "service_url": "",
+  "format": "other",
+  "coverage": "none found",
+  "fields": "",
+  "updated": "",
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "3 searches found no NHDOT speed-limit layer; maps.dot.nh.gov exposes routes, legislative class, ITS devices, districts, but no speed. GRANIT Roads_DOT exists (not checked for speed). Only NHDOT speed-study presentations found.",
+  "confidence": "medium"
+}

@@ -1,0 +1,16 @@
+{
+  "code": "ME",
+  "available": true,
+  "dataset": "MaineDOT Open Data - Posted Speed Limits",
+  "publisher": "Maine DOT",
+  "url": "https://gis.maine.gov/mapservices/rest/services/dot/MaineDOT_OpenData/MapServer/info/iteminfo?f=pjson",
+  "service_url": "https://gis.maine.gov/mapservices/rest/services/dot/MaineDOT_OpenData/MapServer/34",
+  "format": "arcgis-mapserver",
+  "coverage": "unclear; appears statewide (Waze wiki: every segment in MaineDOT viewer has a limit, flagged Posted vs Default)",
+  "fields": "speed (mph, double), effective_date, update_date",
+  "updated": "not shown (per-record update_date field)",
+  "license": "none stated (licenseInfo empty)",
+  "commercial_ok": "unclear",
+  "notes": "Service description says it is for accessing feature layers, not rendering. Per Waze wiki, MaineDOT viewer distinguishes Posted vs Default source and transitions can be off by 100+ yards; check whether the open-data layer carries the source flag (only speed/date fields seen). Query limits not checked.",
+  "confidence": "medium"
+}

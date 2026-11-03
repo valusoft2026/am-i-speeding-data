@@ -1,0 +1,16 @@
+{
+  "code": "AL",
+  "available": false,
+  "dataset": "",
+  "publisher": "",
+  "url": "https://aldotgis.dot.state.al.us/pubgis1/rest/services",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "",
+  "commercial_ok": "unclear",
+  "notes": "No ALDOT speed-limit layer found. ALDOT public ArcGIS (aldotgis.dot.state.al.us/pubgis1) shows project and county reference services only; searches returned no speed layer. FHWA HPMS Alabama data exists (geo.dot.gov HPMS_FULL_AL) but is federal, sample-based.",
+  "confidence": "low"
+}

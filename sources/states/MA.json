@@ -1,0 +1,16 @@
+{
+  "code": "MA",
+  "available": true,
+  "dataset": "MassDOT Road Inventory (CTPS-processed) - Speed_Lim",
+  "publisher": "MassDOT Office of Transportation Planning / Central Transportation Planning Staff",
+  "url": "https://www.mass.gov/info-details/massgis-data-massgis-massdot-roads",
+  "service_url": "https://services1.arcgis.com/ceiitspzDAHrdGO1/ArcGIS/rest/services/VRU_Map_Final_WFL1/FeatureServer/10",
+  "format": "arcgis-featureserver",
+  "coverage": "statewide all public roads plus many private roads (speed populated only where a limit is recorded)",
+  "fields": "Speed_Lim, Op_Dir_SL (opposing-direction limit), Speed (speed regulation)",
+  "updated": "2023-08-02 (layer last edit)",
+  "license": "none stated; MassDOT catalog says road attributes are 'not a legal record', planning purposes only",
+  "commercial_ok": "unclear",
+  "notes": "Confirmed speed fields on MassDOT-org AGOL layers (VRU_Map_Final_WFL1/10; also gis.crashdata.dot.mass.gov IMPACT_RISK_FACTORS/FeatureServer/11 has speed_lim). Canonical statewide download is MassGIS-MassDOT Roads (shapefile https://s3.us-east-1.amazonaws.com/download.massgis.digital.mass.gov/shapefiles/state/MassDOT_Roads_SHP.zip, gdb ..._GDB.zip, updated 2025-01-16) but its page did not confirm a speed field; check Road Inventory data dictionary. MassDOT also has a SpeedRegInventory service on gisstg.massdot.state.ma.us (not reachable). Many roads have no speed regulation (statutory defaults apply).",
+  "confidence": "medium"
+}

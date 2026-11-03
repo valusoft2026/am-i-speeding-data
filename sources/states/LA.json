@@ -1,0 +1,16 @@
+{
+  "code": "LA",
+  "available": true,
+  "dataset": "Speed Limits (Roadway Asset Ownership Viewer)",
+  "publisher": "Louisiana DOTD",
+  "url": "https://maps.dotd.la.gov/gdw/rest/services/RAOV/SpeedLimits/FeatureServer",
+  "service_url": "https://maps.dotd.la.gov/gdw/rest/services/RAOV/SpeedLimits/MapServer/0",
+  "format": "arcgis-mapserver",
+  "coverage": "likely state-maintained routes (RAOV = DOTD asset ownership viewer); not verified",
+  "fields": "SpeedLimit (string), RouteID, FromMeasure, ToMeasure",
+  "updated": "not shown on service",
+  "license": "none stated (copyright text 'Esri, LaDOTD')",
+  "commercial_ok": "unclear",
+  "notes": "Polyline layer, maxRecordCount 2000, supports pagination and geoJSON/PBF query output; FeatureServer also exposes Query + Extract Changes. SpeedLimit is a string field - needs parsing. Could not run a test query (WebFetch returned the query form), so record count/coverage unconfirmed.",
+  "confidence": "medium"
+}

@@ -1,0 +1,16 @@
+{
+  "code": "MI",
+  "available": true,
+  "dataset": "Speed Limits (Trunkline)",
+  "publisher": "MDOT via State of Michigan Open Data (per BTAA Geoportal index)",
+  "url": "https://geo.btaa.org/catalog/b127cf7669084be7834056bbdfe29e18_0",
+  "service_url": "",
+  "format": "arcgis-featureserver",
+  "coverage": "state highways only (MDOT trunkline)",
+  "fields": "unknown ('Speed Limit & LRS Information')",
+  "updated": "unknown",
+  "license": "no dataset license seen; MDOT open-data page: 'as is', user agrees to State of Michigan terms, release/indemnify the State",
+  "commercial_ok": "unclear",
+  "notes": "Only found the BTAA catalog record (ArcGIS item id b127cf7669084be7834056bbdfe29e18, layer 0, hosted feature layer). Could not open the service URL; MDOT open data hub gis-mdot.opendata.arcgis.com was not reachable from here. Needs manual lookup of the FeatureServer URL and fields. Local roads not covered.",
+  "confidence": "low"
+}

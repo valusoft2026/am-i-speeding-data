@@ -1,0 +1,16 @@
+{
+  "code": "IA",
+  "available": true,
+  "dataset": "Pathway Speed Limit Zones (2018/2019 collection)",
+  "publisher": "Iowa DOT",
+  "url": "https://gis.iowadot.gov/agshost/rest/services/RAMS/PathwaySpeedZone/MapServer/info/iteminfo",
+  "service_url": "https://gis.iowadot.gov/agshost/rest/services/RAMS/Pathway_2018_2019_Asset_Collection/FeatureServer/28",
+  "format": "arcgis-featureserver",
+  "coverage": "Routes driven by Pathway Services 2018/2019 asset collection (state primary system presumed; coverage not stated)",
+  "fields": "Limit (also RouteID, FromMP, ToMP, InvDir, SurveyDate)",
+  "updated": "2018/2019 collection cycle (no edit date shown)",
+  "license": "none stated (licenseInfo blank; accessInformation 'Iowa Department of Transportation')",
+  "commercial_ok": "unclear",
+  "notes": "Polyline layer, maxRecordCount 2000. Same data also at RAMS/PathwaySpeedZone/MapServer/0 (and PathwaySpeedZone_2019/_2018 variants). Data is a one-time video-log survey, now ~7 years old and predates Iowa's 2025 speed-limit changes. RAMS/lrs MapServer/138 is only minimum speed limits. Server page shows a Login link but layers opened without token.",
+  "confidence": "medium"
+}

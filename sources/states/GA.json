@@ -1,0 +1,16 @@
+{
+  "code": "GA",
+  "available": false,
+  "dataset": "",
+  "publisher": "",
+  "url": "https://rnhp.dot.ga.gov/hosting/rest/services/RNH_ROUTE_DETAILS/MapServer",
+  "service_url": "",
+  "format": "",
+  "coverage": "",
+  "fields": "",
+  "updated": "",
+  "license": "",
+  "commercial_ok": "unclear",
+  "notes": "No GDOT speed-limit layer found. GDOT REST services seen (rnhp.dot.ga.gov RNH_ROUTE_DETAILS: Travel Way, County only; enterprisegis GDOT Roads) have no speed layer. GIS Clearinghouse (Data.GeorgiaSpatial.org, registration) offers base road map only. FHWA geo.dot.gov GeorgiaInventory requires a token.",
+  "confidence": "medium"
+}

@@ -1,0 +1,16 @@
+{
+  "code": "RI",
+  "available": false,
+  "dataset": "",
+  "publisher": "Rhode Island DOT",
+  "url": "https://risegis.ri.gov/hosting/rest/services/RIDOT/Road_Centerlines/MapServer/info/iteminfo",
+  "service_url": "",
+  "format": "other",
+  "coverage": "none found",
+  "fields": "",
+  "updated": "",
+  "license": "RIDOT Road_Centerlines item lists licenseInfo 'OPEN' (but no speed attribute mentioned)",
+  "commercial_ok": "unclear",
+  "notes": "3 searches found no RIDOT/RIGIS speed-limit layer; only statute pages and unrelated RIDOT services (rush-hour restricted roads, scenic roads, road centerlines without speed). Fallback: FHWA HPMS_FULL_RI_2024 FeatureServer on geo.dot.gov (opened iteminfo; field list not confirmed, no license stated; HPMS speed limit is typically sampled/partial).",
+  "confidence": "medium"
+}

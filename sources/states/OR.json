@@ -1,0 +1,16 @@
+{
+  "code": "OR",
+  "available": false,
+  "dataset": null,
+  "publisher": "Oregon DOT",
+  "url": "https://www.oregon.gov/odot/engineering/pages/finding-speed-limits.aspx",
+  "service_url": null,
+  "format": null,
+  "coverage": null,
+  "fields": null,
+  "updated": null,
+  "license": "none stated",
+  "commercial_ok": "unclear",
+  "notes": "ODOT GIS Data page lists no speed dataset. ODOT offers only a Speed Zone Order Database search (https://ecmnet.odot.state.or.us/SpeedZone/Search/index) of designated speed-zone orders/documents - not GIS segments, and excludes statutory limits. City of Portland publishes its own speed layer (portlandmaps.com).",
+  "confidence": "medium"
+}

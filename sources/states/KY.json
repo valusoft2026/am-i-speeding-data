@@ -1,0 +1,16 @@
+{
+  "code": "KY",
+  "available": true,
+  "dataset": "KYTC Speed Limits (Public)",
+  "publisher": "Kentucky Transportation Cabinet, Division of Planning",
+  "url": "https://kygisserver.ky.gov/arcgis/rest/services/WGS84WM_Services/Ky_Speed_Limits_WGS84WM/MapServer/info/iteminfo?f=pjson",
+  "service_url": "https://services2.arcgis.com/CcI36Pduqd0OR4W9/ArcGIS/rest/services/Speed_Limits_Public/FeatureServer/0",
+  "format": "arcgis-featureserver",
+  "coverage": "state-maintained roads (layer titled 'KYTC State Road Speed Limits'); posted and statutory limits",
+  "fields": "SPEEDLIM (mph), OONUMBER (Official Order no.)",
+  "updated": "2026-10-11 (AGOL layer last data edit)",
+  "license": "Copyright 2019 KYTC, all rights reserved; 'Proper citation is expected when used'; no-warranty disclaimer",
+  "commercial_ok": "unclear",
+  "notes": "'All rights reserved' wording argues for asking KYTC before commercial use. Official MapServer mirror: kygisserver.ky.gov/.../Ky_Speed_Limits_WGS84WM/MapServer/0 (maxRecordCount 1000). AGOL layer value set includes 0 (likely unknown). Built for HPMS submittal; based on signs or Official Orders under KRS 189.390(4).",
+  "confidence": "high"
+}

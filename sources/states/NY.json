@@ -1,0 +1,16 @@
+{
+  "code": "NY",
+  "available": true,
+  "dataset": "NYSDOT Roadway Inventory (RoadwayData)",
+  "publisher": "New York State DOT",
+  "url": "https://gisportalny.dot.ny.gov/hostingny/rest/services/Roadways/RoadwayData/FeatureServer",
+  "service_url": "https://gisportalny.dot.ny.gov/hostingny/rest/services/Roadways/RoadwayData/FeatureServer/0",
+  "format": "arcgis-featureserver",
+  "coverage": "NYSDOT Roadway Inventory - includes Route, Road, Ramp types (appears to include state, county and local roads; not confirmed that speed is populated on all)",
+  "fields": "Posted_Speed_Limit_MPH",
+  "updated": "not seen",
+  "license": "NYS web service Terms of Use in service documentInfo (contract; as-is, no warranty, user indemnifies State); no explicit commercial terms",
+  "commercial_ok": "unclear",
+  "notes": "Polyline Z/M, maxRecordCount 2000, layer supports geoJSON (service-level says JSON). Layer 1 State Touring Inventory = Route/Ramp subset. Dev/QA hosts (gisdev, gisportalnydev/qa) also exist - use production gisportalny.",
+  "confidence": "high"
+}
