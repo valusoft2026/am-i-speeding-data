@@ -16,6 +16,7 @@ rebuilding road files.
 Geometry is simplified to ~3 m, packed as zigzag-varint deltas (1e-5 degrees), and
 indexed with an SQLite R-tree for fast nearest-road lookup on the phone.
 """
+import math
 import re
 import sqlite3
 import struct
@@ -142,15 +143,17 @@ URBAN_MIN = 12        # minor streets within the 3x3 cells around a road -> urba
 
 
 class Roads(osmium.SimpleHandler):
-    def __init__(self, db, dot=None):
+    def __init__(self, db, dot=None, dot_fill_only=False):
         super().__init__()
         self.db = db
         self.dot = dot          # dot_match.DotIndex or None
+        self.fill_only = dot_fill_only  # older DOT data: only fill roads with no mapped limit
         self.n = 0
         self.posted = 0
         self.from_dot = 0
         self.cells = {}       # (i, j) -> count of minor streets (classes 6-8)
         self.minor = []       # (way id, cell) for classes 5-8, to flag urban later
+        self.pieces = {}      # road name -> [[id, start, end, official speed, src, length m], ...]
 
     def way(self, w):
         tags = w.tags
@@ -173,7 +176,8 @@ class Roads(osmium.SimpleHandler):
         name = tags.get("name") or tags.get("ref") or None
         oneway = 1 if tags.get("oneway") in ("yes", "1") else 0
 
-        parts = split_by_dot(coords, self.dot) if self.dot else [(coords, None, None)]
+        use_dot = self.dot and not (self.fill_only and speed)
+        parts = split_by_dot(coords, self.dot) if use_dot else [(coords, None, None)]
         for k, (line, dot_speed, dot_truck) in enumerate(parts):
             row_id = w.id if k == 0 else w.id + (k << 40)  # extra pieces get unique ids
             if dot_speed:
@@ -200,20 +204,59 @@ class Roads(osmium.SimpleHandler):
         if cls >= 5:
             cell = (int(sum(lats) / len(lats) // CELL), int(sum(lons) / len(lons) // CELL))
             self.minor.append((row_id, cell))
+        if name and cls <= 6:
+            # remember ends of named roads, to fill short gaps between official segments later
+            length = sum(math.hypot((b[0] - a[0]) * 110540, (b[1] - a[1]) * 87000)
+                         for a, b in zip(coords, coords[1:]))
+            self.pieces.setdefault(name, []).append(
+                [row_id, coords[0], coords[-1], speed if src == 2 else None, src, length])
         self.n += 1
         if speed:
             self.posted += 1
+
+
+GAP_MAX_M = 1500   # longest unmatched piece we'll fill from its neighbors
+TOUCH_M = 20       # ends closer than this count as connected
+
+
+def fill_gaps(db, pieces):
+    """A named road with official limits on its neighbors but none on this piece (because the DOT
+    line was offset from the map line, or a short stretch didn't match) takes the neighbors' official
+    limit when they agree. Marked src = 3 ("from official data on the rest of this road")."""
+    def near(p, q):
+        return math.hypot((p[0] - q[0]) * 110540, (p[1] - q[1]) * 87000) <= TOUCH_M
+    filled = 0
+    for name, plist in pieces.items():
+        if not any(p[3] for p in plist):
+            continue
+        for _ in range(4):  # a few passes so chains of short gaps fill in
+            changed = False
+            for p in plist:
+                if p[3] is not None or p[4] == 1 or p[5] > GAP_MAX_M:
+                    continue  # already official, or has its own OpenStreetMap posted limit, or too long
+                nbr = {q[3] for q in plist if q is not p and q[3] is not None and
+                       (near(p[1], q[1]) or near(p[1], q[2]) or near(p[2], q[1]) or near(p[2], q[2]))}
+                if len(nbr) == 1:
+                    p[3] = nbr.pop()
+                    p[4] = 3
+                    db.execute("UPDATE roads SET speed_mph = ?, src = 3 WHERE id = ?", (p[3], p[0]))
+                    filled += 1
+                    changed = True
+            if not changed:
+                break
+    return filled
 
 
 def main():
     if len(sys.argv) not in (4, 5):
         sys.exit(__doc__)
     src, out, state = sys.argv[1], sys.argv[2], sys.argv[3].upper()
-    dot, credit = None, None
+    dot, credit, fill_only = None, None, False
     if len(sys.argv) == 5 and os.path.exists(sys.argv[4]):
         import json
         d = json.load(open(sys.argv[4]))
         credit = d.get("credit")
+        fill_only = d.get("mode") == "fill"
         dot = DotIndex(d["segments"])
         print(f"{state}: using {len(d['segments'])} official segments from {credit}")
     if os.path.exists(out):
@@ -228,7 +271,7 @@ def main():
             urban INTEGER NOT NULL DEFAULT 0, src INTEGER NOT NULL DEFAULT 0);
         CREATE VIRTUAL TABLE roads_idx USING rtree(id, min_lat, max_lat, min_lon, max_lon);
     """)
-    h = Roads(db, dot)
+    h = Roads(db, dot, fill_only)
     h.apply_file(src, locations=True)
     # Unposted minor roads in areas dense with streets (subdivisions, town grids) are
     # "urban": the app uses the state's residential/business-district default there.
@@ -236,11 +279,12 @@ def main():
         i, j = cell
         return sum(h.cells.get((i + a, j + b), 0) for a in (-1, 0, 1) for b in (-1, 0, 1)) >= URBAN_MIN
     urban_ids = [(wid,) for wid, cell in h.minor if dense(cell)]
+    filled = fill_gaps(db, h.pieces) if dot else 0
     db.executemany("UPDATE roads SET urban = 1 WHERE id = ?", urban_ids)
     built = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     db.executemany("INSERT INTO meta VALUES(?,?)", [
         ("state", state), ("built_utc", built), ("schema", "4"), ("urban_roads", str(len(urban_ids))),
-        ("dot_credit", credit or ""), ("dot_roads", str(h.from_dot)),
+        ("dot_credit", credit or ""), ("dot_roads", str(h.from_dot)), ("gap_filled", str(filled)),
         ("geom", "zigzag-varint delta, 1e-5 deg, first point absolute"),
         ("roads", str(h.n)), ("posted", str(h.posted)),
         ("attribution", "© OpenStreetMap contributors, ODbL"),
@@ -250,7 +294,7 @@ def main():
     db.close()
     pct = 100 * h.posted // max(h.n, 1)
     print(f"{state}: {h.n} roads, {h.posted} with posted limit ({pct}%), {h.from_dot} from the state DOT, "
-          f"{len(urban_ids)} minor roads marked urban")
+          f"{filled} gaps filled from neighboring official segments, {len(urban_ids)} minor roads marked urban")
     print(f"{out}: {os.path.getsize(out) / 1e6:.1f} MB")
 
 
