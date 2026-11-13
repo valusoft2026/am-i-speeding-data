@@ -18,5 +18,8 @@ osmium tags-filter "$SRC" \
 rm -f "raw/dot_$CODE.json"
 "$PY" dot_sources.py "$CODE" "raw/dot_$CODE.json" || echo "WARNING: $CODE DOT download failed; using OpenStreetMap only"
 "$PY" build_state.py "raw/$CODE-roads.osm.pbf" "out/$CODE.sqlite" "$CODE" "raw/dot_$CODE.json"
+# Known fixed speed cameras (OpenStreetMap, plus city open data where published).
+osmium tags-filter "$SRC" n/highway=speed_camera -o "raw/$CODE-cams.osm.pbf" --overwrite --no-progress
+"$PY" cameras.py "$CODE" "raw/$CODE-cams.osm.pbf" "out/$CODE.sqlite" || echo "WARNING: $CODE cameras failed; road file has none"
 gzip -9 -f "out/$CODE.sqlite"
 ls -lh "out/$CODE.sqlite.gz"
